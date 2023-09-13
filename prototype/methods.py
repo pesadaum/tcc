@@ -42,6 +42,7 @@ def secant(x0: float,
             r_dict['slope'] = slope
             r_dict['x_next'] = x_next
             r_dict['f(x_next)'] = f(x_next)
+            r_dict['error'] = f(x_next) - SEEK
 
             r_iter.append(r_dict)
 
@@ -93,7 +94,6 @@ def bisection(a: float,
               f: callable,
               MAX_ITER: int,
               debug=False):
-    
     """
     # Description
     Computes SEEK = f(x) for a given function and a given set of values using a modified version of the bissection method
@@ -142,6 +142,7 @@ def bisection(a: float,
             r_dict['f(a)'] = f_a
             r_dict['f(b)'] = f_b
             r_dict['f(c)'] = f_c
+            r_dict['error'] = f_c - SEEK
 
             r_iter.append(r_dict)
 
@@ -151,4 +152,3 @@ def bisection(a: float,
         return pd.DataFrame(r_iter)
 
     return c
-
