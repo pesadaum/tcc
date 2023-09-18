@@ -1,4 +1,35 @@
 import numpy as np
+import matplotlib.pyplot as plt
+
+def iteration_graphic(iter_df, fit_df, q_values_df, figsize=(7,5)):
+  fig, ax = plt.subplots(figsize=figsize)
+
+  x = fit_df['x']
+  y = fit_df['y']
+  xn = iter_df['x_next']
+  fxn = iter_df['f(x_next)']
+
+  ax.plot(x, y, label='$Q_{meas}$ polynomial fit')
+  ax.plot(xn, fxn, 'o', label='$\hat{Q}$ Algorithm output', markersize=5)
+
+  q_x = iter_df.iloc[-1, 6]
+  q_y = iter_df.iloc[-1, 7]
+  last_iter = iter_df.iloc[-1, 0]
+
+  ax.plot(q_x, q_y, 'o',
+            label=f'Last iteration [{last_iter}]:\nx={q_x:.2f}, y={q_y:.2f}',
+            c='k', fillstyle='none',)
+
+  ax.plot(q_values_df['i_ref'], q_values_df['Q'], ':o', label='Measured $Q$')
+
+  ax.legend()
+
+  fig.tight_layout()
+  
+  return (fig, ax)
+
+
+
 
 def multiple_seeks(x0: float, 
                    x1: float, 
