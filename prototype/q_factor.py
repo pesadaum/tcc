@@ -1,11 +1,17 @@
 import pandas as pd
 import numpy as np
 
-def get_q_df(fname):
-  return pd.read_csv(fname, 
-                     sep='\s+', 
-                     header=None, 
+
+def get_q_df(fname, include_q_drop=False, drop_at=0.9):
+    df = pd.read_csv(fname,
+                     sep='\s+',
+                     header=None,
                      names=['i_ref', 'Q'])
+
+    if include_q_drop:
+        df.loc[:, 'Q'][df['i_ref'] >= drop_at] = 20.0
+
+    return df
 
 
 def q_func_polynomial(x, q_values, deg=6, include_q_drop=False):
