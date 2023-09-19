@@ -10,6 +10,8 @@ def get_q_df(fname):
 
 def q_func_polynomial(x, q_values, deg=6, include_q_drop=False):
 
+    q_values = q_values.copy()
+
     if include_q_drop:
         # drops Q-factor due to system indefinite oscilation
         q_values.loc[:, 'Q'][q_values['i_ref'] >= 0.9] = 20.0

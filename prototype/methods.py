@@ -30,31 +30,31 @@ def secant(a: float,
 
     while (not converge and iter <= MAX_ITER):
         slope = (f(b) - f(a))/(b - a)
-        x_next = b - (f(b) - SEEK)/slope
+        c = b - (f(b) - SEEK)/slope
 
         if debug:
             r_dict = dict()
             r_dict['iter'] = iter
             r_dict['a'] = a
             r_dict['b'] = b
-            r_dict['f(a)'] = f(a)
-            r_dict['f(b)'] = f(b)
-            r_dict['slope'] = slope
-            r_dict['x_next'] = x_next
-            r_dict['f(x_next)'] = f(x_next)
-            r_dict['error'] = f(x_next) - SEEK
+            r_dict['c'] = c
+            # r_dict['f(a)'] = f(a)
+            # r_dict['f(b)'] = f(b)
+            # r_dict['slope'] = slope
+            r_dict['f(c)'] = f(c)
+            r_dict['error'] = f(c) - SEEK
 
             r_iter.append(r_dict)
 
-        a, b = b, x_next
+        a, b = b, c
 
-        converge = not (np.abs(f(x_next) - SEEK) > TOL)
+        converge = not (np.abs(f(c) - SEEK) > TOL)
         iter += 1
 
     if debug:
         return pd.DataFrame(r_iter)
 
-    return x_next
+    return c
 
 
 def mod_secant(a: float,
@@ -107,8 +107,6 @@ def bisection(a: float,
     @param MAX_TER: Maximum number of operations allowed before convergence
     @param debug: Flag for exporting the results, returns a pandas dataframe with all variables described in the classical version of the algorithm
 
-    # Warning
-    This method in the current implementation either converges reasonably or does not converge at all. Currently the reasons are unknown
     """
 
     converge = False
