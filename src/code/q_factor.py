@@ -14,7 +14,7 @@ def get_q_df(fname, include_q_drop=False, drop_at=0.9):
     return df
 
 
-def q_func_polynomial(x, q_values, deg=6, include_q_drop=False):
+def q_func_polynomial(x, q_values, deg=12, include_q_drop=False):
 
     q_values = q_values.copy()
 
