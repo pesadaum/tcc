@@ -63,7 +63,7 @@ module instability_detect_tb ();
   endtask
 
   task show;
-    $display("At time %3d: i_ref_setup=%d, q_measured=%d, clk=%b, enable=%b, rst=%b, ready=%b",
+    $write("At time %3d: i_ref_setup=%d, q_measured=%d, clk=%b, enable=%b, rst=%b, ready=%b",
       $time, i_ref_setup, q_measured, clk, enable, rst, ready);
   endtask
 
@@ -79,8 +79,8 @@ module instability_detect_tb ();
     rst = 1;
     rst = 0;
     enable = 1;
-    $display("\nTesting x clock cycles in READY mode");
-    generate_clock(100, 1);
+    $display("\nTesting 100 clock cycles in READY mode");
+    generate_clock(50, 1);
 
 
 
@@ -92,7 +92,11 @@ module instability_detect_tb ();
 
   always @(posedge clk or negedge clk) begin: tb
     show();
+    $display();
   end
+
+  // always @(negedge clk)  // gambiarra pra formatação kkkkkkk
+
 
 
 endmodule

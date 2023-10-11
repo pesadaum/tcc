@@ -38,14 +38,13 @@ module instability_detect #(
       curr_q <= q_measured;
     end
 
-    $write("\n[IN-MODULE] At time %3d: last_q=%4d, curr_q=%4d,  difference=%4d\n", $time+1, last_q, curr_q, curr_q - last_q);
+    // $write("[IN-MODULE] At time %3d: last_q=%4d, curr_q=%4d,  difference=%4d", $time+1, last_q, curr_q, curr_q - last_q);
   end
 
   always @(negedge clk) begin
     if ((curr_q - last_q) > DELTA) begin
       found = 1'b1;
-      $display("[IN-MODULE] FOUND!");
-      // $finish;
+      // $write("[IN-MODULE] FOUND!");
     end
     else found = 1'b0;
 

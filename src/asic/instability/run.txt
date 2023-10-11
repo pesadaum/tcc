@@ -1,9 +1,8 @@
-TOOL:	xrun(64)	22.03-s001: Exiting on Oct 05, 2023 at 19:52:49 -03  (total: 00:00:01)
-TOOL:	xrun(64)	22.03-s001: Started on Oct 05, 2023 at 19:53:53 -03
+TOOL:	xrun(64)	22.03-s001: Started on Oct 05, 2023 at 23:58:37 -03
 xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
 Recompiling... reason: file './instability_detect.v' is newer than expected.
-	expected: Thu Oct  5 19:52:47 2023
-	actual:   Thu Oct  5 19:53:52 2023
+	expected: Thu Oct  5 23:57:42 2023
+	actual:   Thu Oct  5 23:58:36 2023
 file: instability_detect.v
 	module worklib.instability_detect:v
 		errors: 0, warnings: 0
@@ -24,8 +23,8 @@ xmelab: (./instability_detect.v,8): ready
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.instability_detect:v <0x18892949>
-			streams:   7, words:  3341
+		worklib.instability_detect:v <0x0ce1a7c9>
+			streams:   7, words:  3123
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -151,489 +150,363 @@ Data acquire completed
 
 
 
-Testing x clock cycles in READY mode
-At time   1: i_ref_setup=1023, q_measured=   x, clk=0, enable=1, rst=0, ready=0
-At time   2: i_ref_setup=1013, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time   3: last_q=   x, curr_q=   x,  difference=   x
-At time   3: i_ref_setup=1013, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time   4: i_ref_setup=1003, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time   5: last_q=   x, curr_q=  23,  difference=   x
-At time   5: i_ref_setup=1003, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time   6: i_ref_setup= 993, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time   7: last_q=  23, curr_q=  23,  difference=   0
-At time   7: i_ref_setup= 993, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time   8: i_ref_setup= 983, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time   9: last_q=  23, curr_q=  23,  difference=   0
-At time   9: i_ref_setup= 983, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  10: i_ref_setup= 973, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  11: last_q=  23, curr_q=  23,  difference=   0
-At time  11: i_ref_setup= 973, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  12: i_ref_setup= 963, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  13: last_q=  23, curr_q=  23,  difference=   0
-At time  13: i_ref_setup= 963, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  14: i_ref_setup= 953, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  15: last_q=  23, curr_q=  23,  difference=   0
-At time  15: i_ref_setup= 953, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  16: i_ref_setup= 943, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  17: last_q=  23, curr_q=  23,  difference=   0
-At time  17: i_ref_setup= 943, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  18: i_ref_setup= 933, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  19: last_q=  23, curr_q=  23,  difference=   0
-At time  19: i_ref_setup= 933, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  20: i_ref_setup= 923, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  21: last_q=  23, curr_q=  23,  difference=   0
-At time  21: i_ref_setup= 923, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  22: i_ref_setup= 913, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  23: last_q=  23, curr_q=  23,  difference=   0
-At time  23: i_ref_setup= 913, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  24: i_ref_setup= 903, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  25: last_q=  23, curr_q=  23,  difference=   0
-At time  25: i_ref_setup= 903, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  26: i_ref_setup= 893, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  27: last_q=  23, curr_q=  23,  difference=   0
-At time  27: i_ref_setup= 893, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  28: i_ref_setup= 883, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  29: last_q=  23, curr_q=  23,  difference=   0
-At time  29: i_ref_setup= 883, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  30: i_ref_setup= 873, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  31: last_q=  23, curr_q=  23,  difference=   0
-At time  31: i_ref_setup= 873, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  32: i_ref_setup= 863, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  33: last_q=  23, curr_q=  23,  difference=   0
-At time  33: i_ref_setup= 863, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  34: i_ref_setup= 853, q_measured=  23, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  35: last_q=  23, curr_q=  23,  difference=   0
-At time  35: i_ref_setup= 853, q_measured=  23, clk=0, enable=1, rst=0, ready=0
-At time  36: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  37: last_q=  23, curr_q=  23,  difference=   0
-At time  37: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  38: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  39: last_q=  23, curr_q= 115,  difference=  92
-At time  39: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  40: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  41: last_q=  23, curr_q= 115,  difference=  92
-At time  41: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  42: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  43: last_q=  23, curr_q= 115,  difference=  92
-At time  43: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  44: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  45: last_q=  23, curr_q= 115,  difference=  92
-At time  45: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  46: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  47: last_q=  23, curr_q= 115,  difference=  92
-At time  47: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  48: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  49: last_q=  23, curr_q= 115,  difference=  92
-At time  49: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  50: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  51: last_q=  23, curr_q= 115,  difference=  92
-At time  51: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  52: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  53: last_q=  23, curr_q= 115,  difference=  92
-At time  53: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  54: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  55: last_q=  23, curr_q= 115,  difference=  92
-At time  55: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  56: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  57: last_q=  23, curr_q= 115,  difference=  92
-At time  57: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  58: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  59: last_q=  23, curr_q= 115,  difference=  92
-At time  59: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  60: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  61: last_q=  23, curr_q= 115,  difference=  92
-At time  61: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  62: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  63: last_q=  23, curr_q= 115,  difference=  92
-At time  63: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  64: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  65: last_q=  23, curr_q= 115,  difference=  92
-At time  65: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  66: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  67: last_q=  23, curr_q= 115,  difference=  92
-At time  67: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  68: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  69: last_q=  23, curr_q= 115,  difference=  92
-At time  69: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  70: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  71: last_q=  23, curr_q= 115,  difference=  92
-At time  71: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  72: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  73: last_q=  23, curr_q= 115,  difference=  92
-At time  73: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  74: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  75: last_q=  23, curr_q= 115,  difference=  92
-At time  75: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  76: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  77: last_q=  23, curr_q= 115,  difference=  92
-At time  77: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  78: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  79: last_q=  23, curr_q= 115,  difference=  92
-At time  79: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  80: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  81: last_q=  23, curr_q= 115,  difference=  92
-At time  81: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  82: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  83: last_q=  23, curr_q= 115,  difference=  92
-At time  83: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  84: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  85: last_q=  23, curr_q= 115,  difference=  92
-At time  85: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  86: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  87: last_q=  23, curr_q= 115,  difference=  92
-At time  87: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  88: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  89: last_q=  23, curr_q= 115,  difference=  92
-At time  89: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  90: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  91: last_q=  23, curr_q= 115,  difference=  92
-At time  91: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  92: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  93: last_q=  23, curr_q= 115,  difference=  92
-At time  93: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  94: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  95: last_q=  23, curr_q= 115,  difference=  92
-At time  95: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  96: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  97: last_q=  23, curr_q= 115,  difference=  92
-At time  97: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time  98: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time  99: last_q=  23, curr_q= 115,  difference=  92
-At time  99: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 100: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 101: last_q=  23, curr_q= 115,  difference=  92
-At time 101: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 102: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 103: last_q=  23, curr_q= 115,  difference=  92
-At time 103: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 104: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 105: last_q=  23, curr_q= 115,  difference=  92
-At time 105: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 106: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 107: last_q=  23, curr_q= 115,  difference=  92
-At time 107: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 108: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 109: last_q=  23, curr_q= 115,  difference=  92
-At time 109: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 110: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 111: last_q=  23, curr_q= 115,  difference=  92
-At time 111: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 112: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 113: last_q=  23, curr_q= 115,  difference=  92
-At time 113: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 114: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 115: last_q=  23, curr_q= 115,  difference=  92
-At time 115: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 116: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 117: last_q=  23, curr_q= 115,  difference=  92
-At time 117: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 118: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 119: last_q=  23, curr_q= 115,  difference=  92
-At time 119: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 120: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 121: last_q=  23, curr_q= 115,  difference=  92
-At time 121: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 122: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 123: last_q=  23, curr_q= 115,  difference=  92
-At time 123: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 124: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 125: last_q=  23, curr_q= 115,  difference=  92
-At time 125: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 126: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 127: last_q=  23, curr_q= 115,  difference=  92
-At time 127: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 128: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 129: last_q=  23, curr_q= 115,  difference=  92
-At time 129: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 130: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 131: last_q=  23, curr_q= 115,  difference=  92
-At time 131: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 132: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 133: last_q=  23, curr_q= 115,  difference=  92
-At time 133: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 134: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 135: last_q=  23, curr_q= 115,  difference=  92
-At time 135: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 136: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 137: last_q=  23, curr_q= 115,  difference=  92
-At time 137: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 138: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 139: last_q=  23, curr_q= 115,  difference=  92
-At time 139: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 140: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 141: last_q=  23, curr_q= 115,  difference=  92
-At time 141: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 142: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 143: last_q=  23, curr_q= 115,  difference=  92
-At time 143: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 144: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 145: last_q=  23, curr_q= 115,  difference=  92
-At time 145: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 146: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 147: last_q=  23, curr_q= 115,  difference=  92
-At time 147: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 148: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 149: last_q=  23, curr_q= 115,  difference=  92
-At time 149: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 150: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 151: last_q=  23, curr_q= 115,  difference=  92
-At time 151: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 152: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 153: last_q=  23, curr_q= 115,  difference=  92
-At time 153: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 154: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 155: last_q=  23, curr_q= 115,  difference=  92
-At time 155: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 156: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 157: last_q=  23, curr_q= 115,  difference=  92
-At time 157: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 158: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 159: last_q=  23, curr_q= 115,  difference=  92
-At time 159: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 160: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 161: last_q=  23, curr_q= 115,  difference=  92
-At time 161: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 162: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 163: last_q=  23, curr_q= 115,  difference=  92
-At time 163: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 164: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 165: last_q=  23, curr_q= 115,  difference=  92
-At time 165: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 166: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 167: last_q=  23, curr_q= 115,  difference=  92
-At time 167: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 168: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 169: last_q=  23, curr_q= 115,  difference=  92
-At time 169: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 170: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 171: last_q=  23, curr_q= 115,  difference=  92
-At time 171: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 172: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 173: last_q=  23, curr_q= 115,  difference=  92
-At time 173: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 174: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 175: last_q=  23, curr_q= 115,  difference=  92
-At time 175: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 176: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 177: last_q=  23, curr_q= 115,  difference=  92
-At time 177: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 178: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 179: last_q=  23, curr_q= 115,  difference=  92
-At time 179: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 180: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 181: last_q=  23, curr_q= 115,  difference=  92
-At time 181: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 182: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 183: last_q=  23, curr_q= 115,  difference=  92
-At time 183: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 184: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 185: last_q=  23, curr_q= 115,  difference=  92
-At time 185: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 186: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 187: last_q=  23, curr_q= 115,  difference=  92
-At time 187: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 188: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 189: last_q=  23, curr_q= 115,  difference=  92
-At time 189: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 190: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 191: last_q=  23, curr_q= 115,  difference=  92
-At time 191: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 192: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 193: last_q=  23, curr_q= 115,  difference=  92
-At time 193: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 194: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 195: last_q=  23, curr_q= 115,  difference=  92
-At time 195: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 196: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 197: last_q=  23, curr_q= 115,  difference=  92
-At time 197: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 198: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 199: last_q=  23, curr_q= 115,  difference=  92
-At time 199: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0
-[IN-MODULE] FOUND!
-At time 200: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
-
-[IN-MODULE] At time 201: last_q=  23, curr_q= 115,  difference=  92
+Testing 100 clock cycles in READY mode
+At time   1: i_ref_setup=1023, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   2: i_ref_setup=1013, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time   3: last_q=   x, curr_q=   x,  difference=   xAt time   3: i_ref_setup=1013, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   4: i_ref_setup=1003, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time   5: last_q=   x, curr_q=  23,  difference=   xAt time   5: i_ref_setup=1003, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   6: i_ref_setup= 993, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time   7: last_q=  23, curr_q=  23,  difference=   0At time   7: i_ref_setup= 993, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   8: i_ref_setup= 983, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time   9: last_q=  23, curr_q=  23,  difference=   0At time   9: i_ref_setup= 983, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  10: i_ref_setup= 973, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  11: last_q=  23, curr_q=  23,  difference=   0At time  11: i_ref_setup= 973, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  12: i_ref_setup= 963, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  13: last_q=  23, curr_q=  23,  difference=   0At time  13: i_ref_setup= 963, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  14: i_ref_setup= 953, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  15: last_q=  23, curr_q=  23,  difference=   0At time  15: i_ref_setup= 953, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  16: i_ref_setup= 943, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  17: last_q=  23, curr_q=  23,  difference=   0At time  17: i_ref_setup= 943, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  18: i_ref_setup= 933, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  19: last_q=  23, curr_q=  23,  difference=   0At time  19: i_ref_setup= 933, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  20: i_ref_setup= 923, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  21: last_q=  23, curr_q=  23,  difference=   0At time  21: i_ref_setup= 923, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  22: i_ref_setup= 913, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  23: last_q=  23, curr_q=  23,  difference=   0At time  23: i_ref_setup= 913, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  24: i_ref_setup= 903, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  25: last_q=  23, curr_q=  23,  difference=   0At time  25: i_ref_setup= 903, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  26: i_ref_setup= 893, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  27: last_q=  23, curr_q=  23,  difference=   0At time  27: i_ref_setup= 893, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  28: i_ref_setup= 883, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  29: last_q=  23, curr_q=  23,  difference=   0At time  29: i_ref_setup= 883, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  30: i_ref_setup= 873, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  31: last_q=  23, curr_q=  23,  difference=   0At time  31: i_ref_setup= 873, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  32: i_ref_setup= 863, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  33: last_q=  23, curr_q=  23,  difference=   0At time  33: i_ref_setup= 863, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  34: i_ref_setup= 853, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  35: last_q=  23, curr_q=  23,  difference=   0At time  35: i_ref_setup= 853, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  36: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  37: last_q=  23, curr_q=  23,  difference=   0At time  37: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  38: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  39: last_q=  23, curr_q= 115,  difference=  92At time  39: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  40: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  41: last_q=  23, curr_q= 115,  difference=  92At time  41: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  42: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  43: last_q=  23, curr_q= 115,  difference=  92At time  43: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  44: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  45: last_q=  23, curr_q= 115,  difference=  92At time  45: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  46: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  47: last_q=  23, curr_q= 115,  difference=  92At time  47: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  48: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  49: last_q=  23, curr_q= 115,  difference=  92At time  49: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  50: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  51: last_q=  23, curr_q= 115,  difference=  92At time  51: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  52: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  53: last_q=  23, curr_q= 115,  difference=  92At time  53: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  54: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  55: last_q=  23, curr_q= 115,  difference=  92At time  55: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  56: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  57: last_q=  23, curr_q= 115,  difference=  92At time  57: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  58: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  59: last_q=  23, curr_q= 115,  difference=  92At time  59: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  60: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  61: last_q=  23, curr_q= 115,  difference=  92At time  61: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  62: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  63: last_q=  23, curr_q= 115,  difference=  92At time  63: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  64: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  65: last_q=  23, curr_q= 115,  difference=  92At time  65: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  66: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  67: last_q=  23, curr_q= 115,  difference=  92At time  67: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  68: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  69: last_q=  23, curr_q= 115,  difference=  92At time  69: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  70: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  71: last_q=  23, curr_q= 115,  difference=  92At time  71: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  72: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  73: last_q=  23, curr_q= 115,  difference=  92At time  73: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  74: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  75: last_q=  23, curr_q= 115,  difference=  92At time  75: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  76: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  77: last_q=  23, curr_q= 115,  difference=  92At time  77: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  78: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  79: last_q=  23, curr_q= 115,  difference=  92At time  79: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  80: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  81: last_q=  23, curr_q= 115,  difference=  92At time  81: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  82: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  83: last_q=  23, curr_q= 115,  difference=  92At time  83: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  84: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  85: last_q=  23, curr_q= 115,  difference=  92At time  85: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  86: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  87: last_q=  23, curr_q= 115,  difference=  92At time  87: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  88: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  89: last_q=  23, curr_q= 115,  difference=  92At time  89: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  90: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  91: last_q=  23, curr_q= 115,  difference=  92At time  91: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  92: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  93: last_q=  23, curr_q= 115,  difference=  92At time  93: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  94: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  95: last_q=  23, curr_q= 115,  difference=  92At time  95: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  96: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  97: last_q=  23, curr_q= 115,  difference=  92At time  97: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time  98: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time  99: last_q=  23, curr_q= 115,  difference=  92At time  99: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+[IN-MODULE] FOUND!At time 100: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+[IN-MODULE] At time 101: last_q=  23, curr_q= 115,  difference=  92xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Oct 05, 2023 at 23:58:38 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Oct 06, 2023 at 00:00:19 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './instability_detect.v' is newer than expected.
+	expected: Thu Oct  5 23:58:36 2023
+	actual:   Fri Oct  6 00:00:17 2023
+file: instability_detect.v
+	module worklib.instability_detect:v
+		errors: 0, warnings: 0
+file: instability_detect_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (instability_detect_tb.sv,43|11): System function '$fgets' invoked as a task. Return value will be ignored.
+file: mock_measure.sv
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  ) DUT (
+      |
+xmelab: *W,CUVWSI (./instability_detect_tb.sv,24|6): 1 input port was not connected:
+xmelab: (./instability_detect.v,8): ready
+
+	Top level design units:
+		instability_detect_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.instability_detect:v <0x09fbd2d7>
+			streams:   7, words:  1590
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           17      17
+		Scalar wires:         2       -
+		Vectored wires:       2       -
+		Always blocks:        5       5
+		Initial blocks:       6       6
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.instability_detect_tb:sv
+Loading snapshot worklib.instability_detect_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+Reading Q = 22 at position 0
+Reading Q = 19 at position 10
+Reading Q = 18 at position 20
+Reading Q = 18 at position 30
+Reading Q = 19 at position 40
+Reading Q = 20 at position 50
+Reading Q = 21 at position 60
+Reading Q = 23 at position 70
+Reading Q = 25 at position 80
+Reading Q = 26 at position 90
+Reading Q = 27 at position 100
+Reading Q = 28 at position 110
+Reading Q = 29 at position 120
+Reading Q = 30 at position 130
+Reading Q = 30 at position 140
+Reading Q = 31 at position 150
+Reading Q = 31 at position 160
+Reading Q = 31 at position 170
+Reading Q = 32 at position 180
+Reading Q = 32 at position 190
+Reading Q = 32 at position 200
+Reading Q = 33 at position 210
+Reading Q = 33 at position 220
+Reading Q = 33 at position 230
+Reading Q = 34 at position 240
+Reading Q = 34 at position 250
+Reading Q = 35 at position 260
+Reading Q = 36 at position 270
+Reading Q = 36 at position 280
+Reading Q = 37 at position 290
+Reading Q = 38 at position 300
+Reading Q = 39 at position 310
+Reading Q = 39 at position 320
+Reading Q = 40 at position 330
+Reading Q = 41 at position 340
+Reading Q = 42 at position 350
+Reading Q = 42 at position 360
+Reading Q = 43 at position 370
+Reading Q = 44 at position 380
+Reading Q = 45 at position 390
+Reading Q = 45 at position 400
+Reading Q = 46 at position 410
+Reading Q = 47 at position 420
+Reading Q = 48 at position 430
+Reading Q = 49 at position 440
+Reading Q = 50 at position 450
+Reading Q = 50 at position 460
+Reading Q = 51 at position 470
+Reading Q = 53 at position 480
+Reading Q = 54 at position 490
+Reading Q = 55 at position 500
+Reading Q = 56 at position 510
+Reading Q = 57 at position 520
+Reading Q = 58 at position 530
+Reading Q = 59 at position 540
+Reading Q = 61 at position 550
+Reading Q = 62 at position 560
+Reading Q = 63 at position 570
+Reading Q = 64 at position 580
+Reading Q = 65 at position 590
+Reading Q = 67 at position 600
+Reading Q = 68 at position 610
+Reading Q = 69 at position 620
+Reading Q = 70 at position 630
+Reading Q = 71 at position 640
+Reading Q = 72 at position 650
+Reading Q = 74 at position 660
+Reading Q = 75 at position 670
+Reading Q = 77 at position 680
+Reading Q = 79 at position 690
+Reading Q = 81 at position 700
+Reading Q = 83 at position 710
+Reading Q = 85 at position 720
+Reading Q = 88 at position 730
+Reading Q = 91 at position 740
+Reading Q = 94 at position 750
+Reading Q = 98 at position 760
+Reading Q = 101 at position 770
+Reading Q = 105 at position 780
+Reading Q = 108 at position 790
+Reading Q = 111 at position 800
+Reading Q = 114 at position 810
+Reading Q = 116 at position 820
+Reading Q = 116 at position 830
+Reading Q = 115 at position 840
+Reading Q = 23 at position 850
+Reading Q = 23 at position 860
+Reading Q = 23 at position 870
+Reading Q = 23 at position 880
+Reading Q = 23 at position 890
+Reading Q = 23 at position 900
+Reading Q = 23 at position 910
+Reading Q = 23 at position 920
+Reading Q = 23 at position 930
+Reading Q = 23 at position 940
+Reading Q = 23 at position 950
+Reading Q = 23 at position 960
+Reading Q = 23 at position 970
+Reading Q = 23 at position 980
+Reading Q = 23 at position 990
+Reading Q = 23 at position 1000
+Reading Q = 23 at position 1010
+Reading Q = 23 at position 1020
+
+
+Data acquire completed
+
+
+
+Testing 100 clock cycles in READY mode
+At time   1: i_ref_setup=1023, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   2: i_ref_setup=1013, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   3: i_ref_setup=1013, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   4: i_ref_setup=1003, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   5: i_ref_setup=1003, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   6: i_ref_setup= 993, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   7: i_ref_setup= 993, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   8: i_ref_setup= 983, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   9: i_ref_setup= 983, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  10: i_ref_setup= 973, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  11: i_ref_setup= 973, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  12: i_ref_setup= 963, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  13: i_ref_setup= 963, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  14: i_ref_setup= 953, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  15: i_ref_setup= 953, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  16: i_ref_setup= 943, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  17: i_ref_setup= 943, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  18: i_ref_setup= 933, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  19: i_ref_setup= 933, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  20: i_ref_setup= 923, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  21: i_ref_setup= 923, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  22: i_ref_setup= 913, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  23: i_ref_setup= 913, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  24: i_ref_setup= 903, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  25: i_ref_setup= 903, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  26: i_ref_setup= 893, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  27: i_ref_setup= 893, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  28: i_ref_setup= 883, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  29: i_ref_setup= 883, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  30: i_ref_setup= 873, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  31: i_ref_setup= 873, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  32: i_ref_setup= 863, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  33: i_ref_setup= 863, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  34: i_ref_setup= 853, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  35: i_ref_setup= 853, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  36: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  37: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  38: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  39: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  40: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  41: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  42: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  43: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  44: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  45: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  46: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  47: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  48: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  49: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  50: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  51: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  52: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  53: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  54: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  55: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  56: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  57: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  58: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  59: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  60: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  61: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  62: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  63: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  64: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  65: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  66: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  67: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  68: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  69: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  70: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  71: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  72: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  73: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  74: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  75: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  76: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  77: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  78: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  79: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  80: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  81: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  82: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  83: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  84: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  85: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  86: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  87: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  88: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  89: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  90: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  91: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  92: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  93: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  94: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  95: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  96: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  97: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  98: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  99: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time 100: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
 xmsim: *W,RNQUIE: Simulation is complete.
 xcelium> exit
-TOOL:	xrun(64)	22.03-s001: Exiting on Oct 05, 2023 at 19:53:54 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Exiting on Oct 06, 2023 at 00:00:20 -03  (total: 00:00:01)
