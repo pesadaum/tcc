@@ -28,7 +28,7 @@ module instability_detect_tb ();
     .i_ref_setup(i_ref_setup)
   );
 
-  reg [WIDTH-1:0] q_array[2**WIDTH:0]; // Caution, large array
+  reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
 
   initial begin: fill_measurements
     integer file  ;

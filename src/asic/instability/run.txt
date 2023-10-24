@@ -510,3 +510,514 @@ At time 100: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0
 xmsim: *W,RNQUIE: Simulation is complete.
 xcelium> exit
 TOOL:	xrun(64)	22.03-s001: Exiting on Oct 06, 2023 at 00:00:20 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Oct 16, 2023 at 22:16:18 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './instability_detect.v' is newer than expected.
+	expected: Fri Oct  6 00:00:17 2023
+	actual:   Mon Oct 16 22:16:17 2023
+file: instability_detect_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (instability_detect_tb.sv,44|11): System function '$fgets' invoked as a task. Return value will be ignored.
+	module worklib.instability_detect_tb:sv
+		errors: 0, warnings: 1
+file: mock_measure.sv
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  ) DUT (
+      |
+xmelab: *W,CUVWSI (./instability_detect_tb.sv,25|6): 1 input port was not connected:
+xmelab: (./instability_detect.v,8): ready
+
+	Top level design units:
+		instability_detect_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.instability_detect_tb:sv <0x0ee74a19>
+			streams:  10, words: 10126
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           17      17
+		Scalar wires:         2       -
+		Vectored wires:       2       -
+		Always blocks:        5       5
+		Initial blocks:       6       6
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.instability_detect_tb:sv
+Loading snapshot worklib.instability_detect_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+Reading Q = 22 at position 0
+Reading Q = 19 at position 10
+Reading Q = 18 at position 20
+Reading Q = 18 at position 30
+Reading Q = 19 at position 40
+Reading Q = 20 at position 50
+Reading Q = 21 at position 60
+Reading Q = 23 at position 70
+Reading Q = 25 at position 80
+Reading Q = 26 at position 90
+Reading Q = 27 at position 100
+Reading Q = 28 at position 110
+Reading Q = 29 at position 120
+Reading Q = 30 at position 130
+Reading Q = 30 at position 140
+Reading Q = 31 at position 150
+Reading Q = 31 at position 160
+Reading Q = 31 at position 170
+Reading Q = 32 at position 180
+Reading Q = 32 at position 190
+Reading Q = 32 at position 200
+Reading Q = 33 at position 210
+Reading Q = 33 at position 220
+Reading Q = 33 at position 230
+Reading Q = 34 at position 240
+Reading Q = 34 at position 250
+Reading Q = 35 at position 260
+Reading Q = 36 at position 270
+Reading Q = 36 at position 280
+Reading Q = 37 at position 290
+Reading Q = 38 at position 300
+Reading Q = 39 at position 310
+Reading Q = 39 at position 320
+Reading Q = 40 at position 330
+Reading Q = 41 at position 340
+Reading Q = 42 at position 350
+Reading Q = 42 at position 360
+Reading Q = 43 at position 370
+Reading Q = 44 at position 380
+Reading Q = 45 at position 390
+Reading Q = 45 at position 400
+Reading Q = 46 at position 410
+Reading Q = 47 at position 420
+Reading Q = 48 at position 430
+Reading Q = 49 at position 440
+Reading Q = 50 at position 450
+Reading Q = 50 at position 460
+Reading Q = 51 at position 470
+Reading Q = 53 at position 480
+Reading Q = 54 at position 490
+Reading Q = 55 at position 500
+Reading Q = 56 at position 510
+Reading Q = 57 at position 520
+Reading Q = 58 at position 530
+Reading Q = 59 at position 540
+Reading Q = 61 at position 550
+Reading Q = 62 at position 560
+Reading Q = 63 at position 570
+Reading Q = 64 at position 580
+Reading Q = 65 at position 590
+Reading Q = 67 at position 600
+Reading Q = 68 at position 610
+Reading Q = 69 at position 620
+Reading Q = 70 at position 630
+Reading Q = 71 at position 640
+Reading Q = 72 at position 650
+Reading Q = 74 at position 660
+Reading Q = 75 at position 670
+Reading Q = 77 at position 680
+Reading Q = 79 at position 690
+Reading Q = 81 at position 700
+Reading Q = 83 at position 710
+Reading Q = 85 at position 720
+Reading Q = 88 at position 730
+Reading Q = 91 at position 740
+Reading Q = 94 at position 750
+Reading Q = 98 at position 760
+Reading Q = 101 at position 770
+Reading Q = 105 at position 780
+Reading Q = 108 at position 790
+Reading Q = 111 at position 800
+Reading Q = 114 at position 810
+Reading Q = 116 at position 820
+Reading Q = 116 at position 830
+Reading Q = 115 at position 840
+Reading Q = 23 at position 850
+Reading Q = 23 at position 860
+Reading Q = 23 at position 870
+Reading Q = 23 at position 880
+Reading Q = 23 at position 890
+Reading Q = 23 at position 900
+Reading Q = 23 at position 910
+Reading Q = 23 at position 920
+Reading Q = 23 at position 930
+Reading Q = 23 at position 940
+Reading Q = 23 at position 950
+Reading Q = 23 at position 960
+Reading Q = 23 at position 970
+Reading Q = 23 at position 980
+Reading Q = 23 at position 990
+Reading Q = 23 at position 1000
+Reading Q = 23 at position 1010
+Reading Q = 23 at position 1020
+
+
+Data acquire completed
+
+
+
+Testing 100 clock cycles in READY mode
+At time   1: i_ref_setup=1023, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   2: i_ref_setup=1013, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   3: i_ref_setup=1013, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   4: i_ref_setup=1003, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   5: i_ref_setup=1003, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   6: i_ref_setup= 993, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   7: i_ref_setup= 993, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time   8: i_ref_setup= 983, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time   9: i_ref_setup= 983, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  10: i_ref_setup= 973, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  11: i_ref_setup= 973, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  12: i_ref_setup= 963, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  13: i_ref_setup= 963, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  14: i_ref_setup= 953, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  15: i_ref_setup= 953, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  16: i_ref_setup= 943, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  17: i_ref_setup= 943, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  18: i_ref_setup= 933, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  19: i_ref_setup= 933, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  20: i_ref_setup= 923, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  21: i_ref_setup= 923, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  22: i_ref_setup= 913, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  23: i_ref_setup= 913, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  24: i_ref_setup= 903, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  25: i_ref_setup= 903, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  26: i_ref_setup= 893, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  27: i_ref_setup= 893, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  28: i_ref_setup= 883, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  29: i_ref_setup= 883, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  30: i_ref_setup= 873, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  31: i_ref_setup= 873, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  32: i_ref_setup= 863, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  33: i_ref_setup= 863, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  34: i_ref_setup= 853, q_measured=  23, clk=1, enable=1, rst=0, ready=0 
+At time  35: i_ref_setup= 853, q_measured=  23, clk=0, enable=1, rst=0, ready=0 
+At time  36: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  37: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  38: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  39: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  40: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  41: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  42: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  43: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  44: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  45: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  46: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  47: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  48: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  49: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  50: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  51: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  52: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  53: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  54: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  55: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  56: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  57: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  58: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  59: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  60: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  61: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  62: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  63: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  64: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  65: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  66: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  67: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  68: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  69: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  70: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  71: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  72: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  73: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  74: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  75: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  76: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  77: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  78: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  79: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  80: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  81: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  82: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  83: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  84: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  85: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  86: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  87: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  88: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  89: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  90: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  91: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  92: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  93: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  94: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  95: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  96: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  97: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time  98: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+At time  99: i_ref_setup= 843, q_measured= 115, clk=0, enable=1, rst=0, ready=0 
+At time 100: i_ref_setup= 843, q_measured= 115, clk=1, enable=1, rst=0, ready=0 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Oct 16, 2023 at 22:16:21 -03  (total: 00:00:03)
+TOOL:	xrun(64)	22.03-s001: Started on Oct 16, 2023 at 22:17:30 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './instability_detect.v' is newer than expected.
+	expected: Mon Oct 16 22:16:17 2023
+	actual:   Mon Oct 16 22:17:29 2023
+file: instability_detect.v
+	module worklib.instability_detect:v
+		errors: 0, warnings: 0
+file: instability_detect_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (instability_detect_tb.sv,44|11): System function '$fgets' invoked as a task. Return value will be ignored.
+file: mock_measure.sv
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+  ) DUT (
+      |
+xmelab: *W,CUVWSI (./instability_detect_tb.sv,25|6): 1 input port was not connected:
+xmelab: (./instability_detect.v,8): ready
+
+	Top level design units:
+		instability_detect_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.instability_detect:v <0x1a866664>
+			streams:   6, words:  1360
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           17      17
+		Scalar wires:         2       -
+		Vectored wires:       2       -
+		Always blocks:        5       5
+		Initial blocks:       5       5
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.instability_detect_tb:sv
+Loading snapshot worklib.instability_detect_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+Reading Q = 22 at position 0
+Reading Q = 19 at position 10
+Reading Q = 18 at position 20
+Reading Q = 18 at position 30
+Reading Q = 19 at position 40
+Reading Q = 20 at position 50
+Reading Q = 21 at position 60
+Reading Q = 23 at position 70
+Reading Q = 25 at position 80
+Reading Q = 26 at position 90
+Reading Q = 27 at position 100
+Reading Q = 28 at position 110
+Reading Q = 29 at position 120
+Reading Q = 30 at position 130
+Reading Q = 30 at position 140
+Reading Q = 31 at position 150
+Reading Q = 31 at position 160
+Reading Q = 31 at position 170
+Reading Q = 32 at position 180
+Reading Q = 32 at position 190
+Reading Q = 32 at position 200
+Reading Q = 33 at position 210
+Reading Q = 33 at position 220
+Reading Q = 33 at position 230
+Reading Q = 34 at position 240
+Reading Q = 34 at position 250
+Reading Q = 35 at position 260
+Reading Q = 36 at position 270
+Reading Q = 36 at position 280
+Reading Q = 37 at position 290
+Reading Q = 38 at position 300
+Reading Q = 39 at position 310
+Reading Q = 39 at position 320
+Reading Q = 40 at position 330
+Reading Q = 41 at position 340
+Reading Q = 42 at position 350
+Reading Q = 42 at position 360
+Reading Q = 43 at position 370
+Reading Q = 44 at position 380
+Reading Q = 45 at position 390
+Reading Q = 45 at position 400
+Reading Q = 46 at position 410
+Reading Q = 47 at position 420
+Reading Q = 48 at position 430
+Reading Q = 49 at position 440
+Reading Q = 50 at position 450
+Reading Q = 50 at position 460
+Reading Q = 51 at position 470
+Reading Q = 53 at position 480
+Reading Q = 54 at position 490
+Reading Q = 55 at position 500
+Reading Q = 56 at position 510
+Reading Q = 57 at position 520
+Reading Q = 58 at position 530
+Reading Q = 59 at position 540
+Reading Q = 61 at position 550
+Reading Q = 62 at position 560
+Reading Q = 63 at position 570
+Reading Q = 64 at position 580
+Reading Q = 65 at position 590
+Reading Q = 67 at position 600
+Reading Q = 68 at position 610
+Reading Q = 69 at position 620
+Reading Q = 70 at position 630
+Reading Q = 71 at position 640
+Reading Q = 72 at position 650
+Reading Q = 74 at position 660
+Reading Q = 75 at position 670
+Reading Q = 77 at position 680
+Reading Q = 79 at position 690
+Reading Q = 81 at position 700
+Reading Q = 83 at position 710
+Reading Q = 85 at position 720
+Reading Q = 88 at position 730
+Reading Q = 91 at position 740
+Reading Q = 94 at position 750
+Reading Q = 98 at position 760
+Reading Q = 101 at position 770
+Reading Q = 105 at position 780
+Reading Q = 108 at position 790
+Reading Q = 111 at position 800
+Reading Q = 114 at position 810
+Reading Q = 116 at position 820
+Reading Q = 116 at position 830
+Reading Q = 115 at position 840
+Reading Q = 23 at position 850
+Reading Q = 23 at position 860
+Reading Q = 23 at position 870
+Reading Q = 23 at position 880
+Reading Q = 23 at position 890
+Reading Q = 23 at position 900
+Reading Q = 23 at position 910
+Reading Q = 23 at position 920
+Reading Q = 23 at position 930
+Reading Q = 23 at position 940
+Reading Q = 23 at position 950
+Reading Q = 23 at position 960
+Reading Q = 23 at position 970
+Reading Q = 23 at position 980
+Reading Q = 23 at position 990
+Reading Q = 23 at position 1000
+Reading Q = 23 at position 1010
+Reading Q = 23 at position 1020
+
+
+Data acquire completed
+
+
+
+Testing 100 clock cycles in READY mode
+At time   1: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   2: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time   3: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   4: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time   5: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   6: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time   7: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time   8: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time   9: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  10: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  11: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  12: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  13: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  14: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  15: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  16: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  17: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  18: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  19: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  20: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  21: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  22: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  23: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  24: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  25: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  26: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  27: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  28: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  29: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  30: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  31: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  32: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  33: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  34: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  35: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  36: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  37: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  38: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  39: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  40: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  41: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  42: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  43: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  44: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  45: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  46: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  47: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  48: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  49: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  50: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  51: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  52: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  53: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  54: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  55: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  56: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  57: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  58: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  59: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  60: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  61: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  62: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  63: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  64: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  65: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  66: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  67: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  68: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  69: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  70: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  71: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  72: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  73: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  74: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  75: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  76: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  77: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  78: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  79: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  80: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  81: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  82: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  83: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  84: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  85: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  86: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  87: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  88: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  89: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  90: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  91: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  92: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  93: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  94: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  95: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  96: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  97: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time  98: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+At time  99: i_ref_setup=   x, q_measured=   x, clk=0, enable=1, rst=0, ready=0 
+At time 100: i_ref_setup=   x, q_measured=   x, clk=1, enable=1, rst=0, ready=0 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Oct 16, 2023 at 22:17:31 -03  (total: 00:00:01)

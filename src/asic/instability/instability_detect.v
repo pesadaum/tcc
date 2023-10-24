@@ -25,7 +25,7 @@ module instability_detect #(
   // asynchronous setup
   always @ (posedge rst) begin: async_setup
     if (rst) i_ref_setup = 2**WIDTH-1; // set all bits
-    // else i_ref_setup = 0;             // clear all bits
+    else i_ref_setup = 0;             // clear all bits
   end
 
 
