@@ -1,26 +1,18 @@
 module control_tb ();
-  localparam MAX_ITER = 32;
-  localparam WIDTH    = 10;
-  localparam TOL      = 30;
+  localparam MAX_ITER  = 32;
+  localparam WIDTH     = 10;
+  localparam TOL       = 1;
+  localparam DESIRED_Q = 248;
 
   reg clk   ;
   reg ready ;
   reg enable;
+  reg rst;
 
-  reg [WIDTH-1:0] desired_q  ;
-  reg [WIDTH-1:0] measured_q ;
-  reg [WIDTH-1:0] i_ref_setup;
-  reg [WIDTH-1:0] i_ref      ;
-
-  initial begin
-    clk         =    0;
-    ready       =    1;
-    enable      =    0;
-    desired_q   =   50;
-    measured_q  =    0;
-    i_ref_setup = 1023;
-    i_ref       =    0;
-  end
+  reg  [WIDTH-1:0] desired_q  ;
+  reg  [WIDTH-1:0] measured_q ;
+  reg  [WIDTH-1:0] i_ref_setup;
+  wire [WIDTH-1:0] i_ref      ;
 
 
   bisection #(
@@ -28,13 +20,25 @@ module control_tb ();
     .MAX_ITER(MAX_ITER),
     .TOL     (TOL     )
   ) DUT_bisection (
+    .rst        (rst        ),
     .clk        (clk        ),
     .ready      (enable     ),
-    .desired_q  (desired_q  ),
+    .desired_q  (DESIRED_Q  ),
     .measured_q (measured_q ),
     .i_ref      (i_ref      ),
     .i_ref_setup(i_ref_setup)
   );
+
+  initial begin
+    clk         =          0;
+    ready       =          1;
+    enable      =          1;
+    desired_q   =         250;
+    measured_q  =          0;
+    i_ref_setup = 2**WIDTH-1;
+    DUT_bisection.error = 2**WIDTH-1;
+  end
+
 
   reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
 
@@ -62,24 +66,35 @@ module control_tb ();
   end
 
 
+  task generate_clock;
+    input integer pulses, duration;
+    repeat(pulses) begin
+      # (duration) clk = 1'b1;
+      # (duration) clk = 1'b0;
+    end
+  endtask
 
-  always #(CLK_PERIOD/2) clk=~clk;
+  task show;
+    $write("At time %3d: i_ref=%d, measured_q=%d, desired_q=%d, clk=%b, enable=%b, ready=%b",
+      $time, i_ref, measured_q, desired_q, clk, enable, ready);
+  endtask
+
 
   initial begin
-    $dumpfile("tb_bisection.vcd");
-    $dumpvars(0, tb_bisection);
+    generate_clock(50, 1);
   end
 
-  initial begin
-    #1 rst_n<=1'bx;clk<=1'bx;
-    #(CLK_PERIOD*3) rst_n<=1;
-    #(CLK_PERIOD*3) rst_n<=0;clk<=0;
-    repeat(5) @(posedge clk);
-    rst_n<=1;
-    @(posedge clk);
-    repeat(2) @(posedge clk);
-    $finish(2);
+  always @(posedge clk) begin: update_q_by_iref
+    measured_q = q_array[i_ref];
+  end
+
+  always @(posedge clk or negedge clk) begin: tb
+    show();
+    $display();
+    if(DUT_bisection.converged) begin
+      $display("Q Converged with desired_q=%d, measured_q=%d, after %3d time units", desired_q, measured_q, $time);
+      $finish();
+    end
   end
 
 endmodule
-`default_nettype wire
