@@ -1,85 +1,121 @@
-module secant_ctrl #(
-  parameter MAX_ITER = 2 ,
-  parameter WIDTH    = 10,
-  parameter TOL      = 30
+module secant #(
+  parameter WIDTH = 10,
+  parameter TOL   = 30
 ) (
-  input  wire             ready     ,
-  input  wire             clk       ,
-  input  wire [WIDTH-1:0] desired_q ,
-  input  wire [WIDTH-1:0] q_measured,
+  input  wire             ready      ,
+  input  wire             clk        ,
+  input  wire             rst        ,
+  input  wire [WIDTH-1:0] desired_q  ,
+  input  wire [WIDTH-1:0] measured_q ,
+  input  wire [WIDTH-1:0] i_ref_setup,
   output reg  [WIDTH-1:0] i_ref
 );
 
-  // Initial lower and upper bounds, respectively; next point to be measured
-  reg [WIDTH-1:0] a, b, c;
+  reg [3-1:0] state;
 
-  // placeholders for measurements
-  // TODO: implement measurement mock
-  reg [WIDTH-1:0] f_a, f_b, f_c;
+  // Initial lower and upper bounds and midpoint respectively;
+  reg signed [WIDTH:0] a, b, c;
 
-  // auxiliar variable used in calculation, maybe should be inserted directly for `reg` economy;
-  reg [WIDTH-1:0] slope;
+  reg signed [WIDTH:0] f_a, f_b, f_c, slope;
 
-  // iteration control
-  reg [WIDTH-1:0] iter;
 
+  // real slope;
   // flag for achieving convergence
-  reg converged = 1'b0;
+  reg converged;
 
   /* REMEMBER:
   some initializations are unnecessary for synthesis, no need to specify the splicit initialization path, but some are necessary
   */
+
+  // should be SIGNED and WIDTH+1 bit long
+  reg signed [WIDTH:0] error;
+
   initial begin
-    a = 0.0;
-    b = 1.0;
-    c = 0.0;
-    f_a = 0.0;
-    f_b = 0.0;
-    f_c = 0.0;
-    slope = 0.0;
-    iter = 1;
+    state = -1;
+    a = 0;
+    b = 2**WIDTH-2;
+    // b = 900;
+    // c = 0;
+    // desired_q = 258;
+    c = 826;
+    // f_c = 119;
     converged = 1'b0;
   end
 
-  reg clk_enb = 1'b1;
+  always @(posedge clk) begin
+    if (ready) state = state+1;
 
-  always @*
-    clk_enb = clk && ~converged;
+    if (error < TOL) converged <= 1'b1;
+    else converged <= 1'b0;
 
-  always @(posedge clk_enb or a or b or c) begin: secant
-    // should be local
-    reg [WIDTH-1:0] error;
+    // $display("[IN-MODULE] a=%d, b=%d, c=%d, f_a=%d, f_b=%d, f_c=%d, state=%d", a, b, c, f_a, f_b, f_c, state);
+  end
 
-    if(!ready) c = 0;
-    else begin
-      for (iter = 0; iter < MAX_ITER; iter = iter+1) begin
+  always @(state) begin: current_updates
+    case (state)
+      0 : begin
+        i_ref <= a;
+        // f_c   <= measured_q;
+      end
 
-        // f(<arg>) is a call to the measurement function
+      1 : begin
+        i_ref <= b;
+        f_a   <= measured_q;
+      end
 
-        // f_a = f(a);
-        i_ref = a;
-        f_a   = q_measured;
+      2 : begin
+        i_ref <= c;
+        f_b   <= measured_q;
+      end
 
-        // f_b = f(b);
-        i_ref = b;
-        f_b   = q_measured;
+      3 : begin
+        f_c <= measured_q;
 
-        slope = (f_b - f_a) / (b - a);
-        c     = b - (f_b - desired_q) / slope;
+        // slope <= (10 *(f_b - f_a)/ (b-a)) * 10;
+        // c <= (b - (f_b - desired_q) / slope);
+        // c <= slope;
 
-        a = b;
-        b = c;
+        // c <= 1023 - (314 - 258)/((314 - 22)/(1023));
+        // c <= 1023 - (314 - 258)*1/0.28;
 
-        i_ref = c;
-        f_c   = q_measured;
+        // c   <= (a+b)/2;
+        // c <= 10/3;
 
-        error = f_c - desired_q;
-        error = error > 0 ? error : -error;
-
-        if (error < TOL) converged = 1'b1;
+        // a <= b;
+        // b <= c;
 
       end
-    end
+
+      4 : begin
+        // $display(a,, b,, c,, f_a,, f_b,, f_c,,slope ,, desired_q,,);
+        a     <= b;
+        b     <= c;
+        state <= -1;
+      end
+    endcase
+
   end
+
+  always @(state) begin
+    if (state == 3) begin
+      slope = (100 *(f_b - f_a)/ (b-a)) * 1;
+      if (slope)
+        c = (b - 100*(f_b - desired_q) / slope);
+      else begin
+        slope = (1000 *(f_b - f_a)/ (b-a)) * 1;
+        c = (b - 1000*(f_b - desired_q) / slope);
+      end
+    end
+    // c <= slope;
+  end
+
+  always @* begin
+    // calculating error (\epsilon) and taking the absolute value
+    error = f_c - desired_q;
+    error = (error > 0) ? error : -error;
+  end
+
+
+
 
 endmodule

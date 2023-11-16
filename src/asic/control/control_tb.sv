@@ -1,13 +1,12 @@
 module control_tb ();
-  localparam MAX_ITER  = 32;
-  localparam WIDTH     = 10;
-  localparam TOL       = 1;
-  localparam DESIRED_Q = 248;
+  localparam WIDTH     = 10 ;
+  localparam TOL       = 10  ;
+  localparam DESIRED_Q = 145;
 
   reg clk   ;
   reg ready ;
   reg enable;
-  reg rst;
+  reg rst   ;
 
   reg  [WIDTH-1:0] desired_q  ;
   reg  [WIDTH-1:0] measured_q ;
@@ -15,11 +14,23 @@ module control_tb ();
   wire [WIDTH-1:0] i_ref      ;
 
 
-  bisection #(
-    .WIDTH   (WIDTH   ),
-    .MAX_ITER(MAX_ITER),
-    .TOL     (TOL     )
-  ) DUT_bisection (
+  // bisection #(
+  //   .WIDTH   (WIDTH   ),
+  //   .TOL     (TOL     )
+  // ) DUT_bisection (
+  //   .rst        (rst        ),
+  //   .clk        (clk        ),
+  //   .ready      (enable     ),
+  //   .desired_q  (DESIRED_Q  ),
+  //   .measured_q (measured_q ),
+  //   .i_ref      (i_ref      ),
+  //   .i_ref_setup(i_ref_setup)
+  // );
+
+  secant #(
+    .WIDTH(WIDTH),
+    .TOL  (TOL  )
+  ) DUT_secant (
     .rst        (rst        ),
     .clk        (clk        ),
     .ready      (enable     ),
@@ -33,10 +44,10 @@ module control_tb ();
     clk         =          0;
     ready       =          1;
     enable      =          1;
-    desired_q   =         250;
+    // desired_q   =         100;
     measured_q  =          0;
     i_ref_setup = 2**WIDTH-1;
-    DUT_bisection.error = 2**WIDTH-1;
+    DUT_secant.error = 2**WIDTH-1;
   end
 
 
@@ -75,8 +86,8 @@ module control_tb ();
   endtask
 
   task show;
-    $write("At time %3d: i_ref=%d, measured_q=%d, desired_q=%d, clk=%b, enable=%b, ready=%b",
-      $time, i_ref, measured_q, desired_q, clk, enable, ready);
+    $write("At time %3d: i_ref=%d, measured_q=%d, desired_q=%4d, clk=%b, enable=%b, ready=%b",
+      $time, i_ref, measured_q, DESIRED_Q, clk, enable, ready);
   endtask
 
 
@@ -91,8 +102,8 @@ module control_tb ();
   always @(posedge clk or negedge clk) begin: tb
     show();
     $display();
-    if(DUT_bisection.converged) begin
-      $display("Q Converged with desired_q=%d, measured_q=%d, after %3d time units", desired_q, measured_q, $time);
+    if(DUT_secant.converged) begin
+      $display("Q Converged with desired_q=%4d, measured_q=%d, after %3d time units", DESIRED_Q, measured_q, $time);
       $finish();
     end
   end

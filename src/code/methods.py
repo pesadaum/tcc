@@ -23,12 +23,12 @@ def secant(a: float,
     @param debug: Flag for exporting the results, returns a pandas dataframe with all variables described in the classical version of the algorithm
     """
 
-    converge = False
+    converged = False
     iter = 1
 
     r_iter = []
 
-    while (not converge and iter <= MAX_ITER):
+    while (not converged and iter <= MAX_ITER):
         slope = (f(b) - f(a))/(b - a)
         c = b - (f(b) - SEEK)/slope
 
@@ -48,7 +48,7 @@ def secant(a: float,
 
         a, b = b, c
 
-        converge = not (np.abs(f(c) - SEEK) > TOL)
+        converged = not (np.abs(f(c) - SEEK) > TOL)
         iter += 1
 
     if debug:
