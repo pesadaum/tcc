@@ -1,8 +1,8 @@
 module bisection #(
-  parameter WIDTH    = 10, // bus width
-  parameter TOL      = 30  // minimum acceptable value of difference between measured Q and desired Q
+  parameter WIDTH = 10, // bus width
+  parameter TOL   = 30  // minimum acceptable value of difference between measured Q and desired Q
 ) (
-  input  wire             ready      , // flag for 
+  input  wire             ready      , // flag for
   input  wire             clk        ,
   input  wire             rst        ,
   input  wire [WIDTH-1:0] desired_q  ,
@@ -32,12 +32,12 @@ module bisection #(
   reg signed [WIDTH:0] error;
 
   always @(posedge clk or posedge rst) begin: bisection
-    // if (rst) begin
-    //   a         <= 0;
-    //   b         <= 2**WIDTH-1;
-    //   iter      <= 0;
-    //   converged <= 1'b0;
-    // end
+    if (rst) begin
+      a         = 0;
+      b         = 2**WIDTH-1;
+      //   iter      <= 0;
+      converged = 1'b0;
+    end
 
     if(!ready) c <= 0;
     else if (!converged) begin

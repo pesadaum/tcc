@@ -98,13 +98,14 @@ module secant #(
 
   always @(state) begin
     if (state == 3) begin
-      slope = (100 *(f_b - f_a)/ (b-a)) * 1;
-      if (slope)
-        c = (b - 100*(f_b - desired_q) / slope);
-      else begin
-        slope = (1000 *(f_b - f_a)/ (b-a)) * 1;
-        c = (b - 1000*(f_b - desired_q) / slope);
+
+      slope = (f_b - f_a)/ (b-a);
+      
+      if (!slope) begin
+        c = (b - (f_b - desired_q));
       end
+      else
+        c = b - (f_b - desired_q) / slope;
     end
     // c <= slope;
   end
