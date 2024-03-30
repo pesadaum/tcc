@@ -1,0 +1,12 @@
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lp{3cm}lp{13cm}@{}}
+\toprule
+\textbf{Bloco}           & \textbf{Sinal}            & \textbf{Tipo}              & \textbf{Função referente ao bloco}                                                                    \\ \midrule
+\textit{Proposed system} & Start                     & Digital {[}1 bit{]}        & Sinalizar que o oscilador enviará pulsos correspondentes ao valor de $Q$                              \\
+\textit{Proposed system} & $I_{REF}$                 & Digital {[}10 bits{]}      & Enviar valor digital de corrente de referência para controlar o $Q$                                   \\
+N-bit DAC                & $I_{REF}$                 & Digital {[}10 bits{]}      & Receber valor digital de corrente de referência para conversão D/A\\
+N-bit DAC                & $i_{ref}$                 & Analógico                  & Equivalente analógico convertido de $I_{REF}$                                                         \\
+\textit{Resonant system} & Start                     & Digital {[}1 bit{]}        & Indicar que o sistema pode injetar a corrente no oscilador LC interno                                 \\
+\textit{Resonant system} & \textit{Q digital pulses} & Digital Serial {[}1 bit{]} & Valor de $Q$ medido e convertido em um trem de pulsos                                                 \\ \bottomrule
+\end{tabular}%
+}

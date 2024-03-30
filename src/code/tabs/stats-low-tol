@@ -1,0 +1,11 @@
+\begin{tabular}{lrrrrr}
+\toprule
+{} &              amin &              amax &              mean &               std &               var \\
+{} & Iters-to-converge & Iters-to-converge & Iters-to-converge & Iters-to-converge & Iters-to-converge \\
+Method          &                   &                   &                   &                   &                   \\
+\midrule
+Basic secant    &                 4 &                15 &          8.785714 &          3.142233 &          9.873626 \\
+Bisection       &                 3 &                10 &          7.000000 &          2.320477 &          5.384615 \\
+Modified secant &                 2 &                 5 &          3.785714 &          0.892582 &          0.796703 \\
+\bottomrule
+\end{tabular}

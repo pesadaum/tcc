@@ -100,9 +100,13 @@ module secant #(
     if (state == 3) begin
 
       slope = (f_b - f_a)/ (b-a);
-      
+      $display("slope=%d", slope);
+
       if (!slope) begin
-        c = (b - (f_b - desired_q));
+        slope = (10 *(f_b - f_a)/ (b-a)) * 100;
+        $display("slope=%d (iszer0)", slope);
+        c     = (b - (f_b - desired_q));
+
       end
       else
         c = b - (f_b - desired_q) / slope;

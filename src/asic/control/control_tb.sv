@@ -14,40 +14,40 @@ module control_tb ();
   wire [WIDTH-1:0] i_ref      ;
 
 
-  bisection #(
-    .WIDTH   (WIDTH   ),
-    .TOL     (TOL     )
-  ) DUT_bisection (
-    .rst        (rst        ),
-    .clk        (clk        ),
-    .ready      (enable     ),
-    .desired_q  (desired_q  ),
-    .measured_q (measured_q ),
-    .i_ref      (i_ref      ),
-    .i_ref_setup(i_ref_setup)
-  );
-
-  // secant #(
-  //   .WIDTH(WIDTH),
-  //   .TOL  (TOL  )
-  // ) DUT_secant (
+  // bisection #(
+  //   .WIDTH   (WIDTH   ),
+  //   .TOL     (TOL     )
+  // ) DUT_bisection (
   //   .rst        (rst        ),
   //   .clk        (clk        ),
   //   .ready      (enable     ),
-  //   .desired_q  (DESIRED_Q  ),
+  //   .desired_q  (desired_q  ),
   //   .measured_q (measured_q ),
   //   .i_ref      (i_ref      ),
   //   .i_ref_setup(i_ref_setup)
   // );
 
+  secant #(
+    .WIDTH(WIDTH),
+    .TOL  (TOL  )
+  ) DUT_secant (
+    .rst        (rst        ),
+    .clk        (clk        ),
+    .ready      (enable     ),
+    .desired_q  (DESIRED_Q  ),
+    .measured_q (measured_q ),
+    .i_ref      (i_ref      ),
+    .i_ref_setup(i_ref_setup)
+  );
+
   initial begin
     clk         =          0;
     ready       =          1;
     enable      =          1;
-    desired_q   =         290;
+    desired_q   =         30;
     measured_q  =          0;
     i_ref_setup = 2**WIDTH-1;
-    DUT_bisection.error = 2**WIDTH-1;
+    DUT_secant.error = 2**WIDTH-1;
   end
 
 
@@ -67,13 +67,13 @@ module control_tb ();
       parsed = data.atoi();
 
       q_array[i] = parsed;
-      if (i % 10 == 0)
-        $display("Reading Q = %0d at position %0d", q_array[i], i);
+      // if (i % 10 == 0)
+        // $display("Reading Q = %0d at position %0d", q_array[i], i);
 
       i = i+1;
     end
     $fclose(file);
-    $display("\n\nData acquire completed\n\n");
+    // $display("\n\nData acquire completed\n\n");
   end
 
 
@@ -99,26 +99,11 @@ module control_tb ();
     measured_q = q_array[i_ref];
   end
 
-  integer i_test = 0;
-  // reg [WIDTH-1:0] sweep [12];
-
-  integer sweep [13:0];
-
-  integer j = 0;
-
-  initial begin
-    sweep[0] = 30;
-    for (j = 1; j < 14; j = j+1) begin
-      sweep[j] = sweep[j-1] + 20;
-      $display("Sweep[j]=%d", sweep[j]);
-    end
-    j = 0;
-  end
 
   always @(posedge clk or negedge clk) begin: tb
     show();
     $display();
-    if(DUT_bisection.converged) begin
+    if(DUT_secant.converged) begin
       // DUT_bisection.converged = 0;
       // rst = 1;
       // desired_q = sweep[j];

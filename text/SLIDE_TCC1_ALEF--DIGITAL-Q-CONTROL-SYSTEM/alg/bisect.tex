@@ -1,0 +1,32 @@
+\begin{algorithmic}[1]
+
+\Require TOL, $Q_{d}$, $Q_{m}$, $I_{Stable}$
+\Ensure $I_{REF} \; | \; \varepsilon \leq$ TOL
+
+\State $a \gets 0$
+\State $b \gets I_{Stable}$
+\State Converged $\gets$ \textbf{False}
+ 
+\While{not Converged}
+
+    \State $c \gets \frac{a+b}{2}$
+% \Comment{$I_{REF}$ is updated to "c"\; value}
+
+    \State $I_{REF} \gets c$ 
+
+    \State $Q_{m} \gets Q_{m}\left(I_{REF}\right)$ \Comment{Realiza-se uma medição do $Q$ com o novo valor de $I_{REF}$}
+
+    \State $\varepsilon \gets Q_m - Q_d $
+
+    \If{$\varepsilon \leq $ TOL} Converged $\gets$ \textbf{True} 
+        \Else
+            \If{$\varepsilon > 0$}
+                \State $a \gets c$
+            \EndIf
+            \If{$\varepsilon < 0$}
+                \State $b \gets c$
+            \EndIf
+    \EndIf
+
+\EndWhile
+\end{algorithmic}

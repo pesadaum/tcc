@@ -1,0 +1,292 @@
+%=======PACOTES FUNDAMENTAIS================%
+
+%9pt -> tamanho da fonte
+%compress -> comprime o texto
+% aspectratio -> razão largura x altura (16:9, 4:3, 1:1 ...)
+
+\documentclass
+    [9pt,
+    compress,
+    xcolor=svgnames,
+    aspectratio=169]{beamer}
+
+\usetheme
+    [
+    progressbar=frametitle,
+    titleformatframe=smallcaps,
+    numbering=counter
+    ]{metropolis}
+    
+\useoutertheme[section=true, subsection=true]{miniframes} % inserir uma página indicando início de seção, subsection = true insere uma página pra subseção também
+
+\usepackage{palatino}  % fonte principal - compilador PdfLaTeX
+%\usepackage{lmodern} % fonte alternativa - compilador PdfLaTeX
+\usepackage{courier} %fonte secundária
+\usefonttheme[onlymath]{serif} % fonte matemática SERIFADA PELO AMOR DE DEUS
+
+\usepackage[english, brazil]{babel} % idiomas
+\usepackage{microtype}
+\usepackage{listings} % códigos-fonte
+\usepackage{ragged2e} % permite texto não-justificado (padrão)
+\usepackage[utf8]{inputenc} %acentos e cedilha
+\usepackage[T1]{fontenc} %acentos "copiáveis"
+\usepackage{soul} %decoração de texto (underline, strike, ..)
+% \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibliografia
+\usepackage[alf,abnt-full-initials=yes]{abntex2cite}	% Citações padrão ABNT
+
+\usepackage{verbatim}
+
+
+
+% \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% \renewcommand{\backref}{}
+% \renewcommand*{\backrefalt}[4]{
+% 	\ifcase #1 %
+% 		Nenhuma citação no texto.%
+% 	\or
+% 		Citado na página #2.%
+% 	\else
+% 		Citado #1 vezes nas páginas #2.%
+% 	\fi}%
+
+
+
+%====================tabelas================================%
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{relsize}
+\usepackage{multicol}
+\usepackage{booktabs}
+
+%===================gráficos=================================%
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+%===================listas==========================%
+\usepackage{enumerate}
+\usepackage{array}
+
+
+%==================matemática====================%
+\usepackage{amsmath,amssymb}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot} % nunca nem vi, cuidado
+
+
+%================espaçamentos====================%
+\usepackage{geometry}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{multicol}
+
+%===================cores===========================%
+\usepackage{xcolor}
+
+
+%fg = foreground = plano principal
+%bg = brackground = plano de fundo
+
+\xdefinecolor{mainColor1}{HTML}{003A70}
+\xdefinecolor{secondaryColor1}{HTML}{E5E5E5}
+\xdefinecolor{secondaryColor2}{rgb}{0.6, 0.6, 0.6}
+
+\setbeamercolor{progress bar}{fg=red}
+\setbeamercolor{title separator}{fg=red}
+\setbeamercolor{structure}{fg=black}
+\setbeamercolor{normal text}{fg=black!87}
+\setbeamercolor{alerted text}{fg=DarkRed!60!Gainsboro}
+\setbeamercolor{example text}{fg=Maroon!70!Coral}
+\setbeamercolor{palette primary}{bg=mainColor1, fg=secondaryColor1}
+\setbeamercolor{palette secondary}{bg=mainColor1!50, fg=secondaryColor1}
+\setbeamercolor{palette tertiary}{bg=NavyBlue!40!Black, fg= white}
+\setbeamercolor{section in toc}{fg=NavyBlue!40!Black}
+
+
+% Tem algumas cores padrão do LaTeX, desculpa a mistura de cor personalizada e padrão mas mo preguiça mudar
+
+%====================blocos==============================%
+\setbeamertemplate{blocks}[rectangle]
+
+\colorlet{normalTitleBlockColor}{mainColor1}
+\colorlet{normalBlockColor}{secondaryColor1}
+\colorlet{alertTitleBlockColor}{red}
+\colorlet{alertBlockColor}{secondaryColor1}
+\colorlet{blockBodyTextColor}{NavyBlue!40!Black}
+
+\setbeamercolor*{block title}{
+  fg=white,
+  bg=normalTitleBlockColor}
+\setbeamercolor*{block body}{
+  fg=blockBodyTextColor,
+  bg=normalBlockColor}
+
+\setbeamercolor*{block title alerted}{
+  fg=white,
+  bg=alertTitleBlockColor}
+\setbeamercolor*{block body alerted}{
+  fg=blockBodyTextColor,
+  bg=alertBlockColor}
+  
+\AtBeginEnvironment{block}{
+  \setbeamercolor{itemize item}{fg=normalTitleBlockColor!70}
+  \setbeamercolor{enumerate item}{fg=normalTitleBlockColor!70}
+} % troca as cores das bolinhas de enumerate e itemize de acordo com o tipo do bloco
+
+\AtBeginEnvironment{alertblock}{
+  \setbeamercolor{itemize item}{fg=alertTitleBlockColor!70}
+  \setbeamercolor{enumerate item}{fg=alertTitleBlockColor!70}
+} % troca as cores das bolinhas de enumerate e itemize de acordo com o tipo do bloco
+
+
+
+%=-=-==============itemize,enumerate==================%
+
+\setbeamercolor{itemize item}{fg=mainColor1!70}
+\setbeamercolor{description item}{fg=mainColor1!70}
+
+\usecolortheme[named=mainColor1]{structure} %enumerate
+
+\useinnertheme{circles} % bolinhas ou {rectangles} nos enumerates e itemize
+
+\usepackage{hyperref}
+\hypersetup{
+	bookmarks=true,     
+	pdftoolbar=true,
+	pdfmenubar=true,     
+	pdffitwindow=true,
+ 	pdftitle={\@title},   
+ 	pdfauthor={\@author},   
+	colorlinks=false,
+%	usar as cores é meio arriscado, deixa à cargo do documento
+% 	linkcolor=mainColor1,
+% 	urlcolor=mainColor1,
+% 	citecolor=blue,        
+% 	filecolor=cyan,
+}
+
+
+
+
+% \setbeamertemplate{section in toc}[sections numbered] seções numeradas sem a bolinha dahora
+
+
+%======================PERIGO-NÃO-MEXA==============================================================================================================================================================%
+
+\setbeamertemplate{footline} 
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}
+    [
+    ht=2.5ex,
+    dp=1.125ex,
+    leftskip=.3cm,
+    rightskip=.3cm plus1fil
+    ]{title in head/foot}%
+      \textcolor{white}{\insertshorttitle}%
+      \hfill  \hspace{-2cm}\insertshortinstitute \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+
+
+%=====================================códigos===============================================================%
+\usepackage{listings}
+
+\definecolor{backcolour}{RGB}{245,245,245}
+\definecolor{commentcolour}{RGB}{0,128,0}
+\definecolor{keywordcolour}{RGB}{249,38,114}
+\definecolor{stringcolour}{RGB}{255,102,0}
+
+\renewcommand\lstlistingname{Código} 
+\lstdefinestyle{padrao}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{commentcolour},
+    keywordstyle=\color{keywordcolour}\bfseries,
+    numberstyle=\tiny\color{black},
+    stringstyle=\color{stringcolour},
+    emphstyle=\color{mainColor1},
+    basicstyle=\footnotesize\ttfamily,
+    breakatwhitespace=false,
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+  {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1 
+}
+
+
+
+%===========================comandos personalizados=============%
+
+\captionsetup{position=top} 
+\renewcommand\emph[1]{\textbf{\textcolor{mainColor1}{#1}}}
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+\newcommand{\themename}{\textbf{\textsc{bluetemp}\xspace}}%metropolis}}\xspace}
+\apptocmd{\frame}{}{\justifying}{}
+
+
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape,
+  breaklines=true,
+  breakatwhitespace=true,
+}
+
+\usepackage[newfloat]{minted}
+
+\setminted{
+    linenos=true,
+    autogobble,
+    breaklines,
+    fontsize=\footnotesize
+}
+
+\usemintedstyle{friendly}
+\newenvironment{code}
+    {\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Código}
+
+\usepackage{algpseudocode}
+\usepackage[ruled]{algorithm}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\floatname{Algoritmo}{algorithm}
+\newcommand{\algorithmautorefname}{Algoritmo}
+\citebrackets[]
+
+\setkeys{Gin}{width=\textwidth}

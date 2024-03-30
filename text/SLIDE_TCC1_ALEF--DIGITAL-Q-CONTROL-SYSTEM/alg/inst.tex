@@ -1,0 +1,19 @@
+\begin{algorithmic}[1]
+
+\Require{$\Delta Q, \Delta I_{REF}$, $Q_m$}
+\Ensure{$I_{Stable}$} 
+
+\State $I_{Stable} \gets I_{MAX}$ \Comment{$I_{MAX} =$ 1mA}
+\State Found $\gets$ \textbf{False}
+
+\While{not Found}
+    
+    \State $Q_i \gets Q_m(I_{Stable})$\Comment{Medição}
+    \State $I_{Stable} \gets I_{Stable}  - \Delta I_{REF}$
+    \State $Q_{i+1} \gets Q_m(I_{Stable})$\Comment{Nova medição}
+    \If{$\left(Q_{i+1} - Q_i \geq \Delta Q\right)$}
+        \State Found $\gets$ \textbf{True}
+    \EndIf
+\EndWhile
+\State \textbf{return $I_{Stable}$}
+\end{algorithmic}

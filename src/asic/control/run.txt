@@ -56789,3 +56789,2656 @@ Simulation complete via $finish(1) at time 28 NS + 0
 ./control_tb.sv:131       $finish();
 xcelium> exit
 TOOL:	xrun(64)	22.03-s001: Exiting on Nov 20, 2023 at 15:59:45 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:22:51 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Mon Nov 20 15:59:43 2023
+	actual:   Wed Nov 22 19:22:50 2023
+file: secant_backup.v
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+	module worklib.control_tb:sv
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		secant
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    DUT_secant.error = 2**WIDTH-1;
+                   |
+xmelab: *E,CUVUNF (./control_tb.sv,50|19): Hierarchical name component lookup failed for 'DUT_secant' at 'control_tb'.
+    if(DUT_secant.converged) begin
+                          |
+xmelab: *E,CUVUNF (./control_tb.sv,106|26): Hierarchical name component lookup failed for 'DUT_secant' at 'control_tb'.
+xrun: *E,ELBERR: Error during elaboration (status 1), exiting.
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:22:51 -03  (total: 00:00:00)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:23:11 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Fri Nov 17 11:04:31 2023
+	actual:   Wed Nov 22 19:23:11 2023
+file: secant_backup.v
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+	module worklib.control_tb:sv
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x20d7f6b0>
+			streams:  10, words: 10162
+		worklib.bisection:v <0x4d62b71a>
+			streams:   0, words:     0
+		worklib.secant:v <0x7531d5b1>
+			streams:  12, words:  4256
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:23:13 -03  (total: 00:00:02)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:25:00 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:23:11 2023
+	actual:   Wed Nov 22 19:25:00 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x20d7f6b0>
+			streams:  10, words: 10162
+		worklib.secant:v <0x7531d5b1>
+			streams:  12, words:  4413
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:25:01 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:25:13 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:25:00 2023
+	actual:   Wed Nov 22 19:25:13 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x20d7f6b0>
+			streams:  10, words: 10162
+		worklib.secant:v <0x7531d5b1>
+			streams:  12, words:  4440
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:25:14 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:26:34 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:25:13 2023
+	actual:   Wed Nov 22 19:26:34 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x20d7f6b0>
+			streams:  10, words: 10162
+		worklib.secant:v <0x7531d5b1>
+			streams:  12, words:  4443
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:26:35 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:28:09 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:26:34 2023
+	actual:   Wed Nov 22 19:28:09 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x5cacddea>
+			streams:  10, words: 10162
+		worklib.secant:v <0x13b3a12b>
+			streams:  12, words:  4599
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:28:10 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:29:24 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:28:09 2023
+	actual:   Wed Nov 22 19:29:24 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x69a104e0>
+			streams:  10, words: 10162
+		worklib.secant:v <0x4c538d5a>
+			streams:  12, words:  5134
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    0
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:29:25 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:30:15 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:29:24 2023
+	actual:   Wed Nov 22 19:30:14 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x1905ac5b>
+			streams:  10, words: 10162
+		worklib.secant:v <0x4a622ae6>
+			streams:  12, words:  5781
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    0
+slope=    0 (iszer0)
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:30:16 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:31:11 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:30:14 2023
+	actual:   Wed Nov 22 19:31:11 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x0440f6af>
+			streams:  10, words: 10162
+		worklib.secant:v <0x3051bb26>
+			streams:  13, words:  6521
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    0
+slope=    0 (iszer0)
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:31:12 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:32:11 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:31:11 2023
+	actual:   Wed Nov 22 19:32:11 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x1905ac5b>
+			streams:  10, words: 10162
+		worklib.secant:v <0x4a622ae6>
+			streams:  12, words:  5761
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    0
+slope=   20 (iszer0)
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:32:12 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Nov 22, 2023 at 19:32:46 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './bisection.v' is newer than expected.
+	expected: Wed Nov 22 19:32:11 2023
+	actual:   Wed Nov 22 19:32:46 2023
+file: secant_backup.v
+file: secant.v
+	module worklib.secant:v
+		errors: 0, warnings: 0
+file: control_tb.sv
+      $fgets(data, file);
+           |
+xmvlog: *W,NOSYST (control_tb.sv,66|11): System function '$fgets' invoked as a task. Return value will be ignored.
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		bisection
+		secant_modif_ctrl
+		control_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CUVMPW (./control_tb.sv,37|25): port sizes differ in port connection(1/10) for the instance(control_tb) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.control_tb:sv <0x1905ac5b>
+			streams:  10, words: 10162
+		worklib.secant:v <0x4a622ae6>
+			streams:  12, words:  5771
+	Building instance specific data structures.
+    .desired_q  (DESIRED_Q  ),
+                         |
+xmelab: *W,CSINFI (./control_tb.sv,37|25): implicit wire has no fanin (control_tb.DESIRED_Q).
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		              Instances  Unique
+		Modules:              4       4
+		Registers:           42      42
+		Scalar wires:         4       -
+		Vectored wires:       4       -
+		Always blocks:       12      12
+		Initial blocks:       7       7
+		Cont. assignments:    0       1
+		Pseudo assignments:   3       3
+	Writing initial simulation snapshot: worklib.bisection:v
+Loading snapshot worklib.bisection:v .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   1: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time   2: i_ref=   0, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time   3: i_ref=   0, measured_q=  22, desired_q=  30, clk=1, enable=1, ready=1 
+At time   4: i_ref=1022, measured_q=  22, desired_q=  30, clk=0, enable=1, ready=1 
+At time   5: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time   6: i_ref= 826, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time   7: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    0
+slope=  200 (iszer0)
+At time   8: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time   9: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  10: i_ref= 826, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  11: i_ref= 826, measured_q= 119, desired_q=  30, clk=1, enable=1, ready=1 
+At time  12: i_ref=1022, measured_q= 119, desired_q=  30, clk=0, enable=1, ready=1 
+At time  13: i_ref=1022, measured_q= 314, desired_q=  30, clk=1, enable=1, ready=1 
+At time  14: i_ref=   x, measured_q= 314, desired_q=  30, clk=0, enable=1, ready=1 
+At time  15: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  16: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  17: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  18: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  19: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  20: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  21: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  22: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  23: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  24: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  25: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  26: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  27: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  28: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  29: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  30: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  31: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  32: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  33: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  34: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  35: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  36: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  37: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  38: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  39: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  40: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  41: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  42: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  43: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  44: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  45: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  46: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  47: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  48: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  49: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  50: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  51: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  52: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  53: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  54: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  55: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  56: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  57: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  58: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  59: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  60: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  61: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  62: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  63: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  64: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  65: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  66: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  67: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  68: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  69: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  70: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  71: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  72: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  73: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  74: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  75: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  76: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  77: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  78: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  79: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  80: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  81: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  82: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  83: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  84: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  85: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  86: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  87: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  88: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  89: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  90: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  91: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  92: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  93: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  94: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  95: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time  96: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  97: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time  98: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time  99: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 100: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 101: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 102: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 103: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 104: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 105: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 106: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 107: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 108: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 109: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 110: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 111: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 112: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 113: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 114: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 115: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 116: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 117: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 118: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 119: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 120: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 121: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 122: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 123: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 124: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 125: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 126: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 127: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 128: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 129: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 130: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 131: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 132: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 133: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 134: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 135: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 136: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 137: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 138: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 139: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 140: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 141: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 142: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 143: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 144: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 145: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 146: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 147: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 148: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 149: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 150: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 151: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 152: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 153: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 154: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 155: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 156: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 157: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 158: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 159: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 160: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 161: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 162: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 163: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 164: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 165: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 166: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 167: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 168: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 169: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 170: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 171: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 172: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 173: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 174: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 175: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 176: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 177: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 178: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 179: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 180: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 181: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 182: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 183: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 184: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 185: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 186: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 187: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 188: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 189: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 190: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 191: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 192: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 193: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 194: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 195: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 196: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 197: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+slope=    x
+At time 198: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+At time 199: i_ref=   x, measured_q=   x, desired_q=  30, clk=1, enable=1, ready=1 
+At time 200: i_ref=   x, measured_q=   x, desired_q=  30, clk=0, enable=1, ready=1 
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Nov 22, 2023 at 19:32:47 -03  (total: 00:00:01)

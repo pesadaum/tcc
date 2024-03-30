@@ -1,0 +1,21 @@
+\babel@toc {brazil}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1}{\ignorespaces Sinais, respectivos tipos e funcionalidades por bloco\relax }}{34}{table.caption.22}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2}{\ignorespaces Parâmetros passados ao algoritmo de determinação de instabilidade\relax }}{52}{table.caption.34}%
+\contentsline {table}{\numberline {3}{\ignorespaces Resultados da busca por ponto máximo de estabilidade.\relax }}{52}{table.caption.35}%
+\contentsline {table}{\numberline {4}{\ignorespaces Especificações do teste de busca por valor único\relax }}{53}{table.caption.36}%
+\contentsline {table}{\numberline {5}{\ignorespaces Resultados de execução do teste de busca única para cada método, $Q_d = 110$.\relax }}{53}{table.caption.37}%
+\contentsline {table}{\numberline {6}{\ignorespaces Especificações do teste de busca em \textit {sweep}\relax }}{54}{table.caption.39}%
+\contentsline {table}{\numberline {7}{\ignorespaces Tabela com mínimo, máximo, média, desvio e variância de ITC por método\relax }}{55}{table.caption.41}%
+\contentsline {table}{\numberline {8}{\ignorespaces Tabela com mínimo, máximo, média, desvio e variância de ITC por método\relax }}{57}{table.caption.43}%
+\contentsline {table}{\numberline {9}{\ignorespaces Pontos obtidos por iteração no método da bisseção\relax }}{58}{table.caption.44}%
+\contentsline {table}{\numberline {10}{\ignorespaces Tabela com mínimo, máximo, média, desvio e variância de ITC por implementação\relax }}{59}{table.caption.47}%
+\contentsline {table}{\numberline {11}{\ignorespaces Busca de $Q_d = 250$ pela secante com alta tolerância\relax }}{60}{table.caption.49}%
+\contentsline {table}{\numberline {12}{\ignorespaces Busca de $Q_d = 250$ pela secante com baixa tolerância\relax }}{61}{table.caption.50}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

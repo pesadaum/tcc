@@ -1,0 +1,34 @@
+\begin{algorithmic}[1]
+
+\Require TOL, $Q_{d}$, $Q_{m}$, $I_{Stable}$
+\Ensure $I_{REF} \; | \; \varepsilon \leq$ TOL
+
+\State Converged $\gets$ \textbf{False}
+\State $Q_{max} \gets Q_m(I_{Stable})$
+\If{$Q_d > \gamma \cdot Q_{max}$} \Comment{Seleção na região linear}
+    \State $a \gets \alpha \cdot I_{Stable}$
+    \State $b \gets I_{Stable}$
+    \Else \Comment{Seleção na região não-linear}
+        \State $a \gets 0$
+        \State $b \gets \beta \cdot I_{Stable}$
+\EndIf
+
+
+\While{not Converged}  \\
+    \State slope $ \gets \dfrac{Q_m(b) - Q_m(a)}{b-a}$
+    \Comment{$Q_m(a), Q_m(b)$ são novas medições} \\
+    \State $c \gets b - \dfrac{Q_m(b) - Q_d}{\text{slope}}$
+    \State $I_{REF} \gets c$
+
+    \State $Q_{m} \gets Q_{m}\left(I_{REF}\right)$  \Comment{Medição do $Q$ com o novo valor de $I_{REF}$}
+
+    \State $\varepsilon \gets \left|Q_m - Q_d \right|$
+
+    \If{$\varepsilon \leq $ TOL} Converged $\gets$ \textbf{True} 
+        \Else
+            \State $a \gets b$
+            \State $b \gets c$
+    \EndIf
+
+\EndWhile
+\end{algorithmic}

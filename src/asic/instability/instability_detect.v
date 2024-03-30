@@ -5,9 +5,9 @@ module instability_detect #(
 ) (
   input                  clk        ,
   input                  rst        ,
-  input                  ready      ,
-  input      [WIDTH-1:0] q_measured ,
-  output reg [WIDTH-1:0] i_ref_setup
+  input                  ready      , // Flag for measurement done 
+  input      [WIDTH-1:0] q_measured , 
+  output reg [WIDTH-1:0] i_ref_setup // upper bound for Q control module
 );
 
   /*REMEMBER TO DELETE, TESTBENCH CONSTRUCT*/

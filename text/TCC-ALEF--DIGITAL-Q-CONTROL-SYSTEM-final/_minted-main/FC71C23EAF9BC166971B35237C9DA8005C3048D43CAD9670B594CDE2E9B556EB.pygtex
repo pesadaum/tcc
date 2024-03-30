@@ -1,0 +1,92 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{module}\PYG{+w}{ }\PYG{n}{secant}\PYG{+w}{ }\PYG{p}{\PYGZsh{}(}
+\PYG{+w}{  }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{WIDTH}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{10}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// bus width}
+\PYG{+w}{  }\PYG{k}{parameter}\PYG{+w}{ }\PYG{n}{TOL}\PYG{+w}{   }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mh}{30}\PYG{+w}{  }\PYG{c+c1}{// minimum acceptable value of difference between measured Q and desired Q}
+\PYG{p}{)}\PYG{+w}{ }\PYG{p}{(}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{                   }\PYG{n}{clk}\PYG{+w}{        }\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Clock}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{                   }\PYG{n}{rst}\PYG{+w}{        }\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Async reset}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{                   }\PYG{n}{ready}\PYG{+w}{      }\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Flag for measurement done}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{desired\PYGZus{}q}\PYG{+w}{  }\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Desired Q value}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{measured\PYGZus{}q}\PYG{+w}{ }\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// Measured Q value}
+\PYG{+w}{  }\PYG{k}{input}\PYG{+w}{  }\PYG{k+kt}{wire}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{i\PYGZus{}ref\PYGZus{}setup}\PYG{p}{,}\PYG{+w}{ }\PYG{c+c1}{// upper bound}
+\PYG{+w}{  }\PYG{k}{output}\PYG{+w}{ }\PYG{k+kt}{reg}\PYG{+w}{  }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{i\PYGZus{}ref}\PYG{+w}{        }\PYG{c+c1}{// produces Q}
+\PYG{p}{);}
+
+\PYG{+w}{  }\PYG{c+c1}{// State is necessary for retaining value of 3 initial measurements}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{l+m+mh}{2}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{state}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// Initial lower and upper bounds and midpoint respectively;}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// Variables for f(x) == Q at x value of I\PYGZus{}\PYGZob{}REF\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{f\PYGZus{}a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{f\PYGZus{}b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{f\PYGZus{}c}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// [Warning] Register type is not adequate in current implementation}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{p}{[}\PYG{n}{WIDTH}\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{o}{:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{slope}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// flag for achieving convergence}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{n}{converged}\PYG{p}{;}
+
+
+\PYG{+w}{  }\PYG{c+c1}{// should be SIGNED and WIDTH+1 bit long}
+\PYG{+w}{  }\PYG{k+kt}{reg}\PYG{+w}{ }\PYG{k}{signed}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nl}{WIDTH:}\PYG{l+m+mh}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{n}{error}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{c+c1}{// state updates}
+\PYG{+w}{  }\PYG{k}{always}\PYG{+w}{ }\PYG{p}{@(}\PYG{k}{posedge}\PYG{+w}{ }\PYG{n}{clk}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{begin}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{state\PYGZus{}updates}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ready}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{state}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{state}\PYG{o}{+}\PYG{l+m+mh}{1}\PYG{p}{;}
+
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{error}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{TOL}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{converged}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b1}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{else}\PYG{+w}{ }\PYG{n}{converged}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mh}{1}\PYG{l+m+mb}{\PYGZsq{}b0}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{k}{end}
+
+\PYG{+w}{  }\PYG{k}{always}\PYG{+w}{ }\PYG{p}{@(}\PYG{n}{state}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{begin}\PYG{o}{:}\PYG{+w}{ }\PYG{n}{current\PYGZus{}updates}
+\PYG{+w}{    }\PYG{k}{case}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{state}\PYG{p}{)}
+\PYG{+w}{      }\PYG{l+m+mh}{0}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{i\PYGZus{}ref}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}
+
+\PYG{+w}{      }\PYG{l+m+mh}{1}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{i\PYGZus{}ref}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{f\PYGZus{}a}\PYG{+w}{   }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{measured\PYGZus{}q}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}
+
+\PYG{+w}{      }\PYG{l+m+mh}{2}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{i\PYGZus{}ref}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{f\PYGZus{}b}\PYG{+w}{   }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{measured\PYGZus{}q}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}
+
+\PYG{+w}{      }\PYG{l+m+mh}{3}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{f\PYGZus{}c}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{measured\PYGZus{}q}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}
+
+\PYG{+w}{      }\PYG{l+m+mh}{4}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{k}{begin}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{new\PYGZus{}bounds}
+\PYG{+w}{        }\PYG{n}{a}\PYG{+w}{     }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{b}\PYG{+w}{     }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{state}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{l+m+mh}{1}\PYG{p}{;}
+\PYG{+w}{      }\PYG{k}{end}
+\PYG{+w}{    }\PYG{k}{endcase}
+
+\PYG{+w}{  }\PYG{k}{end}
+
+\PYG{+w}{  }\PYG{k}{always}\PYG{+w}{ }\PYG{p}{@(}\PYG{n}{state}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{begin}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{blocking\PYGZus{}updates}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{state}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mh}{3}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{begin}
+
+\PYG{+w}{      }\PYG{n}{slope}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f\PYGZus{}b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{f\PYGZus{}a}\PYG{p}{)}\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{b}\PYG{o}{\PYGZhy{}}\PYG{n}{a}\PYG{p}{);}
+\PYG{+w}{      }\PYG{c+c1}{// slope could be zero if is less than 1 in binary.}
+\PYG{+w}{      }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{slope}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{        }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f\PYGZus{}b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{desired\PYGZus{}q}\PYG{p}{);}
+\PYG{+w}{      }\PYG{k}{end}
+\PYG{+w}{      }\PYG{k}{else}
+\PYG{+w}{        }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{f\PYGZus{}b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{desired\PYGZus{}q}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{slope}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{end}
+\PYG{+w}{  }\PYG{k}{end}
+
+\PYG{+w}{  }\PYG{k}{always}\PYG{+w}{ }\PYG{p}{@}\PYG{o}{*}\PYG{+w}{ }\PYG{k}{begin}
+\PYG{+w}{    }\PYG{c+c1}{// calculating error (\PYGZbs{}epsilon) and taking the absolute value}
+\PYG{+w}{    }\PYG{n}{error}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f\PYGZus{}c}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{desired\PYGZus{}q}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{error}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{error}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mh}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{n}{error}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{error}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{end}
+
+\PYG{k}{endmodule}
+\end{Verbatim}

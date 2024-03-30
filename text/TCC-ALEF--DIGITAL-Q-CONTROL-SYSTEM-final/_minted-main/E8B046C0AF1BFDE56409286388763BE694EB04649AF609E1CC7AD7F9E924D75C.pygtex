@@ -1,0 +1,116 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k}{as} \PYG{n+nn}{np}
+
+\PYG{k}{def} \PYG{n+nf}{secant}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+           \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+           \PYG{n}{SEEK}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+           \PYG{n}{TOL}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+           \PYG{n}{f}\PYG{p}{:} \PYG{n}{callable}\PYG{p}{,}
+           \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+           \PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    \PYGZsh{} Description}
+\PYG{l+s+sd}{    Computes SEEK = f(x) for a given function and a given set of values using a modified version of the secant method}
+
+\PYG{l+s+sd}{    \PYGZsh{} Parameters}
+\PYG{l+s+sd}{    @param a: initial lower bound}
+\PYG{l+s+sd}{    @param b: initial upper bound}
+\PYG{l+s+sd}{    @param SEEK: Value to be found}
+\PYG{l+s+sd}{    @param TOL: Error tolerance}
+\PYG{l+s+sd}{    @param f: The function that best describes the system }
+\PYG{l+s+sd}{    @param MAX\PYGZus{}ITER: Maximum number of operations allowed before convergence}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+    \PYG{n}{converged} \PYG{o}{=} \PYG{k+kc}{False}
+    \PYG{n+nb}{iter} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{while} \PYG{p}{(}\PYG{o+ow}{not} \PYG{n}{converged} \PYG{o+ow}{and} \PYG{n+nb}{iter} \PYG{o}{\PYGZlt{}=} \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{):}
+        \PYG{n}{slope} \PYG{o}{=} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{f}\PYG{p}{(}\PYG{n}{a}\PYG{p}{))}\PYG{o}{/}\PYG{p}{(}\PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{p}{)}
+        \PYG{n}{c} \PYG{o}{=} \PYG{n}{b} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{b}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{SEEK}\PYG{p}{)}\PYG{o}{/}\PYG{n}{slope}
+
+        \PYG{n}{a}\PYG{p}{,} \PYG{n}{b} \PYG{o}{=} \PYG{n}{b}\PYG{p}{,} \PYG{n}{c}
+
+        \PYG{n}{converged} \PYG{o}{=} \PYG{o+ow}{not} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{SEEK}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{n}{TOL}\PYG{p}{)}
+        \PYG{n+nb}{iter} \PYG{o}{+=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{return} \PYG{n}{c}
+
+
+\PYG{k}{def} \PYG{n+nf}{mod\PYGZus{}secant}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+               \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+               \PYG{n}{SEEK}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+               \PYG{n}{TOL}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+               \PYG{n}{f}\PYG{p}{:} \PYG{n}{callable}\PYG{p}{,}
+               \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+               \PYG{n}{alpha}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+               \PYG{n}{beta}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+               \PYG{n}{gamma}\PYG{p}{:} \PYG{n+nb}{float}
+               \PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    \PYGZsh{} Description}
+\PYG{l+s+sd}{    This implementation relies in the specific case of the Q versus I\PYGZus{}ref curve. It calls the basic secant(**kwargs) method with same parameters but improved region selection}
+
+\PYG{l+s+sd}{    \PYGZsh{} Parameters}
+\PYG{l+s+sd}{    @param a: initial lower bound in linear region}
+\PYG{l+s+sd}{    @param b: initial upper bound}
+\PYG{l+s+sd}{    @param SEEK: Value to be found}
+\PYG{l+s+sd}{    @param TOL: Error tolerance}
+\PYG{l+s+sd}{    @param f: The function that best describes the system }
+\PYG{l+s+sd}{    @param MAX\PYGZus{}TER: Maximum number of operations allowed before convergence}
+\PYG{l+s+sd}{    @param alpha: linear region upper bound}
+\PYG{l+s+sd}{    @param beta: non\PYGZhy{}linear region lower bound}
+\PYG{l+s+sd}{    @param: gamma: Q\PYGZus{}d theshold}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{c+c1}{\PYGZsh{} Q (SEEK) is in nonlinear region}
+    \PYG{k}{if} \PYG{n}{SEEK} \PYG{o}{\PYGZgt{}} \PYG{n}{gamma} \PYG{o}{*} \PYG{n}{SEEK}\PYG{p}{:}
+        \PYG{n}{a} \PYG{o}{=} \PYG{n}{beta}
+        \PYG{n}{b} \PYG{o}{=} \PYG{l+m+mf}{1.0}
+    \PYG{c+c1}{\PYGZsh{}\PYGZsh{} Q (SEEK) is in linear region}
+    \PYG{k}{else}\PYG{p}{:}
+        \PYG{n}{a} \PYG{o}{=} \PYG{l+m+mf}{0.0}
+        \PYG{n}{b} \PYG{o}{=} \PYG{n}{alpha}
+
+    \PYG{k}{return} \PYG{n}{secant}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{SEEK}\PYG{p}{,} \PYG{n}{TOL}\PYG{p}{,} \PYG{n}{f}\PYG{p}{,} \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{)}
+
+
+\PYG{k}{def} \PYG{n+nf}{bisection}\PYG{p}{(}\PYG{n}{a}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+              \PYG{n}{b}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+              \PYG{n}{SEEK}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+              \PYG{n}{TOL}\PYG{p}{:} \PYG{n+nb}{float}\PYG{p}{,}
+              \PYG{n}{f}\PYG{p}{:} \PYG{n}{callable}\PYG{p}{,}
+              \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{:} \PYG{n+nb}{int}\PYG{p}{,}
+              \PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+\PYG{l+s+sd}{    \PYGZsh{} Description}
+\PYG{l+s+sd}{    Computes SEEK = f(x) for a given function and a given set of values using a modified version of the bissection method}
+
+\PYG{l+s+sd}{    \PYGZsh{} Parameters}
+\PYG{l+s+sd}{    @param a: initial lower bound}
+\PYG{l+s+sd}{    @param b: initial upper bound}
+\PYG{l+s+sd}{    @param SEEK: Value to be found}
+\PYG{l+s+sd}{    @param TOL: Error tolerance}
+\PYG{l+s+sd}{    @param f: The function that best describes the system }
+\PYG{l+s+sd}{    @param MAX\PYGZus{}TER: Maximum number of operations allowed before convergence}
+\PYG{l+s+sd}{    \PYGZdq{}\PYGZdq{}\PYGZdq{}}
+
+    \PYG{n}{converged} \PYG{o}{=} \PYG{k+kc}{False}
+    \PYG{n+nb}{iter} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{while} \PYG{p}{(}\PYG{o+ow}{not} \PYG{n}{converged} \PYG{o+ow}{and} \PYG{n+nb}{iter} \PYG{o}{\PYGZlt{}=} \PYG{n}{MAX\PYGZus{}ITER}\PYG{p}{):}
+
+        \PYG{n}{c} \PYG{o}{=} \PYG{p}{(}\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}
+        \PYG{n}{f\PYGZus{}c} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{c}\PYG{p}{)}
+
+        \PYG{k}{if} \PYG{n}{np}\PYG{o}{.}\PYG{n}{abs}\PYG{p}{(}\PYG{n}{SEEK} \PYG{o}{\PYGZhy{}} \PYG{n}{f\PYGZus{}c}\PYG{p}{)} \PYG{o}{\PYGZlt{}=} \PYG{n}{TOL}\PYG{p}{:}
+            \PYG{n}{converged} \PYG{o}{=} \PYG{k+kc}{True}
+        \PYG{k}{elif} \PYG{p}{(}\PYG{n}{SEEK} \PYG{o}{\PYGZhy{}} \PYG{n}{f\PYGZus{}c}\PYG{p}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{n}{a} \PYG{o}{=} \PYG{n}{c}
+        \PYG{k}{elif} \PYG{p}{(}\PYG{n}{SEEK} \PYG{o}{\PYGZhy{}} \PYG{n}{f\PYGZus{}c}\PYG{p}{)} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{0}\PYG{p}{:}
+            \PYG{n}{b} \PYG{o}{=} \PYG{n}{c}
+        \PYG{k}{else}\PYG{p}{:}
+            \PYG{n}{converged} \PYG{o}{=} \PYG{k+kc}{True}
+
+        \PYG{n+nb}{iter} \PYG{o}{+=} \PYG{l+m+mi}{1}
+
+    \PYG{k}{return} \PYG{n}{c}
+\end{Verbatim}
