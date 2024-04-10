@@ -1,0 +1,220 @@
+TOOL:	xrun(64)	22.03-s001: Started on Apr 10, 2024 at 10:10:00 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './setup_completed.v' is newer than expected.
+	expected: Wed Apr 10 10:09:48 2024
+	actual:   Wed Apr 10 10:09:59 2024
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		setup_completed_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           5       5
+		Scalar wires:        1       -
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      2       2
+		Cont. assignments:   1       1
+		Pseudo assignments:  4       4
+	Writing initial simulation snapshot: worklib.setup_completed_tb:sv
+Loading snapshot worklib.setup_completed_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   4: i_ref= 341, i_ref_setup=1021, i_ref_out=1023, completed=0
+At time   7: i_ref= 341, i_ref_setup=1017, i_ref_out=1021, completed=0
+At time  10: i_ref= 341, i_ref_setup=1011, i_ref_out=1017, completed=0
+At time  13: i_ref= 341, i_ref_setup=1003, i_ref_out=1011, completed=0
+At time  16: i_ref= 341, i_ref_setup= 993, i_ref_out=1003, completed=0
+At time  19: i_ref= 341, i_ref_setup= 981, i_ref_out= 993, completed=0
+At time  22: i_ref= 341, i_ref_setup= 967, i_ref_out= 981, completed=0
+At time  25: i_ref= 341, i_ref_setup= 951, i_ref_out= 967, completed=0
+At time  28: i_ref= 341, i_ref_setup= 933, i_ref_out= 951, completed=0
+At time  31: i_ref= 341, i_ref_setup= 913, i_ref_out= 933, completed=0
+At time  34: i_ref= 341, i_ref_setup= 891, i_ref_out= 913, completed=0
+At time  37: i_ref= 341, i_ref_setup= 867, i_ref_out= 891, completed=0
+At time  40: i_ref= 341, i_ref_setup= 841, i_ref_out= 867, completed=0
+At time  43: i_ref= 341, i_ref_setup= 813, i_ref_out= 841, completed=0
+At time  46: i_ref= 341, i_ref_setup= 783, i_ref_out= 813, completed=0
+At time  49: i_ref= 341, i_ref_setup= 751, i_ref_out= 783, completed=0
+At time  52: i_ref= 341, i_ref_setup= 717, i_ref_out= 751, completed=0
+At time  55: i_ref= 341, i_ref_setup= 681, i_ref_out= 717, completed=0
+At time  58: i_ref= 341, i_ref_setup= 643, i_ref_out= 681, completed=0
+At time  61: i_ref= 341, i_ref_setup= 603, i_ref_out= 643, completed=0
+At time  64: i_ref= 341, i_ref_setup= 561, i_ref_out= 603, completed=0
+At time  67: i_ref= 341, i_ref_setup= 517, i_ref_out= 561, completed=0
+At time  70: i_ref= 341, i_ref_setup= 471, i_ref_out= 517, completed=0
+At time  73: i_ref= 341, i_ref_setup= 423, i_ref_out= 471, completed=0
+At time  76: i_ref= 341, i_ref_setup= 373, i_ref_out= 423, completed=0
+At time  77: i_ref= 341, i_ref_setup= 373, i_ref_out= 373, completed=1
+At time  79: i_ref= 341, i_ref_setup= 321, i_ref_out= 341, completed=1
+At time  82: i_ref= 341, i_ref_setup= 267, i_ref_out= 341, completed=1
+At time  85: i_ref= 341, i_ref_setup= 211, i_ref_out= 341, completed=1
+At time  88: i_ref= 341, i_ref_setup= 153, i_ref_out= 341, completed=1
+At time  91: i_ref= 341, i_ref_setup=  93, i_ref_out= 341, completed=1
+At time  94: i_ref= 341, i_ref_setup=  31, i_ref_out= 341, completed=1
+At time  97: i_ref= 341, i_ref_setup= 991, i_ref_out= 341, completed=1
+At time 100: i_ref= 341, i_ref_setup= 925, i_ref_out= 341, completed=1
+At time 103: i_ref= 341, i_ref_setup= 857, i_ref_out= 341, completed=1
+At time 106: i_ref= 341, i_ref_setup= 787, i_ref_out= 341, completed=1
+At time 109: i_ref= 341, i_ref_setup= 715, i_ref_out= 341, completed=1
+At time 112: i_ref= 341, i_ref_setup= 641, i_ref_out= 341, completed=1
+At time 115: i_ref= 341, i_ref_setup= 565, i_ref_out= 341, completed=1
+At time 118: i_ref= 341, i_ref_setup= 487, i_ref_out= 341, completed=1
+At time 121: i_ref= 341, i_ref_setup= 407, i_ref_out= 341, completed=1
+At time 124: i_ref= 341, i_ref_setup= 325, i_ref_out= 341, completed=1
+At time 127: i_ref= 341, i_ref_setup= 241, i_ref_out= 341, completed=1
+At time 130: i_ref= 341, i_ref_setup= 155, i_ref_out= 341, completed=1
+At time 133: i_ref= 341, i_ref_setup=  67, i_ref_out= 341, completed=1
+At time 136: i_ref= 341, i_ref_setup=1001, i_ref_out= 341, completed=1
+At time 139: i_ref= 341, i_ref_setup= 909, i_ref_out= 341, completed=1
+At time 142: i_ref= 341, i_ref_setup= 815, i_ref_out= 341, completed=1
+At time 145: i_ref= 341, i_ref_setup= 719, i_ref_out= 341, completed=1
+At time 148: i_ref= 341, i_ref_setup= 621, i_ref_out= 341, completed=1
+At time 151: i_ref= 341, i_ref_setup= 521, i_ref_out= 341, completed=1
+At time 154: i_ref= 341, i_ref_setup= 419, i_ref_out= 341, completed=1
+At time 157: i_ref= 341, i_ref_setup= 315, i_ref_out= 341, completed=1
+At time 160: i_ref= 341, i_ref_setup= 209, i_ref_out= 341, completed=1
+At time 163: i_ref= 341, i_ref_setup= 101, i_ref_out= 341, completed=1
+At time 166: i_ref= 341, i_ref_setup=1015, i_ref_out= 341, completed=1
+At time 168: i_ref= 341, i_ref_setup=1015, i_ref_out= 341, completed=0
+At time 169: i_ref= 341, i_ref_setup= 903, i_ref_out=1015, completed=0
+At time 172: i_ref= 341, i_ref_setup= 789, i_ref_out= 903, completed=0
+At time 175: i_ref= 341, i_ref_setup= 673, i_ref_out= 789, completed=0
+At time 178: i_ref= 341, i_ref_setup= 555, i_ref_out= 673, completed=0
+At time 181: i_ref= 341, i_ref_setup= 435, i_ref_out= 555, completed=0
+At time 184: i_ref= 341, i_ref_setup= 313, i_ref_out= 435, completed=0
+At time 187: i_ref= 341, i_ref_setup= 189, i_ref_out= 313, completed=0
+At time 190: i_ref= 341, i_ref_setup=  63, i_ref_out= 189, completed=0
+At time 193: i_ref= 341, i_ref_setup= 959, i_ref_out=  63, completed=0
+At time 196: i_ref= 341, i_ref_setup= 829, i_ref_out= 959, completed=0
+At time 199: i_ref= 341, i_ref_setup= 697, i_ref_out= 829, completed=0
+At time 202: i_ref= 341, i_ref_setup= 563, i_ref_out= 697, completed=0
+At time 205: i_ref= 341, i_ref_setup= 427, i_ref_out= 563, completed=0
+At time 208: i_ref= 341, i_ref_setup= 289, i_ref_out= 427, completed=0
+At time 211: i_ref= 341, i_ref_setup= 149, i_ref_out= 289, completed=0
+At time 214: i_ref= 341, i_ref_setup=   7, i_ref_out= 149, completed=0
+At time 217: i_ref= 341, i_ref_setup= 887, i_ref_out=   7, completed=0
+At time 220: i_ref= 341, i_ref_setup= 741, i_ref_out= 887, completed=0
+At time 223: i_ref= 341, i_ref_setup= 593, i_ref_out= 741, completed=0
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Apr 10, 2024 at 10:10:01 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.03-s001: Started on Apr 10, 2024 at 10:16:40 -03
+xrun(64): 22.03-s001: (c) Copyright 1995-2022 Cadence Design Systems, Inc.
+Recompiling... reason: file './setup_completed.v' is newer than expected.
+	expected: Wed Apr 10 10:09:59 2024
+	actual:   Wed Apr 10 10:16:38 2024
+file: setup_completed_tb.sv
+	module worklib.setup_completed_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		setup_completed_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.setup_completed_tb:sv <0x050f4b19>
+			streams:   8, words:  4593
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           5       5
+		Scalar wires:        1       -
+		Vectored wires:      4       -
+		Always blocks:       1       1
+		Initial blocks:      2       2
+		Cont. assignments:   1       1
+		Pseudo assignments:  4       4
+	Writing initial simulation snapshot: worklib.setup_completed_tb:sv
+Loading snapshot worklib.setup_completed_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/cadence/cadence/installsXCELIUM2203/tools/xcelium/files/xmsimrc
+xcelium> run
+At time   2: i_ref= 341, i_ref_setup=1021, i_ref_out=1023, completed=0
+At time   3: i_ref= 341, i_ref_setup=1017, i_ref_out=1021, completed=0
+At time   4: i_ref= 341, i_ref_setup=1011, i_ref_out=1017, completed=0
+At time   5: i_ref= 341, i_ref_setup=1003, i_ref_out=1011, completed=0
+At time   6: i_ref= 341, i_ref_setup= 993, i_ref_out=1003, completed=0
+At time   7: i_ref= 341, i_ref_setup= 981, i_ref_out= 993, completed=0
+At time   8: i_ref= 341, i_ref_setup= 967, i_ref_out= 981, completed=0
+At time   9: i_ref= 341, i_ref_setup= 951, i_ref_out= 967, completed=0
+At time  10: i_ref= 341, i_ref_setup= 933, i_ref_out= 951, completed=0
+At time  11: i_ref= 341, i_ref_setup= 913, i_ref_out= 933, completed=0
+At time  12: i_ref= 341, i_ref_setup= 891, i_ref_out= 913, completed=0
+At time  13: i_ref= 341, i_ref_setup= 867, i_ref_out= 891, completed=0
+At time  14: i_ref= 341, i_ref_setup= 841, i_ref_out= 867, completed=0
+At time  15: i_ref= 341, i_ref_setup= 813, i_ref_out= 841, completed=0
+At time  16: i_ref= 341, i_ref_setup= 783, i_ref_out= 813, completed=0
+At time  17: i_ref= 341, i_ref_setup= 751, i_ref_out= 783, completed=0
+At time  18: i_ref= 341, i_ref_setup= 717, i_ref_out= 751, completed=0
+At time  19: i_ref= 341, i_ref_setup= 681, i_ref_out= 717, completed=0
+At time  20: i_ref= 341, i_ref_setup= 643, i_ref_out= 681, completed=0
+At time  21: i_ref= 341, i_ref_setup= 603, i_ref_out= 643, completed=0
+At time  22: i_ref= 341, i_ref_setup= 561, i_ref_out= 603, completed=0
+At time  23: i_ref= 341, i_ref_setup= 517, i_ref_out= 561, completed=0
+At time  24: i_ref= 341, i_ref_setup= 471, i_ref_out= 517, completed=0
+At time  25: i_ref= 341, i_ref_setup= 423, i_ref_out= 471, completed=0
+At time  26: i_ref= 341, i_ref_setup= 373, i_ref_out= 423, completed=0
+At time  27: i_ref= 341, i_ref_setup= 373, i_ref_out= 373, completed=1
+At time  28: i_ref= 341, i_ref_setup= 321, i_ref_out= 341, completed=1
+At time  29: i_ref= 341, i_ref_setup= 267, i_ref_out= 341, completed=1
+At time  30: i_ref= 341, i_ref_setup= 211, i_ref_out= 341, completed=1
+At time  31: i_ref= 341, i_ref_setup= 153, i_ref_out= 341, completed=1
+At time  32: i_ref= 341, i_ref_setup=  93, i_ref_out= 341, completed=1
+At time  33: i_ref= 341, i_ref_setup=  31, i_ref_out= 341, completed=1
+At time  34: i_ref= 341, i_ref_setup= 991, i_ref_out= 341, completed=1
+At time  35: i_ref= 341, i_ref_setup= 925, i_ref_out= 341, completed=1
+At time  36: i_ref= 341, i_ref_setup= 857, i_ref_out= 341, completed=1
+At time  37: i_ref= 341, i_ref_setup= 787, i_ref_out= 341, completed=1
+At time  38: i_ref= 341, i_ref_setup= 715, i_ref_out= 341, completed=1
+At time  39: i_ref= 341, i_ref_setup= 641, i_ref_out= 341, completed=1
+At time  40: i_ref= 341, i_ref_setup= 565, i_ref_out= 341, completed=1
+At time  41: i_ref= 341, i_ref_setup= 487, i_ref_out= 341, completed=1
+At time  42: i_ref= 341, i_ref_setup= 407, i_ref_out= 341, completed=1
+At time  43: i_ref= 341, i_ref_setup= 325, i_ref_out= 341, completed=1
+At time  44: i_ref= 341, i_ref_setup= 241, i_ref_out= 341, completed=1
+At time  45: i_ref= 341, i_ref_setup= 155, i_ref_out= 341, completed=1
+At time  46: i_ref= 341, i_ref_setup=  67, i_ref_out= 341, completed=1
+At time  47: i_ref= 341, i_ref_setup=1001, i_ref_out= 341, completed=1
+At time  48: i_ref= 341, i_ref_setup= 909, i_ref_out= 341, completed=1
+At time  49: i_ref= 341, i_ref_setup= 815, i_ref_out= 341, completed=1
+At time  50: i_ref= 341, i_ref_setup= 719, i_ref_out= 341, completed=1
+At time  51: i_ref= 341, i_ref_setup= 621, i_ref_out= 341, completed=1
+At time  52: i_ref= 341, i_ref_setup= 521, i_ref_out= 341, completed=1
+At time  53: i_ref= 341, i_ref_setup= 419, i_ref_out= 341, completed=1
+At time  54: i_ref= 341, i_ref_setup= 315, i_ref_out= 341, completed=1
+At time  55: i_ref= 341, i_ref_setup= 209, i_ref_out= 341, completed=1
+At time  56: i_ref= 341, i_ref_setup= 101, i_ref_out= 341, completed=1
+At time  57: i_ref= 341, i_ref_setup=1015, i_ref_out= 341, completed=1
+At time  58: i_ref= 341, i_ref_setup=1015, i_ref_out= 341, completed=0
+At time  59: i_ref= 341, i_ref_setup= 903, i_ref_out=1015, completed=0
+At time  60: i_ref= 341, i_ref_setup= 789, i_ref_out= 903, completed=0
+At time  61: i_ref= 341, i_ref_setup= 673, i_ref_out= 789, completed=0
+At time  62: i_ref= 341, i_ref_setup= 555, i_ref_out= 673, completed=0
+At time  63: i_ref= 341, i_ref_setup= 435, i_ref_out= 555, completed=0
+At time  64: i_ref= 341, i_ref_setup= 313, i_ref_out= 435, completed=0
+At time  65: i_ref= 341, i_ref_setup= 189, i_ref_out= 313, completed=0
+At time  66: i_ref= 341, i_ref_setup=  63, i_ref_out= 189, completed=0
+At time  67: i_ref= 341, i_ref_setup= 959, i_ref_out=  63, completed=0
+At time  68: i_ref= 341, i_ref_setup= 829, i_ref_out= 959, completed=0
+At time  69: i_ref= 341, i_ref_setup= 697, i_ref_out= 829, completed=0
+At time  70: i_ref= 341, i_ref_setup= 563, i_ref_out= 697, completed=0
+At time  71: i_ref= 341, i_ref_setup= 427, i_ref_out= 563, completed=0
+At time  72: i_ref= 341, i_ref_setup= 289, i_ref_out= 427, completed=0
+At time  73: i_ref= 341, i_ref_setup= 149, i_ref_out= 289, completed=0
+At time  74: i_ref= 341, i_ref_setup=   7, i_ref_out= 149, completed=0
+At time  75: i_ref= 341, i_ref_setup= 887, i_ref_out=   7, completed=0
+At time  76: i_ref= 341, i_ref_setup= 741, i_ref_out= 887, completed=0
+At time  77: i_ref= 341, i_ref_setup= 593, i_ref_out= 741, completed=0
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.03-s001: Exiting on Apr 10, 2024 at 10:16:42 -03  (total: 00:00:02)
