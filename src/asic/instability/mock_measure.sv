@@ -1,10 +1,10 @@
 // module mock_measure #(
 //   parameter READY_DELAY = 10,
-//   parameter WIDTH       = 10
+//   parameter BUS_WIDTH       = 10
 // ) (
 //   input                  clk       ,
-//   input      [WIDTH-1:0] i_ref     ,
-//   output reg [WIDTH-1:0] q_measured,
+//   input      [BUS_WIDTH-1:0] i_ref     ,
+//   output reg [BUS_WIDTH-1:0] q_measured,
 //   output reg             ready
 // );
 

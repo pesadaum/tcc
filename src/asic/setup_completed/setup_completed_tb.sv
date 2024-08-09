@@ -1,16 +1,16 @@
 module setup_completed_tb ();
-  localparam WIDTH = 10;
+  localparam BUS_WIDTH = 10;
 
-  logic [WIDTH-1:0] i_ref      ;
-  logic [WIDTH-1:0] i_ref_setup;
-  logic [WIDTH-1:0] i_ref_out  ;
+  logic [BUS_WIDTH-1:0] i_ref      ;
+  logic [BUS_WIDTH-1:0] i_ref_setup;
+  logic [BUS_WIDTH-1:0] i_ref_out  ;
   bit               completed  ;
 
   setup_completed DUT (.*);
 
   initial begin : setup
-    i_ref = (2**WIDTH-1)/3; // random value
-    i_ref_setup = 2**WIDTH-1; // max I_REF value
+    i_ref = (2**BUS_WIDTH-1)/3; // random value
+    i_ref_setup = 2**BUS_WIDTH-1; // max I_REF value
     completed = 0;
   end
 

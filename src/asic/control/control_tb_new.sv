@@ -2,9 +2,9 @@ module control_tb_new ();
 
   // timeunit = 900us;
   // timeprecision = 1us;
-  localparam WIDTH = 10;
+  localparam BUS_WIDTH = 10;
   localparam TOL   = 1 ;
-  // localparam DESIRED_Q = 110;
+  // localparam q_desired = 110;
 
 
 
@@ -13,20 +13,20 @@ module control_tb_new ();
   logic rst  ;
 //   logic enable;
 
-  logic [WIDTH-1:0] desired_q  ;
-  logic [WIDTH-1:0] measured_q ;
-  logic [WIDTH-1:0] i_ref_setup;
-  logic [WIDTH-1:0] i_ref      ;
+  logic [BUS_WIDTH-1:0] q_desired  ;
+  logic [BUS_WIDTH-1:0] q_measured ;
+  logic [BUS_WIDTH-1:0] i_ref_setup;
+  logic [BUS_WIDTH-1:0] i_ref      ;
 
   bisection #(
-    .WIDTH(WIDTH),
+    .BUS_WIDTH(BUS_WIDTH),
     .TOL  (TOL  )
   ) DUT (
     .rst        (rst        ),
     .clk        (clk        ),
     .ready      (ready      ),
-    .desired_q  (desired_q  ),
-    .measured_q (measured_q ),
+    .q_desired  (q_desired  ),
+    .q_measured (q_measured ),
     .i_ref      (i_ref      ),
     .i_ref_setup(i_ref_setup)
   );
@@ -36,11 +36,11 @@ module control_tb_new ();
     clk         =          0;
     ready       =          0;
     rst         =          0;
-    desired_q   =        110;
-    i_ref_setup = 2**WIDTH-1;
+    q_desired   =        110;
+    i_ref_setup = 2**BUS_WIDTH-1;
   end
 
-  reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
+  reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
 
   initial begin: fill_measurements
     integer file  ;
@@ -80,7 +80,7 @@ module control_tb_new ();
     converged = DUT.converged;
   end
 
-  always @(i_ref) measured_q = q_array[i_ref];
+  always @(i_ref) q_measured = q_array[i_ref];
 
 
   // CLK generator
@@ -94,7 +94,7 @@ module control_tb_new ();
     #5 rst = 0; ready = 1;
     # 50;
 
-    desired_q = 40;
+    q_desired = 40;
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
     #50;

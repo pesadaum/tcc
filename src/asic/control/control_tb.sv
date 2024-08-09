@@ -1,41 +1,41 @@
 module control_tb ();
-  localparam WIDTH = 10;
+  localparam BUS_WIDTH = 10;
   localparam TOL   = 1 ;
-  // localparam DESIRED_Q = 110;
+  // localparam q_desired = 110;
 
   reg clk   ;
   reg ready ;
   reg enable;
   reg rst   ;
 
-  reg  [WIDTH-1:0] desired_q  ;
-  reg  [WIDTH-1:0] measured_q ;
-  reg  [WIDTH-1:0] i_ref_setup;
-  wire [WIDTH-1:0] i_ref      ;
+  reg  [BUS_WIDTH-1:0] q_desired  ;
+  reg  [BUS_WIDTH-1:0] q_measured ;
+  reg  [BUS_WIDTH-1:0] i_ref_setup;
+  wire [BUS_WIDTH-1:0] i_ref      ;
 
 
   bisection #(
-    .WIDTH(WIDTH),
+    .BUS_WIDTH(BUS_WIDTH),
     .TOL  (TOL  )
   ) DUT_bisection (
     .rst        (rst        ),
     .clk        (clk        ),
     .ready      (enable     ),
-    .desired_q  (desired_q  ),
-    .measured_q (measured_q ),
+    .q_desired  (q_desired  ),
+    .q_measured (q_measured ),
     .i_ref      (i_ref      ),
     .i_ref_setup(i_ref_setup)
   );
 
   // secant #(
-  //   .WIDTH(WIDTH),
+  //   .BUS_WIDTH(BUS_WIDTH),
   //   .TOL  (TOL  )
   // ) DUT_secant (
   //   .rst        (rst        ),
   //   .clk        (clk        ),
   //   .ready      (enable     ),
-  //   .desired_q  (DESIRED_Q  ),
-  //   .measured_q (measured_q ),
+  //   .q_desired  (q_desired  ),
+  //   .q_measured (q_measured ),
   //   .i_ref      (i_ref      ),
   //   .i_ref_setup(i_ref_setup)
   // );
@@ -44,15 +44,15 @@ module control_tb ();
     clk         =          0;
     ready       =          1;
     enable      =          1;
-    desired_q   =         110;
-    measured_q  =          0;
-    i_ref_setup = 2**WIDTH-1;
-    DUT_bisection.error = 2**WIDTH-1;
+    q_desired   =         110;
+    q_measured  =          0;
+    i_ref_setup = 2**BUS_WIDTH-1;
+    DUT_bisection.error = 2**BUS_WIDTH-1;
     // DUT_bisection.c = 512;
   end
 
 
-  reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
+  reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
 
   initial begin: fill_measurements
     integer file  ;
@@ -87,8 +87,8 @@ module control_tb ();
   endtask
 
   task show;
-    $write("At time %3d: i_ref=%d, measured_q=%d, desired_q=%4d, clk=%b, enable=%b, ready=%b",
-      $time, i_ref, measured_q, desired_q, clk, enable, ready);
+    $write("At time %3d: i_ref=%d, q_measured=%d, q_desired=%4d, clk=%b, enable=%b, ready=%b",
+      $time, i_ref, q_measured, q_desired, clk, enable, ready);
   endtask
 
 
@@ -99,7 +99,7 @@ module control_tb ();
   end
 
   always @(posedge clk) begin: update_q_by_iref
-    measured_q = q_array[i_ref];
+    q_measured = q_array[i_ref];
   end
 
   integer i_test = 0;
@@ -125,11 +125,11 @@ module control_tb ();
     if(DUT_bisection.converged) begin
       DUT_bisection.converged = 0;
       rst                     = 1;
-      desired_q               = sweep[j];
+      q_desired               = sweep[j];
       j                       = j+1;
       rst                     = 0;
       // i = i+1;
-      $display("Q Converged with desired_q=%4d, measured_q=%d, after %3d time units", desired_q, measured_q, $time);
+      $display("Q Converged with q_desired=%4d, q_measured=%d, after %3d time units", q_desired, q_measured, $time);
       $finish();
     end
   end

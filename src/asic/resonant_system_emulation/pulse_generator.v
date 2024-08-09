@@ -1,5 +1,5 @@
 module pulse_generator #(
-  parameter WIDTH      = 10,
+  parameter BUS_WIDTH      = 10,
   parameter MAX_PULSES = 32,
   parameter PULSE_DUR  = 2
 ) (
@@ -7,7 +7,7 @@ module pulse_generator #(
   output reg pulses
 );
 
-  reg [WIDTH-1:0] pulses_ctr = 0;
+  reg [BUS_WIDTH-1:0] pulses_ctr = 0;
 
   always @* begin
     if (enable) begin

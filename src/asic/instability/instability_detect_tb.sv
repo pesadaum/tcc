@@ -1,16 +1,16 @@
 module instability_detect_tb ();
 
-  localparam WIDTH      = 10;
-  localparam DELTA      = 50;
-  localparam IREF_DELTA = 10;
+  localparam BUS_WIDTH      = 10;
+  localparam DELTA_Q_INSTB      = 50;
+  localparam I_REF_DELTA_INSTB = 10;
 
   logic clk   ;
   logic rst   ;
   logic ready ;
   logic enable;
 
-  logic [WIDTH-1:0] q_measured ;
-  wire  [WIDTH-1:0] i_ref_setup;
+  logic [BUS_WIDTH-1:0] q_measured ;
+  wire  [BUS_WIDTH-1:0] i_ref_setup;
 
   initial begin: variables_setup
     clk = 0;
@@ -20,9 +20,9 @@ module instability_detect_tb ();
   end
 
   instability_detect #(
-    .WIDTH     (WIDTH     ),
-    .DELTA     (DELTA     ),
-    .IREF_DELTA(IREF_DELTA)
+    .BUS_WIDTH     (BUS_WIDTH     ),
+    .DELTA_Q_INSTB     (DELTA_Q_INSTB     ),
+    .I_REF_DELTA_INSTB(I_REF_DELTA_INSTB)
   ) DUT (
     .clk        (clk        ),
     .rst        (rst        ),
@@ -37,8 +37,8 @@ module instability_detect_tb ();
   always #1 clk = ~clk;
 
   logic             found ;
-  logic [WIDTH-1:0] curr_q;
-  logic [WIDTH-1:0] last_q;
+  logic [BUS_WIDTH-1:0] curr_q;
+  logic [BUS_WIDTH-1:0] last_q;
 
   always @(posedge clk or negedge clk) begin
     found  = DUT.found;
@@ -46,7 +46,7 @@ module instability_detect_tb ();
     last_q = DUT.last_q;
   end
 
-  reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
+  reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
 
   initial begin: fill_measurements
     integer file  ;

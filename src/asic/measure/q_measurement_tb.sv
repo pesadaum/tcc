@@ -1,17 +1,17 @@
 module q_measurement_tb ();
-  localparam WTD_WIDTH   = 3 ;
-  localparam WIDTH       = 10;
+  localparam WTD_BUS_WIDTH   = 3 ;
+  localparam BUS_WIDTH       = 10;
   localparam Q_PER_PULSE = 30;
 
   logic             clk         ;
   logic             q_serialized;
   logic             start       ;
   logic             ready       ;
-  logic [WIDTH-1:0] measured_q  ;
+  logic [BUS_WIDTH-1:0] q_measured  ;
 
   q_measurement #(
-    .WIDTH      (WIDTH      ),
-    .WTD_WIDTH  (WTD_WIDTH  ),
+    .BUS_WIDTH      (BUS_WIDTH      ),
+    .WTD_BUS_WIDTH  (WTD_BUS_WIDTH  ),
     .Q_PER_PULSE(Q_PER_PULSE)
   ) DUT (.*);
 

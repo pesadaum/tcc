@@ -1,34 +1,34 @@
 module secant #(
-  parameter WIDTH = 10, // bus width
+  parameter BUS_WIDTH = 10, // bus BUS_WIDTH
   parameter TOL   = 30  // minimum acceptable value of difference between measured Q and desired Q
 ) (
   input                   clk        , // Clock
   input                   rst        , // Async reset
   input                   ready      , // Flag for measurement done
-  input  wire [WIDTH-1:0] desired_q  , // Desired Q value
-  input  wire [WIDTH-1:0] measured_q , // Measured Q value
-  input  wire [WIDTH-1:0] i_ref_setup, // upper bound
-  output reg  [WIDTH-1:0] i_ref        // produces Q
+  input  wire [BUS_WIDTH-1:0] q_desired  , // Desired Q value
+  input  wire [BUS_WIDTH-1:0] q_measured , // Measured Q value
+  input  wire [BUS_WIDTH-1:0] i_ref_setup, // upper bound
+  output reg  [BUS_WIDTH-1:0] i_ref        // produces Q
 );
 
   // State is necessary for retaining value of 3 initial measurements
   reg [2:0] state;
 
   // Initial lower and upper bounds and midpoint respectively;
-  reg [WIDTH-1:0] a, b, c;
+  reg [BUS_WIDTH-1:0] a, b, c;
 
   // Variables for f(x) == Q at x value of I_{REF}
-  reg [WIDTH-1:0] f_a, f_b, f_c;
+  reg [BUS_WIDTH-1:0] f_a, f_b, f_c;
 
   // [Warning] Register type is not adequate in current implementation
-  reg [WIDTH-1:0] slope;
+  reg [BUS_WIDTH-1:0] slope;
 
   // flag for achieving convergence
   reg converged;
 
 
-  // should be SIGNED and WIDTH+1 bit long
-  reg signed [WIDTH:0] error;
+  // should be SIGNED and BUS_WIDTH+1 bit long
+  reg signed [BUS_WIDTH:0] error;
 
   // state updates
   always @(posedge clk) begin : state_updates
@@ -47,16 +47,16 @@ module secant #(
 
       1 : begin
         i_ref <= b;
-        f_a   <= measured_q;
+        f_a   <= q_measured;
       end
 
       2 : begin
         i_ref <= c;
-        f_b   <= measured_q;
+        f_b   <= q_measured;
       end
 
       3 : begin
-        f_c <= measured_q;
+        f_c <= q_measured;
       end
 
       4 : begin : new_bounds
@@ -74,16 +74,16 @@ module secant #(
       slope = (f_b - f_a)/ (b-a);
       // slope could be zero if is less than 1 in binary.
       if (!slope) begin
-        c = b - (f_b - desired_q);
+        c = b - (f_b - q_desired);
       end
       else
-        c = b - (f_b - desired_q) / slope;
+        c = b - (f_b - q_desired) / slope;
     end
   end
 
   always @* begin
     // calculating error (\epsilon) and taking the absolute value
-    error = f_c - desired_q;
+    error = f_c - q_desired;
     error = (error > 0) ? error : -error;
   end
 
