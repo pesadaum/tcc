@@ -4,17 +4,19 @@ module instability_detect_tb ();
   localparam DELTA      = 50;
   localparam IREF_DELTA = 10;
 
-  reg              clk        ;
-  reg              rst        ;
-  reg              enable     ;
-  reg              ready      ;
-  reg  [WIDTH-1:0] q_measured ;
-  wire [WIDTH-1:0] i_ref_setup;
+  logic clk   ;
+  logic rst   ;
+  logic ready ;
+  logic enable;
+
+  logic [WIDTH-1:0] q_measured ;
+  wire  [WIDTH-1:0] i_ref_setup;
 
   initial begin: variables_setup
+    clk = 0;
     rst = 0;
+    ready = 1;
     enable = 0;
-    ready = 0;
   end
 
   instability_detect #(
@@ -24,9 +26,25 @@ module instability_detect_tb ();
   ) DUT (
     .clk        (clk        ),
     .rst        (rst        ),
+    .ready      (ready      ),
+    .enable     (enable     ),
     .q_measured (q_measured ),
     .i_ref_setup(i_ref_setup)
   );
+
+
+  // clock generator
+  always #1 clk = ~clk;
+
+  logic             found ;
+  logic [WIDTH-1:0] curr_q;
+  logic [WIDTH-1:0] last_q;
+
+  always @(posedge clk or negedge clk) begin
+    found  = DUT.found;
+    curr_q = DUT.curr_q;
+    last_q = DUT.last_q;
+  end
 
   reg [WIDTH-1:0] q_array[2**WIDTH-1:0]; // Caution, large array
 
@@ -54,48 +72,37 @@ module instability_detect_tb ();
   end
 
 
-  task generate_clock;
-    input integer pulses, duration;
-    repeat(pulses) begin
-      # (duration) clk = 1'b0;
-      # (duration) clk = 1'b1;
-    end
-  endtask
 
   task show;
-    $write("At time %3d: i_ref_setup=%d, q_measured=%d, clk=%b, enable=%b, rst=%b, ready=%b",
-      $time, i_ref_setup, q_measured, clk, enable, rst, ready);
+    $write("At time %3d: i_ref_setup=%d, q_measured=%d, clk=%b, enable=%b, rst=%b",
+      $time, i_ref_setup, q_measured, clk, enable, rst);
   endtask
 
 
-  integer idx = (2**WIDTH) - 1;
   initial begin
-    // Testing 5 clock cycles in idle mode
-    // $display("Testing 5 clock cycles in IDLE mode");
-    // generate_clock(5, 1);
-    // rst = 1; // wait two clock cycles for resetting the module value
+    # 1 rst = 1;
+    # 1 rst = 0;
+    # 1 enable = 1;
 
-    // #10;
-    rst = 1;
-    rst = 0;
-    enable = 1;
-    $display("\nTesting 100 clock cycles in READY mode");
-    generate_clock(50, 1);
+    # 15 enable = 0;
+    # 10 enable = 1;
 
+    # 10 rst = 1 ; #5 rst = 0;
 
+    # 50;
 
+    # 10 rst = 1 ; #5 rst = 0;
+
+    # 50;
+    $stop();
   end
 
-  always @(posedge clk) begin: update_q_by_iref
-    q_measured = q_array[i_ref_setup];
-  end
+  always @(i_ref_setup) q_measured = q_array[i_ref_setup];
 
   always @(posedge clk or negedge clk) begin: tb
     show();
     $display();
   end
-
-  // always @(negedge clk)  // gambiarra pra formatação kkkkkkk
 
 
 
