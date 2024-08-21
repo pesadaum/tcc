@@ -1,21 +1,30 @@
 module q_measurement #(
-  parameter BUS_WIDTH       = 10, // bus BUS_WIDTH
-  parameter WTD_BUS_WIDTH   = 2 , // watchdog register BUS_WIDTH
-  parameter Q_PER_PULSE = 30  // value of Q for each pulse
+  parameter BUS_WIDTH     = 10, // bus BUS_WIDTH
+  parameter WTD_BUS_WIDTH = 2 , // watchdog register BUS_WIDTH
+  parameter Q_PER_PULSE   = 30  // value of Q for each pulse
 ) (
-  input                  q_serialized,
-  input                  clk         ,
-  input                  start       ,
-  output reg             ready       ,
+  input                      q_serialized,
+  input                      clk         ,
+  input                      rst         ,
+  input                      start       ,
+  output reg                 ready       ,
   output reg [BUS_WIDTH-1:0] q_measured
 );
 
-  reg [WTD_BUS_WIDTH:0] q_pulses_count; // stores the quantity of digital pulses
   reg [WTD_BUS_WIDTH-1:0] wtd           ; // watchdog for when the system stops receiving pulses
+  reg [      BUS_WIDTH:0] q_pulses_count; // stores the quantity of digital pulses
+
+  always @ (posedge rst) begin: async_setup
+    if (rst) begin
+      ready          = 0; // system is not ready to forward measurement
+      q_pulses_count = 0; // no pulses acquired
+      wtd            = 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
+    end
+  end
 
 
   always @(posedge clk) begin
-    if (!start) begin
+    if (!start) begin // syncronous reset with "start" flag
       ready          <= 0; // system is not ready to forward measurement
       q_pulses_count <= 0; // no pulses acquired
       wtd            <= 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value

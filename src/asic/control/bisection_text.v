@@ -1,4 +1,4 @@
-module bisection #(
+module bisection_TEXT #(
   parameter BUS_WIDTH = 10, // bus BUS_WIDTH
   parameter TOL   = 30  // minimum acceptable value of difference between measured Q and desired Q
 ) (

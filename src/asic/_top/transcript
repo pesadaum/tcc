@@ -1,0 +1,469 @@
+# Reading C:/intelFPGA/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# vsim -gui . -do "compile_run.do" 
+# Start time: 20:40:46 on Aug 20,2024
+# ** Error (suppressible): (vsim-19) Failed to access library '' at "".
+# Invalid argument. (errno = EINVAL)
+# Error loading design
+# End time: 20:40:46 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+do compile_run.do
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Copying C:/intelFPGA/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:41:34 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top
+# 	top_tb
+# End time: 20:41:34 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.control_tb_new 
+# Start time: 20:41:34 on Aug 20,2024
+# ** Error: (vsim-3170) Could not find 'control_tb_new'.
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+vsim work.top
+# vsim work.top 
+# Start time: 20:41:34 on Aug 20,2024
+# Loading work.top
+# ** Error: (vsim-3033) top.v(37): Instantiation of 'bisection' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# ** Error: (vsim-3033) top.v(52): Instantiation of 'q_measurement' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# ** Error: (vsim-3033) top.v(75): Instantiation of 'setup_completed' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+vsim work.top
+# vsim work.top 
+# Start time: 20:41:34 on Aug 20,2024
+# Loading work.top
+# ** Error: (vsim-3033) top.v(37): Instantiation of 'bisection' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# ** Error: (vsim-3033) top.v(52): Instantiation of 'q_measurement' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# ** Error: (vsim-3033) top.v(75): Instantiation of 'setup_completed' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top File: top.v
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:41:34 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:41:34 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+quit -sim
+# End time: 20:42:25 on Aug 20,2024, Elapsed time: 0:00:51
+# Errors: 9, Warnings: 0
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:42:29 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top
+# 	top_tb
+# End time: 20:42:29 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# unsigned
+# ** Error: No Design Loaded!
+# Error in macro ./compile_run.do line 12
+# No Design Loaded!
+#     while executing
+# "run -200"
+run -200ps
+# No Design Loaded!
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 8
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:43:20 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top
+# 	top_tb
+# End time: 20:43:20 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:46:25 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top
+# 	top_tb
+# End time: 20:46:26 on Aug 20,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# ** Error: (vsim-3033) top_tb.sv(27): Instantiation of 'top_meas_control' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+#         Searched libraries:
+#             //wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/work
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:46:55 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:46:55 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Error: (vsim-3063) top.v(41): Port 'ready_w' not found in the connected module (4th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/q_control_inst File: ../control/bisection.v
+# ** Error: (vsim-3063) top.v(56): Port 'ready_w' not found in the connected module (5th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/q_measurement_inst File: ../measure/q_measurement.v
+# ** Error (suppressible): (vsim-3053) top.v(79): Illegal output or inout port connection for port 'i_ref_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/setup_completed_inst File: ../setup_completed/setup_completed.v
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+vsim work.setup_completed
+# vsim work.setup_completed 
+# Start time: 20:42:27 on Aug 20,2024
+# Loading work.setup_completed
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:48:44 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:48:45 on Aug 20,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 20:48:46 on Aug 20,2024, Elapsed time: 0:06:19
+# Errors: 7, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:48:46 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Error (suppressible): (vsim-3053) top.v(79): Illegal output or inout port connection for port 'i_ref_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/setup_completed_inst File: ../setup_completed/setup_completed.v
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:48:46 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Error (suppressible): (vsim-3053) top.v(79): Illegal output or inout port connection for port 'i_ref_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/setup_completed_inst File: ../setup_completed/setup_completed.v
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+restart -f
+# No Design Loaded!
+vsim work.top_tb
+# vsim work.top_tb 
+# Start time: 20:48:46 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Error (suppressible): (vsim-3053) top.v(79): Illegal output or inout port connection for port 'i_ref_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/setup_completed_inst File: ../setup_completed/setup_completed.v
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:49:59 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:50:00 on Aug 20,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:48:46 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Error (suppressible): (vsim-3053) top.v(79): Illegal output or inout port connection for port 'i_ref_out'.
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb/top_meas_control_inst/setup_completed_inst File: ../setup_completed/setup_completed.v
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./compile_run.do PAUSED at line 7
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:50:25 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:50:26 on Aug 20,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:48:46 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# unsigned
+run
+run 200
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:52:54 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:52:55 on Aug 20,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 20:52:56 on Aug 20,2024, Elapsed time: 0:04:10
+# Errors: 4, Warnings: 0
+# vsim work.top_tb 
+# Start time: 20:52:57 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Warning: (vsim-3839) top_tb.sv(36): Variable '/top_tb/i_ref_out', driven via a port connection, is multiply driven. See top_tb.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+# unsigned
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 20:54:10 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 20:54:10 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 20:54:12 on Aug 20,2024, Elapsed time: 0:01:15
+# Errors: 0, Warnings: 1
+# vsim work.top_tb 
+# Start time: 20:54:12 on Aug 20,2024
+# Loading sv_std.std
+# Loading work.top_tb
+# Loading work.top
+# Loading work.bisection
+# Loading work.q_measurement
+# Loading work.setup_completed
+# ** Warning: (vsim-3839) top_tb.sv(36): Variable '/top_tb/i_ref_out', driven via a port connection, is multiply driven. See top_tb.sv(27).
+#    Time: 0 ps  Iteration: 0  Instance: /top_tb File: top_tb.sv
+# unsigned
+do compile_run.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 21:07:50 on Aug 20,2024
+# vlog -reportprogress 300 -work work top.v resonant_sys.sv top_tb.sv 
+# -- Compiling module bisection
+# -- Compiling module q_measurement
+# -- Compiling module setup_completed
+# -- Compiling module top
+# -- Compiling module resonant_sys
+# ** Error: resonant_sys.sv(32): (vlog-2730) Undefined variable: 'q_measured'.
+# ** Warning: ** while parsing file included at top_tb.sv(1)
+# ** at resonant_sys.sv(1): (vlog-2275) 'resonant_sys' already exists and will be overwritten.
+# -- Compiling module resonant_sys
+# ** Error: ** while parsing file included at top_tb.sv(1)
+# ** at resonant_sys.sv(32): (vlog-2730) Undefined variable: 'q_measured'.
+# -- Compiling module top_tb
+# End time: 21:07:50 on Aug 20,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# ** Error: C:/intelFPGA/18.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./compile_run.do line 5
+# C:/intelFPGA/18.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -work work *.v *.sv"
+# End time: 21:41:50 on Aug 20,2024, Elapsed time: 0:47:38
+# Errors: 5, Warnings: 2

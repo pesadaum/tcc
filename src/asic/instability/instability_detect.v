@@ -1,12 +1,12 @@
 module instability_detect #(
-  parameter BUS_WIDTH      = 10 ,
-  parameter DELTA_Q_INSTB      = 300,
+  parameter BUS_WIDTH         = 10 ,
+  parameter DELTA_Q_INSTB     = 300,
   parameter I_REF_DELTA_INSTB = 50
 ) (
-  input                  clk        ,
-  input                  rst        ,
-  input                  ready      , // Flag for measurement done
-  input                  enable     ,
+  input                      clk        ,
+  input                      rst        ,
+  input                      ready      , // Flag for measurement done
+  input                      enable     ,
   input      [BUS_WIDTH-1:0] q_measured ,
   output reg [BUS_WIDTH-1:0] i_ref_setup  // upper bound for Q control module
 );

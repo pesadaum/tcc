@@ -1,0 +1,58 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d//wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/resonant_system_emulation
+vresonant_sys
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1724206563
+!i10b 1
+!s100 ZbN3Sc<QAT]?]VWQFBn;k2
+IXhS^zHg[l3=P7=3I9:`822
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 resonant_sys_sv_unit
+S1
+R0
+w1724206385
+8resonant_sys.sv
+Fresonant_sys.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1724206563.000000
+Z6 !s107 resonant_sys_tb.sv|resonant_sys.sv|
+Z7 !s90 -reportprogress|300|-work|work|resonant_sys.sv|resonant_sys_tb.sv|
+!i113 1
+Z8 o-work work
+Z9 tCvgOpt 0
+vresonant_sys_tb
+R1
+R2
+!i10b 1
+!s100 _SkJX4e>;@do:6B;^Ez`B3
+IJPVM>44<Nheo@SH=TEKiP2
+R3
+!s105 resonant_sys_tb_sv_unit
+S1
+R0
+w1724206560
+8resonant_sys_tb.sv
+Fresonant_sys_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+R9

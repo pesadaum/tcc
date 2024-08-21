@@ -228,3 +228,5 @@ do compile_run.do
 # At time  75: i_ref= 341, i_ref_setup= 887, i_ref_out= 887, completed=0
 # At time  76: i_ref= 341, i_ref_setup= 741, i_ref_out= 741, completed=0
 # At time  77: i_ref= 341, i_ref_setup= 593, i_ref_out= 593, completed=0
+# End time: 22:55:02 on Aug 08,2024, Elapsed time: 1:09:11
+# Errors: 0, Warnings: 0

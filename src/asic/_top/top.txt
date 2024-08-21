@@ -1,7 +1,3 @@
-`include "../control/bisection.v"
-`include "../measure/q_measurement.v"
-`include "../setup_completed/setup_completed.v"
-
 module top #(
   // -- general
   parameter BUS_WIDTH         = 10,
@@ -20,18 +16,18 @@ module top #(
   input                      rst         ,
   input                      enable      ,
   input      [BUS_WIDTH-1:0] q_desired   ,
-  output wire [BUS_WIDTH-1:0] i_ref_out
+  output reg [BUS_WIDTH-1:0] i_ref_out
 );
 
   // -- top module connections
   // --- wires
-  wire ready_w                 ;
-  wire setup_completed_w = 1'b1; //
+  wire ready_w          ;
+  wire setup_completed_w;
 
   // --- buses
-  wire [BUS_WIDTH-1:0] q_measured_w                  ;
-  wire [BUS_WIDTH-1:0] i_ref_setup_w = 2**BUS_WIDTH-1;
-  wire [BUS_WIDTH-1:0] i_ref_w                       ;
+  wire [BUS_WIDTH-1:0] q_measured_w ;
+  wire [BUS_WIDTH-1:0] i_ref_setup_w;
+  wire [BUS_WIDTH-1:0] i_ref_w      ;
 
   // -- Lower modules Instance
 
@@ -39,10 +35,9 @@ module top #(
     .BUS_WIDTH(BUS_WIDTH),
     .TOL      (TOL      )
   ) q_control_inst (
+    .rst        (rst          ), 
     .clk        (clk          ),
-    .rst        (rst          ),
-    .enable     (enable       ),
-    .ready    (ready_w      ),
+    .ready_w    (ready_w      ),
     .q_desired  (q_desired    ),
     .q_measured (q_measured_w ),
     .i_ref      (i_ref_w      ),
@@ -56,31 +51,30 @@ module top #(
   ) q_measurement_inst (
     .q_serialized(q_serialized),
     .clk         (clk         ),
-    .rst         (rst         ),
     .start       (start       ),
-    .ready     (ready_w     ),
+    .ready_w     (ready_w     ),
     .q_measured  (q_measured_w)
   );
 
 
-//   instability_detect #(
-//     .BUS_WIDTH        (BUS_WIDTH        ),
-//     .DELTA_Q_INSTB    (DELTA_Q_INSTB    ),
-//     .I_REF_DELTA_INSTB(I_REF_DELTA_INSTB)
-//   ) instb_detect_inst (
-//     .clk        (clk        ),
-//     .rst        (rst        ),
-//     .ready_w    (ready_w    ),
-//     .enable     (enable     ),
-//     .q_measured (q_measured_w ),
-//     .i_ref_setup(i_ref_setup_w)
-//   );
+  instability_detect #(
+    .BUS_WIDTH        (BUS_WIDTH        ),
+    .DELTA_Q_INSTB    (DELTA_Q_INSTB    ),
+    .I_REF_DELTA_INSTB(I_REF_DELTA_INSTB)
+  ) instb_detect_inst (
+    .clk        (clk        ),
+    .rst        (rst        ),
+    .ready_w    (ready_w    ),
+    .enable     (enable     ),
+    .q_measured (q_measured_w ),
+    .i_ref_setup(i_ref_setup_w)
+  );
 
   setup_completed #(.BUS_WIDTH(BUS_WIDTH)) setup_completed_inst (
-    .i_ref      (i_ref_w          ),
-    .i_ref_setup(i_ref_setup_w    ),
+    .i_ref      (i_ref_w               ),
+    .i_ref_setup(i_ref_setup_w         ),
     .completed  (setup_completed_w),
-    .i_ref_out  (i_ref_out        )
+    .i_ref_out  (i_ref_out               )
   );
 
   // // -- State machine

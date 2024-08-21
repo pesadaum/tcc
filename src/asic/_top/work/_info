@@ -1,0 +1,118 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d//wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top
+vbisection
+Z1 !s110 1724198870
+!i10b 1
+!s100 GCkElGO[@25VV8SeN8m`o1
+Iin44V7@[cdoPd^NNUg:FJ0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1723511215
+8../control/bisection.v
+F../control/bisection.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1724198870.000000
+Z5 !s107 ../setup_completed/setup_completed.v|../measure/q_measurement.v|../control/bisection.v|top_tb.sv|resonant_sys.sv|top.v|
+Z6 !s90 -reportprogress|300|-work|work|top.v|resonant_sys.sv|top_tb.sv|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vq_measurement
+R1
+!i10b 1
+!s100 L0i@I<Ia0IPR:TMUe?^N_3
+IA8J:_FBe]Z4ammzSDTEn`0
+R2
+R0
+w1723509951
+8../measure/q_measurement.v
+F../measure/q_measurement.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vsetup_completed
+R1
+!i10b 1
+!s100 iA46i;[_g>d:ihHRToRkf0
+IRUZ87:7QP86Y[7<X:mO3j2
+R2
+R0
+w1723166342
+8../setup_completed/setup_completed.v
+F../setup_completed/setup_completed.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vtop
+R1
+!i10b 1
+!s100 h0dI:E]lbdzS9MU5L]B^?0
+IcMTGMUF@lidYlg5SBZFCI0
+R2
+R0
+w1724197819
+8top.v
+Ftop.v
+L0 5
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vtop_tb
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+R1
+!i10b 1
+!s100 m5d^dWioT=KhhSGO8;5nJ0
+IPcM;A>kV=fFliMZ`KeMag3
+R2
+!s105 top_tb_sv_unit
+S1
+R0
+w1724198857
+8top_tb.sv
+Ftop_tb.sv
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
