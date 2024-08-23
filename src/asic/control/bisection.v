@@ -21,12 +21,15 @@ module bisection #(
   // should be SIGNED and BUS_WIDTH+1 bit long
   reg signed [BUS_WIDTH:0] error;
 
+  reg lock_latch;
+
   always @(posedge clk or posedge rst) begin: bisection
     if (rst) begin
       a         <= 0;
       b         <= (2**BUS_WIDTH)-1;
       c         <= (a+b)/2;
-      converged <= 1'b0;
+      converged <= 0;
+      lock_latch <= 0;
     end
 
     else if (!converged && ready && enable) begin
@@ -46,9 +49,13 @@ module bisection #(
 
   end
 
+  // always @(posedge clk) begin
+  //   lock_latch = ~lock_latch;
+  // end
+
   always @* begin
     // updating reference current with midpoint
-    if (enable)
+    if (enable && ready && ~converged)
       i_ref <= c;
   end
 

@@ -9,110 +9,146 @@ z2
 cModel Technology
 Z0 d//wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top
 vbisection
-Z1 !s110 1724198870
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1724378323
 !i10b 1
-!s100 GCkElGO[@25VV8SeN8m`o1
-Iin44V7@[cdoPd^NNUg:FJ0
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 HYGGDM2YZ>fbghM[DUJ5e1
+Icg`?6dEZnW1FAbUnLN6H`2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z4 !s105 top_v_unit
+S1
 R0
-w1723511215
+w1724376697
 8../control/bisection.v
 F../control/bisection.v
 L0 1
-Z3 OV;L;10.5b;63
+Z5 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1724198870.000000
-Z5 !s107 ../setup_completed/setup_completed.v|../measure/q_measurement.v|../control/bisection.v|top_tb.sv|resonant_sys.sv|top.v|
-Z6 !s90 -reportprogress|300|-work|work|top.v|resonant_sys.sv|top_tb.sv|
+Z6 !s108 1724378323.000000
+Z7 !s107 ../resonant_system_emulation/resonant_sys.sv|../setup_completed/setup_completed.v|../measure/q_measurement.v|../control/bisection.v|top_tb.sv|top.v|
+Z8 !s90 -##implicit##push_minusfile_path##|//wsl.localhost/Ubuntu/home/pesadaum/work/tcc/src/asic/_top/vlog.opt|-##implicit##pop_minusfile_path##|-reportprogress|300|-work|work|top.v|top_tb.sv|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z9 o-work work
+Z10 tSvlog 1 CvgOpt 0
 vq_measurement
 R1
-!i10b 1
-!s100 L0i@I<Ia0IPR:TMUe?^N_3
-IA8J:_FBe]Z4ammzSDTEn`0
 R2
+!i10b 1
+!s100 98mMPDXC2e@;j<B=Uo9ze2
+IT7YJZ9^X3X_V]b1h>dUj70
+R3
+R4
+S1
 R0
-w1723509951
+w1724378295
 8../measure/q_measurement.v
 F../measure/q_measurement.v
 L0 1
-R3
+R5
 r1
 !s85 0
 31
-R4
-R5
 R6
-!i113 1
 R7
 R8
+!i113 1
+R9
+R10
+vresonant_sys
+R1
+R2
+!i10b 1
+!s100 z>oFdKk4^OLfaiYcOM6FG2
+I@_g;FFInS68o9[:zN^@TS1
+R3
+Z11 !s105 top_tb_sv_unit
+S1
+R0
+w1724370012
+8../resonant_system_emulation/resonant_sys.sv
+F../resonant_system_emulation/resonant_sys.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
 vsetup_completed
 R1
-!i10b 1
-!s100 iA46i;[_g>d:ihHRToRkf0
-IRUZ87:7QP86Y[7<X:mO3j2
 R2
+!i10b 1
+!s100 OSO[XC2P2hj_GfJiAo56:2
+IJ7oP4dYmHVB[n]AZZ3MGV3
+R3
+R4
+S1
 R0
 w1723166342
 8../setup_completed/setup_completed.v
 F../setup_completed/setup_completed.v
 L0 1
-R3
+R5
 r1
 !s85 0
 31
-R4
-R5
 R6
-!i113 1
 R7
 R8
+!i113 1
+R9
+R10
 vtop
 R1
-!i10b 1
-!s100 h0dI:E]lbdzS9MU5L]B^?0
-IcMTGMUF@lidYlg5SBZFCI0
 R2
+!i10b 1
+!s100 ha4kK9=gl0;CEV4:@:KBL1
+IG2YP0`fPQFXOBzf92Zz8h2
+R3
+R4
+S1
 R0
-w1724197819
+w1724369284
 8top.v
 Ftop.v
-L0 5
-R3
+L0 6
+R5
 r1
 !s85 0
 31
-R4
-R5
 R6
-!i113 1
 R7
 R8
+!i113 1
+R9
+R10
 vtop_tb
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
 R1
-!i10b 1
-!s100 m5d^dWioT=KhhSGO8;5nJ0
-IPcM;A>kV=fFliMZ`KeMag3
 R2
-!s105 top_tb_sv_unit
+!i10b 1
+!s100 5jzecWgB5QI^TD]_>1OEM0
+I0LWLPAlJ8SUNPEN:gd[]81
+R3
+R11
 S1
 R0
-w1724198857
+w1724377455
 8top_tb.sv
 Ftop_tb.sv
 L0 3
-R3
+R5
 r1
 !s85 0
 31
-R4
-R5
 R6
-!i113 1
 R7
 R8
+!i113 1
+R9
+R10

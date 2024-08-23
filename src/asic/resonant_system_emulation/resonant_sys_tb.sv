@@ -6,6 +6,7 @@ module resonant_sys_tb ();
   reg [BUS_WIDTH-1:0] i_ref       ;
   reg                 start       ;
   reg                 q_serialized;
+  reg pulses_ended;
 
   resonant_sys #(
     .BUS_WIDTH     (BUS_WIDTH     ),
@@ -20,6 +21,10 @@ module resonant_sys_tb ();
   initial begin
     i_ref = 1024;
     start = 0;
+  end
+
+  always @(q_serialized) begin
+    pulses_ended = DUT.pulses_ended;
   end
 
 

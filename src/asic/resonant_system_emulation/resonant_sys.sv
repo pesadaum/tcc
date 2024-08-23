@@ -8,16 +8,18 @@ module resonant_sys #(
   output reg                 q_serialized
 );
 
+
   initial begin
     q_serialized = 0;
   end
 
   reg [BUS_WIDTH-1:0] q_parallel  = 0;
   reg [BUS_WIDTH-1:0] n_of_pulses = 0;
-  integer i_ref_idx = 0;
+
+  reg pulses_ended = 0;
 
 
-  reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
+  reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0];
 
   initial begin: fill_measurements
     integer file  ;
@@ -33,14 +35,15 @@ module resonant_sys #(
       parsed = data.atoi();
 
       q_array[i] = parsed;
-      if (i % 10 == 0)
+      if (i % 10 == 0) begin
         $display("Reading Q = %0d at position %0d", q_array[i], i);
+      end
 
       i = i+1;
     end
     $fclose(file);
     $display("\n\nData acquire completed\n\n");
-    $display("Q array is=%p", q_array);
+    // $display("Q array is=%p", q_array);
   end
 
   always @(i_ref) q_parallel = q_array[i_ref];
@@ -49,7 +52,7 @@ module resonant_sys #(
     if (start) begin
       q_parallel  = q_array[i_ref];
       n_of_pulses = q_parallel / Q_PER_PULSE;
-      
+
       if (n_of_pulses == 0) n_of_pulses = 1;
       $display("q_parallel=%4d, i_ref=%4d, indexed_q=%4d, n_of_pulses=%4d", q_parallel, i_ref, q_array[i_ref], n_of_pulses);
     end
@@ -57,12 +60,13 @@ module resonant_sys #(
   end
 
   always @(n_of_pulses or start) begin
-    if (start) begin  
+    pulses_ended = 0;
+    if (start) begin
       repeat (n_of_pulses*2) begin
         # (2*PULSE_DURATION) q_serialized = ~q_serialized;
       end
+      pulses_ended = 1;
     end
   end
-
 
 endmodule
