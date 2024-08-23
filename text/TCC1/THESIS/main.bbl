@@ -1,0 +1,58 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.7 }
+
+\bibitem{what-is-q-takashi}
+\abntrefinfo{Ohira}{OHIRA}{2016}
+{OHIRA, T. What in the world is $\text{Q}$? -- distinguished microwave lecture.
+\emph{IEEE Microwave Magazine}, v.~17, n.~6, p. 42--49, 2016.}
+
+\bibitem{z-match-q}
+\abntrefinfo{Liao, Tan e Wang}{LIAO; TAN; WANG}{2011}
+{LIAO, R.; TAN, J.; WANG, H. Q-based design method for impedance matching
+  network considering load variation and frequency drift.
+\emph{Microelectronics Journal}, v.~42, n.~2, p. 403--408, 2011.
+ISSN 0026-2692.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0026269210002284}.}
+
+\bibitem{z-match-q-2}
+\abntrefinfo{Chung}{CHUNG}{2006}
+{CHUNG, B. Q-based design method for t network impedance matching.
+\emph{Microelectronics Journal}, v.~37, n.~9, p. 1007--1011, 2006.
+ISSN 0026-2692.
+Dispon{\'\i}vel em:
+  \url{https://www.sciencedirect.com/science/article/pii/S0026269206000310}.}
+
+\bibitem{tese-pmms}
+\abntrefinfo{Silva}{SILVA}{2017}
+{SILVA, P. M.~M. e.
+\emph{Contributions on the automatic tuning of LC networks using on- chip
+  circuits}.
+Tese (Doutorado) --- UFSC, 2017.
+Dispon{\'\i}vel em: \url{https://repositorio.ufsc.br/handle/123456789/185002}.}
+
+\bibitem{numerical-anal-burden}
+\abntrefinfo{Burden e Faires}{BURDEN; FAIRES}{2010}
+{BURDEN, R.; FAIRES, J. \emph{Numerical Analysis}. $10^{th}$. Cengage Learning,
+  2010.  (The Prindle, Weber and Schmidt Series in Mathematics).
+ISBN 9780538733519. Dispon{\'\i}vel em:
+  \url{https://books.google.com.br/books?id=zXnSxY9G2JgC}.}
+
+\bibitem{interp-video}
+\abntrefinfo{Safinaz e Kumar}{SAFINAZ; KUMAR}{2017}
+{SAFINAZ, S.; KUMAR, A. V.~R. Vlsi realization of lanczos interpolation for a
+  generic video scaling algorithm. In:  \emph{2017 International Conference on
+  Recent Advances in Electronics and Communication Technology (ICRAECT)}.
+  [S.l.: s.n.], 2017. p. 17--23.}
+
+\bibitem{interp-fft}
+\abntrefinfo{Piao et al.}{PIAO et al.}{2011}
+{PIAO, Z.-Y. et al. Interpolation circuit design for xrf systems using fft. In:
+   \emph{2011 3rd Asia Symposium on Quality Electronic Design (ASQED)}. [S.l.:
+  s.n.], 2011. p. 236--239.}
+
+\end{thebibliography}

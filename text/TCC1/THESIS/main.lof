@@ -1,0 +1,29 @@
+\babel@toc {brazil}{}\relax 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces $Q$ \textit {versus} largura de banda\relax }}{25}{figure.caption.18}%
+\contentsline {figure}{\numberline {2}{\ignorespaces $Q$ \textit {versus} eficiência\relax }}{26}{figure.caption.19}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3}{\ignorespaces Arquitetura simplificada do sistema completo\relax }}{33}{figure.caption.21}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Representação gráfica do método das secantes\relax }}{36}{figure.caption.23}%
+\contentsline {figure}{\numberline {5}{\ignorespaces $Q \times I_{REF}$ com destaque para as regiões linear e não linear\relax }}{38}{figure.caption.24}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6}{\ignorespaces Arquitetura desenvolvida para o sistema\relax }}{43}{figure.caption.25}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Diagrama de tempo da operação do bloco de medição.\relax }}{44}{figure.caption.26}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Curva $Q \times I_{REF}$ com destaque para o ponto máximo de estabilidade\relax }}{45}{figure.caption.27}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de tempo da operação do bloco de determinação de instabilidade\relax }}{46}{figure.caption.28}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Representação do bloco intertravamento ou seleção de correntes\relax }}{47}{figure.caption.29}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de tempo da operação do bloco de seleção de corrente\relax }}{47}{figure.caption.30}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Diagrama de tempo da operação do bloco de controle do $Q$.\relax }}{48}{figure.caption.31}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Arquitetura dos \textit {testbenches}\relax }}{48}{figure.caption.32}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {14}{\ignorespaces Dados teóricos e sintéticos utilizados para o teste de determinação de instabilidade\relax }}{51}{figure.caption.33}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Pontos obtidos por iteração e curva $Q \times I_{REF}$ dos métodos de busca em alto nível\relax }}{54}{figure.caption.38}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Número de iterações para convergência e valor desejado de $Q$ com alta tolerância\relax }}{55}{figure.caption.40}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Número de iterações para convergência e valor desejado de $Q$ com baixa tolerância\relax }}{56}{figure.caption.42}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Gráfico dos pontos obtidos por iteração no método da bisseção\relax }}{58}{figure.caption.45}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Número de iterações para convergência \textit {versus} $Q_d$ do método da bisseção em de HDL \textit {versus} PL\relax }}{59}{figure.caption.46}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Busca em sweep dos valores de $Q$ no método da bisseção\relax }}{60}{figure.caption.48}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
