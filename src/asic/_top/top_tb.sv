@@ -3,10 +3,10 @@
 module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
-localparam WTD_BUS_WIDTH = 4 ;
-localparam Q_PER_PULSE   = 10;
+localparam WTD_BUS_WIDTH = 3 ;
+localparam Q_PER_PULSE   = 1;
 // -- module: control
-localparam TOL = Q_PER_PULSE + 5;
+localparam TOL = Q_PER_PULSE + 1;
 // -- module: instability determination
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
@@ -92,7 +92,9 @@ initial begin
   #5 rst = 1;  #5 rst = 0;
   #5 start = 1; enable = 1;
 
-  q_desired = 210;
+
+
+  q_desired = 169;
 
   # 210;
 

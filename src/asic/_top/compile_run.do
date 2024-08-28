@@ -11,4 +11,4 @@ add wave -position insertpoint sim:/top_tb/top_inst/q_measurement_inst/*
 config wave -signalnamewidth 1
 
 radix -unsigned
-run 1000
+run 500
