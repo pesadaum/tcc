@@ -4,9 +4,9 @@ module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
 localparam WTD_BUS_WIDTH = 3 ;
-localparam Q_PER_PULSE   = 1;
+localparam Q_PER_PULSE   = 10;
 // -- module: control
-localparam TOL = Q_PER_PULSE + 1;
+localparam TOL = Q_PER_PULSE - 5;
 // -- module: instability determination
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
@@ -55,6 +55,8 @@ always @(q_serialized) begin
 end
 
 
+integer vars_file;
+
 initial begin
   // q_serialized = 0;
   start        = 0;
@@ -62,45 +64,39 @@ initial begin
   rst          = 0;
   enable       = 0;
   q_desired    = 0;
+
   // i_ref_w    = 2**BUS_WIDTH-1;
+  vars_file = $fopen("vars.txt", "w");
+  $fwrite(vars_file, "time clk rst start enable i_ref q_measured ready q_desired\n");
+  $fmonitor(vars_file, $time,, clk,, rst,, start,, enable,, i_ref_w,, top_inst.q_measured_w,, top_inst.ready_w,, q_desired);
 end
-
-
-
-//   /* Internal signals strobes*/
-//   integer a         = DUT.a        ;
-//   integer b         = DUT.b        ;
-//   integer c         = DUT.c        ;
-//   integer error     = DUT.error    ;
-//   logic   converged = DUT.converged;
-
-//   always @* begin
-//     a         = DUT.a;
-//     b         = DUT.b;
-//     c         = DUT.c;
-//     error     = DUT.error;
-//     converged = DUT.converged;
-//   end
 
 
 // CLK generator
 always
   #1 clk = ~clk;
 
+integer max_timeout = 10_000; // ps
 
 initial begin
+
+
   #5 rst = 1;  #5 rst = 0;
   #5 start = 1; enable = 1;
 
+  q_desired = 301;
 
-
-  q_desired = 169;
-
-  # 210;
-
-  // $stop();
+  while (!top_inst.q_control_inst.converged) begin
+    #1 ;
+    max_timeout--;
+    if(max_timeout == 0)
+      $stop();
+  end
+  # 100;
+  $fclose(vars_file);
+  $stop();
 end
-  
+
 
 
 
