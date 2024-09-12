@@ -3,16 +3,16 @@
 module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
-localparam WTD_BUS_WIDTH = 3 ;
-localparam Q_PER_PULSE   = 10;
+localparam WTD_BUS_WIDTH = 3;
+localparam Q_PER_PULSE   = 1;
 // -- module: control
-localparam TOL = Q_PER_PULSE - 5;
+localparam TOL = Q_PER_PULSE + 1;
 // -- module: instability determination
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
 // -- module: resonant system emulation
 localparam PULSE_DURATION = 3;
-localparam INCLUDE_Q_DROP = 1;
+localparam INCLUDE_Q_DROP = 0;
 
 wire                 q_serialized;
 reg                  start       ;
@@ -29,7 +29,8 @@ top #(
   .Q_PER_PULSE      (Q_PER_PULSE      ),
   .TOL              (TOL              ),
   .I_REF_DELTA_INSTB(I_REF_DELTA_INSTB),
-  .DELTA_Q_INSTB    (DELTA_Q_INSTB    )
+  .DELTA_Q_INSTB    (DELTA_Q_INSTB    ),
+  .INCLUDE_Q_DROP   (INCLUDE_Q_DROP   )
 ) top_inst (
   .q_serialized(q_serialized),
   .start       (start       ),
@@ -82,28 +83,18 @@ integer max_timeout = 10_000; // ps
 
 initial begin
 
-
   #5 rst = 1;  #5 rst = 0;
   #5 start = 1; enable = 1;
 
-  q_desired = 110;
+  q_desired = 120;
 
-  while (!top_inst.q_control_inst.converged) begin
-    #1 ;
-    max_timeout--;
-    if(max_timeout == 0)
-    $stop();
-  end
-  #5 rst = 1;  #5 rst = 0;
-  q_desired = 301;
-  while (!top_inst.q_control_inst.converged) begin
-    #1 ;
-    max_timeout--;
-    if(max_timeout == 0)
-      $stop();
-  end
-
-
+    while (!top_inst.q_control_inst.converged) begin
+      #1 ;
+      max_timeout--;
+      if(max_timeout == 0)
+        $stop();
+    end
+    
   # 100;
   $fclose(vars_file);
   $stop();
