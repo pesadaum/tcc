@@ -3,12 +3,13 @@ module instability_detect #(
   parameter DELTA_Q_INSTB     = 300,
   parameter I_REF_DELTA_INSTB = 50
 ) (
-  input                      clk        ,
-  input                      rst        ,
-  input                      ready      , // Flag for measurement done
-  input                      enable     ,
-  input      [BUS_WIDTH-1:0] q_measured ,
-  output reg [BUS_WIDTH-1:0] i_ref_setup  // upper bound for Q control module
+  input                      clk            ,
+  input                      rst            ,
+  input                      ready          , // Flag for measurement done
+  input                      enable         ,
+  input      [BUS_WIDTH-1:0] q_measured     ,
+  output reg [BUS_WIDTH-1:0] i_ref_setup    , // upper bound for Q control module
+  output                     setup_completed
 );
 
 
@@ -28,30 +29,21 @@ module instability_detect #(
     end
   end
 
+  assign setup_completed = ((curr_q - last_q) > DELTA_Q_INSTB) ? 1'b1 : 1'b0;
+
   always @(posedge clk) begin: main
     if (ready && enable) begin
-      if (!found) begin
-        last_q <= curr_q;
-        curr_q <= q_measured;
-      end
+      last_q <= curr_q;
+      curr_q <= q_measured;
+
+      i_ref_setup <= i_ref_setup - I_REF_DELTA_INSTB;
     end
 
   end
 
-  always @(negedge clk) begin
-    if (ready && enable) begin
-
-      if ((curr_q - last_q) > DELTA_Q_INSTB) begin
-        found = 1'b1;
-      end
-      else found = 1'b0;
-
-      if (!found)  i_ref_setup = i_ref_setup - I_REF_DELTA_INSTB;
-    end
-    // end
-  end
-
-  //TODO: Remember to implement some optimization strategy to obtain the maximum Q
+  // always @* begin
+  //   setup_completed = found;
+  // end
 
 
 endmodule

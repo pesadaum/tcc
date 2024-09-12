@@ -1,7 +1,8 @@
 module resonant_sys #(
   parameter BUS_WIDTH      = 10,
   parameter PULSE_DURATION = 3 ,
-  parameter Q_PER_PULSE    = 30
+  parameter Q_PER_PULSE    = 30,
+  parameter INCLUDE_Q_DROP = 0
 ) (
   input      [BUS_WIDTH-1:0] i_ref       ,
   input                      start       ,
@@ -18,7 +19,7 @@ module resonant_sys #(
 
   reg pulses_ended = 0;
 
-
+  integer i_ref_idx = 0;
   reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0];
 
   initial begin: fill_measurements
@@ -27,7 +28,10 @@ module resonant_sys #(
     integer i     ;
     string  data  ;
 
-    file = $fopen("./q_fit_10bits_no_drop.txt", "r");
+    if (INCLUDE_Q_DROP)
+      file = $fopen("./q_fit_10bits_with_drop.txt", "r");
+    else
+      file = $fopen("./q_fit_10bits_no_drop.txt", "r");
 
     i = 0;
     while (!$feof(file)) begin : reading_file
@@ -46,11 +50,17 @@ module resonant_sys #(
     // $display("Q array is=%p", q_array);
   end
 
-  always @(i_ref) q_parallel = q_array[i_ref];
+  // always @(i_ref) begin
+  //     i_ref_idx = i_ref;
+  //     q_parallel = q_array[i_ref_idx];
+  //     $display("i_ref is now %4d", i_ref);
+  // end
 
   always @(i_ref or start) begin
+    i_ref_idx = i_ref;
+    n_of_pulses = 0;
     if (start) begin
-      q_parallel  = q_array[i_ref];
+      q_parallel  = q_array[i_ref_idx];
       n_of_pulses = q_parallel / Q_PER_PULSE;
 
       if (n_of_pulses == 0) n_of_pulses = 1;

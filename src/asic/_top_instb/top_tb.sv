@@ -4,9 +4,9 @@ module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
 localparam WTD_BUS_WIDTH = 3 ;
-localparam Q_PER_PULSE   = 10;
+localparam Q_PER_PULSE   = 5;
 // -- module: control
-localparam TOL = Q_PER_PULSE - 5;
+localparam TOL = Q_PER_PULSE +1;
 // -- module: instability determination
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
@@ -86,33 +86,27 @@ initial begin
   #5 rst = 1;  #5 rst = 0;
   #5 start = 1; enable = 1;
 
-  q_desired = 110;
+  // q_desired = 110;
 
-  while (!top_inst.q_control_inst.converged) begin
-    #1 ;
-    max_timeout--;
-    if(max_timeout == 0)
-    $stop();
-  end
-  #5 rst = 1;  #5 rst = 0;
-  q_desired = 301;
-  while (!top_inst.q_control_inst.converged) begin
-    #1 ;
-    max_timeout--;
-    if(max_timeout == 0)
-      $stop();
-  end
+  // while (!top_inst.q_control_inst.converged) begin
+  //   #1 ;
+  //   max_timeout--;
+  //   if(max_timeout == 0)
+  //   $stop();
+  // end
+  // #5 rst = 1;  #5 rst = 0;
+  // q_desired = 301;
+  // while (!top_inst.q_control_inst.converged) begin
+  //   #1 ;
+  //   max_timeout--;
+  //   if(max_timeout == 0)
+  //     $stop();
+  // end
 
 
-  # 100;
+  # 1500;
   $fclose(vars_file);
   $stop();
 end
-
-
-
-
-
-
 
 endmodule
