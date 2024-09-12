@@ -6,6 +6,7 @@ module bisection #(
   input  wire                 clk        ,
   input  wire                 rst        ,
   input  wire                 enable     ,
+  input  wire                 setup_completed,
   input  wire [BUS_WIDTH-1:0] q_desired  ,
   input  wire [BUS_WIDTH-1:0] q_measured ,
   input  wire [BUS_WIDTH-1:0] i_ref_setup, // upper bound
@@ -16,7 +17,7 @@ module bisection #(
   reg [BUS_WIDTH-1:0] a, b, c;
 
   // flag for achieving convergence
-  reg converged = 1'b0;
+  reg converged;
 
   // should be SIGNED and BUS_WIDTH+1 bit long
   reg signed [BUS_WIDTH:0] error;
@@ -32,9 +33,7 @@ module bisection #(
       converged  <= 0;
     end
 
-    else if (!converged && ready && enable) begin
-
-      // finding midpoint
+    else if (!converged && ready && enable && setup_completed) begin
 
       if (error < TOL) converged <= 1'b1;
       // desired value is between a and c
@@ -50,12 +49,6 @@ module bisection #(
   always @* begin
     i_ref = c;
   end
-
-  // always @(enable or ready or converged) begin
-  //   // updating reference current with midpoint
-  //   if (enable && ready && !converged)
-  //     i_ref <= c;
-  // end
 
   always @* begin
     if (enable) begin

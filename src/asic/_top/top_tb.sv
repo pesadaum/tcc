@@ -11,7 +11,8 @@ localparam TOL = Q_PER_PULSE - 5;
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
 // -- module: resonant system emulation
-parameter PULSE_DURATION = 3;
+localparam PULSE_DURATION = 3;
+localparam INCLUDE_Q_DROP = 0;
 
 wire                 q_serialized;
 reg                  start       ;
@@ -28,7 +29,8 @@ top #(
   .Q_PER_PULSE      (Q_PER_PULSE      ),
   .TOL              (TOL              ),
   .I_REF_DELTA_INSTB(I_REF_DELTA_INSTB),
-  .DELTA_Q_INSTB    (DELTA_Q_INSTB    )
+  .DELTA_Q_INSTB    (DELTA_Q_INSTB    ),
+  .INCLUDE_Q_DROP   (INCLUDE_Q_DROP   )
 ) top_inst (
   .q_serialized(q_serialized),
   .start       (start       ),
@@ -42,7 +44,8 @@ top #(
 resonant_sys #(
   .BUS_WIDTH     (BUS_WIDTH     ),
   .PULSE_DURATION(PULSE_DURATION),
-  .Q_PER_PULSE   (Q_PER_PULSE   )
+  .Q_PER_PULSE   (Q_PER_PULSE   ),
+  .INCLUDE_Q_DROP   (INCLUDE_Q_DROP   )
 ) resonant_sys_inst (
   .i_ref       (i_ref_w     ),
   .start       (start       ),
