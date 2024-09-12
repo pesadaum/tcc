@@ -79,7 +79,7 @@ end
 always
   #1 clk = ~clk;
 
-integer max_timeout = 10_000; // ps
+integer max_timeout = 1000; // ps
 
 initial begin
 

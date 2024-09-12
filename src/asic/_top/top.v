@@ -56,7 +56,9 @@ q_measurement #(
 
 
 generate
-  if (INCLUDE_Q_DROP) begin : gen_drop/* In this case, we have a limited upper bound for i_ref*/
+  if (INCLUDE_Q_DROP) begin : gen_blk/* In this case, we have a limited upper bound for i_ref*/
+    wire [BUS_WIDTH-1:0] i_ref_setup_w    ;
+    wire                 setup_completed_w;
     instability_detect #(
       .BUS_WIDTH        (BUS_WIDTH        ),
       .DELTA_Q_INSTB    (DELTA_Q_INSTB    ),
@@ -71,7 +73,7 @@ generate
       .setup_completed(setup_completed_w)
     );
   end
-  else begin : gen_no_drop /* In this case, wthe upper bound for i_ref is the BUS_WIDTH chosen*/
+  else begin : gen_blk /* In this case, wthe upper bound for i_ref is the BUS_WIDTH chosen*/
     wire [BUS_WIDTH-1:0] i_ref_setup_w     = 2**BUS_WIDTH-1;
     wire                 setup_completed_w = 1'b1          ;
   end
@@ -89,15 +91,14 @@ bisection #(
   .q_desired      (q_desired        ),
   .q_measured     (q_measured_w     ),
   .i_ref          (i_ref_w          ),
-  .i_ref_setup    (i_ref_setup_w    )
+  .i_ref_setup    (gen_blk.i_ref_setup_w    )
 );
 
-
 setup_completed #(.BUS_WIDTH(BUS_WIDTH)) setup_completed_inst (
-  .i_ref      (i_ref_w          ),
-  .i_ref_setup(i_ref_setup_w    ),
-  .completed  (setup_completed_w),
-  .i_ref_out  (i_ref_out        )
+  .i_ref      (i_ref_w                  ),
+  .i_ref_setup(gen_blk.i_ref_setup_w    ),
+  .completed  (gen_blk.setup_completed_w),
+  .i_ref_out  (i_ref_out                )
 );
 
 endmodule
