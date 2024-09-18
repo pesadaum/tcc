@@ -78,8 +78,8 @@ end
 always
   #1 clk = ~clk;
 
-int unsigned values_sweep[30]     ; // Array size 10, change it as needed
-int unsigned step             = 5;
+int unsigned values_sweep[4]     ; // Array size 10, change it as needed
+int unsigned step             = 20;
 int unsigned lower_b; 
 int unsigned upper_b;
 

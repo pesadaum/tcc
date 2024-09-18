@@ -10,7 +10,8 @@ module bisection #(
   input  wire [BUS_WIDTH-1:0] q_desired      ,
   input  wire [BUS_WIDTH-1:0] q_measured     ,
   input  wire [BUS_WIDTH-1:0] i_ref_setup    , // upper bound
-  output reg  [BUS_WIDTH-1:0] i_ref
+  output reg  [BUS_WIDTH-1:0] i_ref,
+  output reg went_unstable
 );
 
   // Initial lower and upper bounds and midpoint respectively;
@@ -19,7 +20,7 @@ module bisection #(
   // flag for achieving convergence
   reg converged;
 
-  reg went_unstable;
+  // reg went_unstable;
 
   // should be SIGNED and BUS_WIDTH+1 bit long
   reg signed [BUS_WIDTH:0] error             ;

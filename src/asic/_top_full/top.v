@@ -1,4 +1,5 @@
 `include "../control/bisection.v"
+`include "../i_ref_sampling/i_ref_sampling.v"
 `include "../measure/q_measurement.v"
 `include "../setup_completed/setup_completed.v"
 `include "../resonant_system_emulation/resonant_sys.sv"
@@ -31,13 +32,14 @@ module top #(
 // --- wires
 wire ready_w                 ;
 wire setup_completed_w = 1'b1; //
+wire went_unstable_w         ; //
 
 // --- buses
 wire [BUS_WIDTH-1:0] q_measured_w                  ;
 wire [BUS_WIDTH-1:0] i_ref_setup_w = 2**BUS_WIDTH-1;
 wire [BUS_WIDTH-1:0] i_ref_w                       ;
+wire [BUS_WIDTH-1:0] i_ref_max_w                   ;
 
-// -- Lower modules Instance
 
 q_measurement #(
   .BUS_WIDTH    (BUS_WIDTH    ),
@@ -88,7 +90,18 @@ bisection #(
   .q_desired      (q_desired        ),
   .q_measured     (q_measured_w     ),
   .i_ref          (i_ref_w          ),
+  .went_unstable  (went_unstable_w  ),
   .i_ref_setup    (gen_blk.i_ref_setup_w    )
+);
+
+i_ref_sampling #(.BUS_WIDTH(BUS_WIDTH)) i_ref_sampling_inst (
+  .i_ref        (i_ref_w        ),
+  .clk          (clk            ),
+  .rst          (rst            ),
+  .enable       (enable         ),
+  .ready        (ready_w        ),
+  .went_unstable(went_unstable_w),
+  .i_ref_max    (i_ref_max_w    )
 );
 
 setup_completed #(.BUS_WIDTH(BUS_WIDTH)) setup_completed_inst (
