@@ -21,6 +21,7 @@ module q_measurement #(
       q_pulses_count = 0; // no pulses acquired
       wtd            = 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
       wtd_lock = 0;
+      q_measured = 1'bZ;
     end
   end
 
