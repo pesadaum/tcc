@@ -1,4 +1,4 @@
-module setup_completed_tb ();
+module i_ref_mux_tb ();
   localparam BUS_WIDTH = 10;
 
   logic [BUS_WIDTH-1:0] i_ref      ;
@@ -6,7 +6,7 @@ module setup_completed_tb ();
   logic [BUS_WIDTH-1:0] i_ref_out  ;
   bit               completed  ;
 
-  setup_completed DUT (.*);
+  i_ref_mux DUT (.*);
 
   initial begin : setup
     i_ref = (2**BUS_WIDTH-1)/3; // random value

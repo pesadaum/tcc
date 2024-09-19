@@ -3,7 +3,7 @@
 module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
-localparam WTD_BUS_WIDTH = 3 ;
+localparam WTD_BUS_WIDTH = 3;
 localparam Q_PER_PULSE   = 3;
 // -- module: control
 localparam TOL = 6;
@@ -79,16 +79,16 @@ always
   #1 clk = ~clk;
 
 int unsigned values_sweep[4]     ; // Array size 10, change it as needed
-int unsigned step             = 20;
-int unsigned lower_b; 
-int unsigned upper_b;
+int unsigned step            = 20;
+int unsigned lower_b             ;
+int unsigned upper_b             ;
 
 initial begin: random_q_seek_generation
   foreach (values_sweep[i]) begin
 
     lower_b = step + (step * (i+1));
     upper_b = step + (2 * step * (i+1));
-    
+
     values_sweep[i] = $urandom_range(lower_b, upper_b);
     $display("Generated random value = %d", values_sweep[i]);
   end
@@ -101,9 +101,9 @@ initial begin
   #5 rst = 1;  #5 rst = 0;
   #5 start = 1; enable = 1;
 
-  
+
   foreach (values_sweep[i]) begin : q_desired_sweep
-    max_timeout = 5_0000;
+    max_timeout = 5_000;
     q_desired = values_sweep[i];
     while (!top_inst.q_control_inst.converged) begin
       #1 ;

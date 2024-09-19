@@ -7,7 +7,6 @@ add wave -noupdate -divider <NULL>
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/enable
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/q_desired
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/q_measured
-add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/i_ref_setup
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/i_ref
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/error
 add wave -noupdate -expand -group Q_CONTROL /top_tb/top_inst/q_control_inst/error_sample_first
@@ -32,9 +31,14 @@ add wave -noupdate -expand -group I_REF_SAMPLING /top_tb/top_inst/i_ref_sampling
 add wave -noupdate -expand -group I_REF_SAMPLING /top_tb/top_inst/i_ref_sampling_inst/i_ref_smp_2
 add wave -noupdate -expand -group I_REF_SAMPLING /top_tb/top_inst/i_ref_sampling_inst/i_ref_smp_3
 add wave -noupdate -expand -group I_REF_SAMPLING /top_tb/top_inst/i_ref_sampling_inst/i_ref_smp_4
+add wave -noupdate -divider <NULL>
+add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/went_unstable
+add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref
+add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref_max
+add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {123594 ps} 0}
-quietly wave cursor active 1
+WaveRestoreCursors {{Cursor 1} {1246 ps} 1} {{Cursor 2} {3215 ps} 1} {{Cursor 3} {1270 ps} 0}
+quietly wave cursor active 3
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
@@ -46,7 +50,7 @@ configure wave -childrowmargin 2
 configure wave -gridoffset 0
 configure wave -gridperiod 1
 configure wave -griddelta 40
-configure wave -timeline 0
+configure wave -timeline 1
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {853060 ps}
+WaveRestoreZoom {1246 ps} {3215 ps}
