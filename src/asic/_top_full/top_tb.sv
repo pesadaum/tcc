@@ -1,3 +1,6 @@
+timeunit 100ps;
+
+
 `include "../resonant_system_emulation/resonant_sys.sv"
 
 module top_tb ();
@@ -74,11 +77,12 @@ initial begin : variables_log
 end
 
 
+localparam CLK_PERIOD = 1; // -> ~1GHz
 // CLK generator
 always
-  #1 clk = ~clk;
+  #CLK_PERIOD clk = ~clk;
 
-int unsigned values_sweep[4]     ; // Array size 10, change it as needed
+int unsigned values_sweep[2]     ; // Array size 10, change it as needed
 int unsigned step            = 20;
 int unsigned lower_b             ;
 int unsigned upper_b             ;
