@@ -15,19 +15,27 @@ module q_measurement #(
   reg [      BUS_WIDTH:0] q_pulses_count; // stores the quantity of digital pulses
   reg                     wtd_lock          ;
 
-  always @ (posedge rst) begin: async_setup
-    if (rst) begin
+  // always @ (posedge rst) begin: async_setup
+  //   if (rst) begin
+  //     ready          = 0; // system is not ready to forward measurement
+  //     q_pulses_count = 0; // no pulses acquired
+  //     wtd            = 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
+  //     wtd_lock = 0;
+  //     q_measured = 1'bZ;
+  //   end
+  // end
+
+
+  always @(posedge clk or posedge rst) begin
+    if (rst)
+    begin
       ready          = 0; // system is not ready to forward measurement
       q_pulses_count = 0; // no pulses acquired
       wtd            = 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
       wtd_lock = 0;
       q_measured = 1'bZ;
     end
-  end
-
-
-  always @(posedge clk) begin
-    if (!start) begin // syncronous reset with "start" flag
+    else if (!start) begin // syncronous reset with "start" flag
       ready          <= 0; // system is not ready to forward measurement
       q_pulses_count <= 0; // no pulses acquired
       wtd            <= 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
@@ -47,9 +55,6 @@ module q_measurement #(
           wtd   <= wtd -1; // if watchdog is not zero then system is still emitting pulses
         end
       end
-      // if(ready) begin
-      // q_pulses_count <= 0;
-      // end
     end
 
   end
@@ -69,9 +74,5 @@ module q_measurement #(
     q_pulses_count <= 0;
     wtd_lock <= 1;
   end
-
-  // always @(q_measured) begin
-  //   ready = 0;
-  // end
 
 endmodule

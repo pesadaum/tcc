@@ -82,7 +82,7 @@ localparam CLK_PERIOD = 1; // -> ~1GHz
 always
   #CLK_PERIOD clk = ~clk;
 
-int unsigned values_sweep[2]     ; // Array size 10, change it as needed
+int unsigned values_sweep[4]     ; // Array size 10, change it as needed
 int unsigned step            = 20;
 int unsigned lower_b             ;
 int unsigned upper_b             ;
