@@ -6,7 +6,6 @@ module bisection #(
   input  wire                 clk          ,
   input  wire                 rst          ,
   input  wire                 enable       ,
-  input  wire                 i_ref_mux    ,
   input  wire [BUS_WIDTH-1:0] q_desired    ,
   input  wire [BUS_WIDTH-1:0] q_measured   ,
   output reg  [BUS_WIDTH-1:0] i_ref        ,
@@ -18,6 +17,7 @@ module bisection #(
 
   // flag for achieving convergence
   reg converged;
+  reg [BUS_WIDTH-1:0] q_desired_reg;
 
   // reg went_unstable;
 
@@ -28,7 +28,11 @@ module bisection #(
   reg signed [BUS_WIDTH:0] error_sample_last ;
 
 
-  always @(posedge clk or posedge rst) begin: bisection
+  always @ (posedge clk) begin
+    q_desired_reg <= q_desired;
+  end
+
+  always @(posedge clk or posedge rst)
     if (rst) begin
       a             <= 0;
       b             <= (2**BUS_WIDTH)-1;
@@ -38,7 +42,7 @@ module bisection #(
       converged     <= 0;
     end
 
-    else if (!converged && ready && enable && i_ref_mux) begin
+    else if (!converged && ready && enable) begin
 
       if (error < TOL) converged <= 1'b1;
       // desired value is between a and c
@@ -48,10 +52,8 @@ module bisection #(
       // convergence achieved
       else converged <= 1'b0;
     end
-    
-    c <= (a+b)/2;
-
-  end
+    else 
+      c <= (a+b)/2;
 
   always @* begin
     i_ref = c;
@@ -65,7 +67,7 @@ module bisection #(
     end
   end
 
-  always @(posedge ready) begin
+  always @(posedge ready)
     if (enable) begin
 
       error_sample_first <= error;
@@ -78,6 +80,5 @@ module bisection #(
       end
     end
 
-  end
 
-endmodule
+  endmodule

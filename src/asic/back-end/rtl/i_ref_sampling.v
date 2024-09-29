@@ -13,7 +13,7 @@ reg [BUS_WIDTH-1:0] i_ref_smp_2;
 reg [BUS_WIDTH-1:0] i_ref_smp_3;
 reg [BUS_WIDTH-1:0] i_ref_smp_4;
 
-always @(posedge clk or posedge rst) begin
+always @(posedge clk or posedge rst)
     if (rst) begin
         i_ref_smp_1 <= 2**BUS_WIDTH-1;
         i_ref_smp_2 <= 2**BUS_WIDTH-1;
@@ -31,6 +31,5 @@ always @(posedge clk or posedge rst) begin
         i_ref_max <= i_ref_smp_4;
     end
     
-end
 
 endmodule

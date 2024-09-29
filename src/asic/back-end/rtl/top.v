@@ -1,7 +1,7 @@
-// `include "../control/bisection.v"
-// `include "../i_ref_sampling/i_ref_sampling.v"
-// `include "../measure/q_measurement.v"
-// `include "../i_ref_mux/i_ref_mux.v"
+// `include "bisection.v"
+// `include "i_ref_sampling.v"
+// `include "q_measurement.v"
+// `include "i_ref_mux.v"
 // `include "../resonant_system_emulation/resonant_sys.sv"
 
 module top #(
@@ -30,15 +30,14 @@ module top #(
 
 // -- top module connections
 // --- wires
-wire ready_w               ;
-wire i_ref_mux_w     = 1'b1; //
-wire went_unstable_w       ; //
+wire ready_w        ;
+wire i_ref_mux_w    ; //
+wire went_unstable_w; //
 
 // --- buses
-wire [BUS_WIDTH-1:0] q_measured_w                  ;
-wire [BUS_WIDTH-1:0] i_ref_setup_w = 2**BUS_WIDTH-1;
-wire [BUS_WIDTH-1:0] i_ref_w                       ;
-wire [BUS_WIDTH-1:0] i_ref_max_w                   ;
+wire [BUS_WIDTH-1:0] q_measured_w;
+wire [BUS_WIDTH-1:0] i_ref_w     ;
+wire [BUS_WIDTH-1:0] i_ref_max_w ;
 
 
 q_measurement #(
@@ -54,28 +53,18 @@ q_measurement #(
   .q_measured  (q_measured_w)
 );
 
-// generate
-//   if (INCLUDE_Q_DROP == 0) begin : gen_blk/* In this case, we have a limited upper bound for i_ref*/
-//     wire i_ref_mux_w;
-//   end
-//   else begin : gen_blk /* In this case, wthe upper bound for i_ref is the BUS_WIDTH chosen*/
-//     wire i_ref_mux_w = 1'b1;
-//   end
-// endgenerate
-
 bisection #(
   .BUS_WIDTH(BUS_WIDTH),
   .TOL      (TOL      )
 ) q_control_inst (
-  .clk            (clk              ),
-  .rst            (rst              ),
-  .enable         (enable           ),
-  .ready          (ready_w          ),
-  .i_ref_mux      (i_ref_mux_w      ),
-  .q_desired      (q_desired        ),
-  .q_measured     (q_measured_w     ),
-  .i_ref          (i_ref_w          ),
-  .went_unstable  (went_unstable_w  )
+  .clk          (clk            ),
+  .rst          (rst            ),
+  .enable       (enable         ),
+  .ready        (ready_w        ),
+  .q_desired    (q_desired      ),
+  .q_measured   (q_measured_w   ),
+  .i_ref        (i_ref_w        ),
+  .went_unstable(went_unstable_w)
 );
 
 i_ref_sampling #(.BUS_WIDTH(BUS_WIDTH)) i_ref_sampling_inst (

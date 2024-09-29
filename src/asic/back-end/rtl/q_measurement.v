@@ -26,14 +26,14 @@ module q_measurement #(
   // end
 
 
-  always @(posedge clk or posedge rst) begin
+  always @(posedge clk or posedge rst)
     if (rst)
     begin
-      ready          = 0; // system is not ready to forward measurement
-      q_pulses_count = 0; // no pulses acquired
-      wtd            = 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
-      wtd_lock = 0;
-      q_measured = 1'bZ;
+      ready           <= 0; // system is not ready to forward measurement
+      q_pulses_count  <= 0; // no pulses acquired
+      wtd             <= 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
+      wtd_lock        <= 0;
+      q_measured      <= 1'bZ;
     end
     else if (!start) begin // syncronous reset with "start" flag
       ready          <= 0; // system is not ready to forward measurement
@@ -57,22 +57,26 @@ module q_measurement #(
       end
     end
 
-  end
-
-  always @(posedge q_serialized) begin
-    wtd            <= 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
-    q_pulses_count <= q_pulses_count +1; // number of pulses is incremented
-    // ready          <= 0 ;
-    wtd_lock <= 0;
-  end
+  always @(posedge q_serialized or posedge ready) 
+    if (ready) begin
+      q_pulses_count <= 0;
+      wtd_lock <= 1;
+    end
+    else begin
+      wtd            <= 2**WTD_BUS_WIDTH-1; // watchdog counter is set to maximum value
+      q_pulses_count <= q_pulses_count +1; // number of pulses is incremented
+      // ready          <= 0 ;
+      wtd_lock <= 0;
+    end
+  
 
   always @(negedge q_serialized) begin
     ready <= 0;
   end
 
-  always @(posedge ready) begin
-    q_pulses_count <= 0;
-    wtd_lock <= 1;
-  end
+  // always @(posedge ready) begin
+  //   q_pulses_count <= 0;
+  //   wtd_lock <= 1;
+  // end
 
 endmodule
