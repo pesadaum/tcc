@@ -4,8 +4,11 @@ set_db init_power_nets VDD
 set_db init_ground_nets VSS
 set_db init_mmmc_files  MMMC.view
 
+set_db design_flow_effort extreme
+
 # uncomment this if NOT using an IO definition file
-# set_db place_detail_io_pin_blockage true
+set_db place_global_place_io_pins TRUE
+set_db place_detail_io_pin_blockage true
 # uncomment this if NOT using an IO definition file
 
 read_mmmc MMMC.view
@@ -18,10 +21,10 @@ connect_global_net VDD -type pg_pin -pin_base_name VDD -inst_base_name *
 connect_global_net VSS -type pg_pin -pin_base_name VSS -inst_base_name *
 
 #Create Floorplan
-create_floorplan -core_margins_by die -site CoreSite -core_density_size 1 0.5 4.0 4.0 4.0 4.0
+create_floorplan -core_margins_by die -site CoreSite -core_density_size 1 0.9 4.0 4.0 4.0 4.0
 
 #Pin Assignment
-read_io_file top.newpinloc.io
+# read_io_file top.newpinloc.io
 
 #Power Planning
 set_db add_rings_skip_shared_inner_ring none ; set_db add_rings_avoid_short 1 ; set_db add_rings_ignore_rows 0 ; set_db add_rings_extend_over_row 0
@@ -33,7 +36,7 @@ add_rings -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -fol
 add_stripes -block_ring_top_layer_limit Metal11 -max_same_layer_jog_length 0.44 -pad_core_ring_bottom_layer_limit Metal9 -set_to_set_distance 5 -pad_core_ring_top_layer_limit Metal11 -spacing 0.4 -merge_stripes_value 0.6 -layer Metal10 -block_ring_bottom_layer_limit Metal9 -width 0.3 -nets {VDD VSS} 
 
 # Create Power Rails with Special Route
-route_special -connect core_pin -layer_change_range { Metal1(1) Metal11(11) } -block_pin_target nearest_target -core_pin_target first_after_row_end -allow_jogging 1 -crossover_via_layer_range { Metal1(1) Metal11(11) } -nets { VDD VSS } -allow_layer_change 1 -target_via_layer_range { Metal1(1) Metal11(11) }
+route_special -connect core_pin -layer_change_range { Metal11(1) Metal11(11) } -block_pin_target nearest_target -core_pin_target first_after_row_end -allow_jogging 1 -crossover_via_layer_range { Metal1(1) Metal11(11) } -nets { VDD VSS } -allow_layer_change 1 -target_via_layer_range { Metal1(1) Metal11(11) }
 # Read the Scan DEF
 set_db reorder_scan_comp_logic true
 # Run Placement Optimization
