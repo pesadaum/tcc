@@ -1,0 +1,63 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {part}{\partnumberline {I}\MakeTextUppercase {Introdução}}{23}{part.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introdução}}{25}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contexto e justificativa}{25}{section.1.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Objetivos}}{29}{chapter.2}%
+\contentsline {part}{\partnumberline {II}\MakeTextUppercase {Desenvolvimento}}{31}{part.2}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Referencial teórico}}{33}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Interface com o sistema completo e arquitetura simplificada}{33}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Métodos numéricos para aproximações de funções não-lineares}{34}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Método da bisseção}{34}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Método das secantes}{36}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Método das secantes com seleção de intervalo}{37}{subsection.3.2.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Metodologia}}{39}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Adaptação de métodos numéricos para busca de valores}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Método da bisecção}{39}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Método das secantes}{40}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Método das secantes com seleção de intervalo}{42}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Arquitetura do sistema}{42}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Medição do $Q$: $Q$ \textit {measurement}}{44}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Determinação de limite de instabilidade: \textit {Instability determination}}{45}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Seleção de correntes: \textit {Setup completed}}{46}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Controle do Q: $Q$ \textit {Control}}{48}{subsection.4.2.4}%
+\contentsline {section}{\numberline {4.3}Arquitetura de testes do sistema}{48}{section.4.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Resultados e análise}}{51}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Resultados do bloco de determinação do limite de estabilidade}{51}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Resultados do bloco de controle do $Q$}{52}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Algoritmos em alto nível}{52}{subsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1.1}Cenário sintético com baixa tolerância}{56}{subsubsection.5.2.1.1}%
+\contentsline {subsection}{\numberline {5.2.2}Algoritmos em HDL}{57}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Resultados do método da bisseção}{58}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Resultados do método das secantes}{60}{subsection.5.2.4}%
+\contentsline {part}{\partnumberline {III}\MakeTextUppercase {Conclusões}}{63}{part.3}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Problemas encontrados e melhorias futuras}}{65}{chapter.6}%
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\MakeTextUppercase {Refer\^encias}}{67}{section*.54}%
+\cftinsert {AAA}
+\renewcommand *{\cftappendixname }{ANEXO \space }
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\contentsline {part}{\uppercase {Anexos}}{69}{section*.55}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase {Códigos em linguagem de programação de propósito geral}}{71}{appendix.anexochapback.1}%
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase {Códigos em linguagem de descrição de hardware}}{75}{appendix.anexochapback.2}%

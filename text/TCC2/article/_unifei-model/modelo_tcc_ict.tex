@@ -1,0 +1,235 @@
+\documentclass[conference,harvard,brazil,english]{icttcc}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{icomma}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{tikz-cd}
+\DeclareGraphicsExtensions{.eps,.pdf}
+\usepackage{listings}
+\usepackage{ae}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage{commath}
+\usepackage{authorbiography}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{amssymb,amsfonts}
+\usepackage{amsbsy}
+\usepackage{setspace}
+\usepackage{hyphenat}
+\usepackage{environ}
+\usepackage{calrsfs}
+\usepackage{indentfirst}
+\usepackage{longtable}
+\usepackage{color}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%\bibliographystyle{harvard}
+\newtheorem{thm}{Teorema}
+\newtheorem{lem}{Lema}
+
+\NewEnviron{myequation}{%
+	\begin{equation}
+	\scalebox{1.3}{$\BODY$}
+	\end{equation}}
+\NewEnviron{myequation2}{%
+	\begin{equation}
+	\scalebox{0.9}{$\BODY$}
+	\end{equation}}
+\makeatletter
+\def\verbatim@font{\normalfont\ttfamily\footnotesize}
+\makeatother
+% --------------------------------------------------
+
+\begin{document}
+\sloppy
+% CABEÇALHO
+
+
+\title{MODELO DE TCC 2 FORMATO ARTIGO - ICT}
+
+\author{Theodomiro Santiago}{theodomiro@unifei.edu.br}
+\address{Universidade Federal de Itajubá - \textit{Campus} de Itabira\\ Rua Irmã Ivone Drumond, 200 - Distrito Industrial II - 35903-087\\ Itabira, Minas Gerais, Brasil}
+
+\twocolumn[
+
+% Cabeçalho Estilo Unifei
+\flushleft
+\begin{minipage}{2cm}
+\includegraphics{Figuras/unifei.png}
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{tabular}{ccccc}
+ & & & & \large \textsc{Trabalho de Conclusão de Curso}  \\
+ & & & & \large \textsc{Universidade Federal de Itajubá - \textit{Campus} de Itabira} \\
+  & & & & \large \textsc{Instituto de Ciências Tecnológicas} \\
+ & & & & \large \textbf{\textsc{ENGENHARIA DE ...}}  
+\end{tabular}
+\end{minipage}
+
+\vspace{1.5cm}
+
+\maketitle
+
+\selectlanguage{english}
+\begin{abstract}
+Write your abstract here. Follow the instructions bellow.
+
+\end{abstract}
+
+\keywords{Keyword list, separated by colons.}
+
+\selectlanguage{brazil}
+\begin{abstract}
+Escreva aqui o resumo de seu trabalho. Redija-o em português, em um único parágrafo, e com tamanho adequado. O resumo deve conter as informações relevantes do seu trabalho, a proposta, a metodologia, os resultados e a relevância. Lembrando ainda que não se deve realizar citações no resumo.
+\end{abstract}
+
+\keywords {Lista de palavras-chave, separadas por vírgulas}
+]
+
+\selectlanguage{brazil}
+
+\section{Introdução}
+
+A Introdução deve informar ao leitor como o problema está sendo estudado e por que ele é relevante; trabalhos já desenvolvidos sobre o tema; qual é proposta do trabalho que se apresenta; e, finalmente, a estrutura do artigo.
+
+\section{Recomendações}
+
+Nas seções seguintes à Introdução, apresentam-se:
+
+\begin{enumerate}[label=(\alph*)]
+\item A revisão bibliográfica, na qual são apresentados os conhecimentos básicos para o entendimento do trabalho desenvolvido;
+
+\item Metodologia proposta ou desenvolvimento do estudo que está sendo realizado;
+
+\item Resultados obtidos com sua pesquisa ou técnica;
+
+\item Conclusão.
+\end{enumerate} 
+
+
+
+\subsection{Elementos textuais}
+Nesta subseção são apresentados os elementos comumente empregados em trabalhos científicos e como eles devem ser apresentados nos TCCs dos cursos do ICT.
+
+\subsubsection {Figuras e Tabelas}
+Deve-se identificar cada figura e tabela por um número sequencial. Lembre sempre de colocar as unidades nos eixos dos gráficos e nas tabelas.
+
+Antes de entregar o seu artigo, imprima-o em papel e certifique-se que o tamanho das figuras esteja adequado e, em especial, que o texto informativo esteja legível.
+
+Um exemplo de tabela é apresentado na Tabela \ref{tab_tabela_1}.
+
+\begin{table}[H]
+	\caption{Simulação de Monte Carlo para o sistema usando a otimização não linear}
+	{	
+		\begin{tabular}	{|c|c|c|}
+			\hline	
+			Modelo & EQM (Médio) & EQM (desvio padrão)  \\ 
+			\hline
+			1 & $0,3318$ & $0,0382$  \\ \hline
+			2 & $0,3656$ & $0,0518$  \\
+			\hline
+		\end{tabular}
+	}
+	\label{tab_tabela_1}
+\end{table}
+
+Um exemplo de figura é apresentado na Figura \ref{fig:fig_1}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width = \linewidth]{Figuras/figura.eps}
+	\caption{Magnetização em função do campo aplicado}
+	\label{fig:fig_1}
+\end{figure}
+
+
+
+\subsubsection {Equações}
+Equações devem estar sempre numeradas na parte direita.
+
+\begin{equation} \label{cmeans_pert}
+\mu_{ik}=\frac{1}{\sum\limits_{j=1}^{c}{\frac{||x_k-v_i||}{||x_k-v_j||}}^{2/(m-1)}}
+\end{equation}
+
+\subsection{Citações}
+
+As citações seguem o estilo autor / ano. Por exemplo: ``o resumo deste artigo é um trecho do livro de Ljung (1999)''. Quando um trecho é referente a mais de uma fonte, elas devem aparecer de forma cronológica.
+
+Todas as referências citadas ao longo do texto devem ser reunidas e detalhadas ao fim do manuscrito, devem também ser arranjadas alfabeticamente pelo primeiro autor.
+
+IMPORTANTE: Todas as referências detalhadas no fim do texto devem aparecer em algum ponto do corpo do texto e todas as referências citadas no texto devem estar detalhadas no final do manuscrito.
+Exemplos:
+
+
+\begin{itemize}
+\item Quando se deseja simplesmente citar um trabalho, basta fazê-lo  \cite{gustafson};
+
+\item Citações em linha, como \cite{marquardt1963}, também são possíveis;
+
+\item Pode-se citar múltiplos trabalhos simultaneamente \cite{ljung1999,gustafson}.
+
+\end{itemize}
+
+\subsection{Apêndices e anexos}
+Os apêndices e anexos devem aparecer no fim do documento, em páginas separadas e discriminadas como tal, como por exemplo o Apêndice \ref{ape:apendiceA}.
+
+\section{Resultados}
+ Escreva aqui os resultados obtidos com o trabalho.
+
+
+\section{Conclusões} 
+
+Escreva aqui as conclusões do presente trabalho e as propostas para trabalhos futuros.
+
+%AGRADECIMENTOS
+
+\section*{Agradecimentos}
+Mencione aqui os agradecimentos às agências de fomento, organizações e/ou profissionais que colaboraram com o trabalho.
+
+
+% BIBLIOGRAFIA
+
+\bibliography{bibliografia}
+
+\authorbiography[wraplines=12,imagewidth=3cm,imagepos=l]{Figuras/autor.jpg}{Teodomiro Santiago}{
+	Teodomiro Carneiro Santiago
+Nascido em Itajubá (MG) em 1883. Bacharelou em São Paulo em Ciências Jurídicas e Sociais pela Faculdade de Direito em 1906. De volta a Minas Gerais, tornou-se industrial e exerceu o magistério e a advocacia. Entre 1909 e 1910, foi secretário particular de Venceslau Brás. Em 1913 fundou o Instituto Eletrotécnico e Mecânico de Itajubá, que hoje é a Unifei.} 
+
+\vspace{-0.5cm}
+\authorbiography[wraplines=12,imagewidth=3cm,imagepos=l]{Figuras/autor1.jpg}{Albert Einstein}{
+	Nascido em Ulm (Baden-Württemberg) em 1879, formou-se em física pela Escola Politécnica de Zurique em 1900 e obteve seu título de doutor também pela Universidade de Zurique em 1905. Suas áreas de interesse são vastas: física quântica, teoria da relatividade, cosmologia, entre outras.} %
+\Authorbiography
+
+\newpage
+
+\onecolumn
+
+\appendix
+
+\section{Apêndice} \label{ape:apendiceA}
+
+Insira aqui o Apêndice \ref{ape:apendiceA}.
+
+Tanto o Anexo quanto o Apêndice servem para complementar a argumentação do autor do trabalho. A diferença entre Anexo e Apêndice é que o Anexo é um texto ou documento não elaborado pelo autor do trabalho, mas que ajuda a fundamentar e comprovar o embasamento acadêmico (Por exemplo, TCCs, Teses, Leis, normas, manuais de equipamentos, etc).
+
+Já o Apêndice é um texto ou documento elaborado pelo próprio autor, mas que foge da proposta principal do trabalho apesar de ter auxiliado de alguma forma no seu desenvolvimento (Por exemplo, se foram realizadas entrevistas, talvez um relatório tenha sido produzido ou um roteiro de perguntas).
+
+
+\end{document}

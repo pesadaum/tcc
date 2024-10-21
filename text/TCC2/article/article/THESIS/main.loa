@@ -1,0 +1,7 @@
+\def \figurename {Algoritmo}
+\contentsline {algorithm}{\numberline {1}{\ignorespaces Método clássico da bisseção\relax }}{35}{algorithm.1}%
+\contentsline {algorithm}{\numberline {2}{\ignorespaces Método clássico das secantes\relax }}{37}{algorithm.2}%
+\contentsline {algorithm}{\numberline {3}{\ignorespaces Método adaptado da bisseção\relax }}{40}{algorithm.3}%
+\contentsline {algorithm}{\numberline {4}{\ignorespaces Método adaptado das secantes\relax }}{41}{algorithm.4}%
+\contentsline {algorithm}{\numberline {5}{\ignorespaces Método adaptado das secantes com seleção de intervalo desenvolvido\relax }}{42}{algorithm.5}%
+\contentsline {algorithm}{\numberline {6}{\ignorespaces Algoritmo de determinação de instabilidade\relax }}{46}{algorithm.6}%
