@@ -1,0 +1,104 @@
+\documentclass[
+	% -- opções da classe memoir --
+	article,			% indica que é um artigo acadêmico
+	11pt,				% tamanho da fonte
+	oneside,			% para impressão apenas no recto. Oposto a twoside
+	a4paper,			% tamanho do papel. 
+	twocolumn,
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE % títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	sumario=tradicional
+	]{abntex2}
+
+\usepackage{cmap}	
+\usepackage{lmodern}	
+\usepackage[T1]{fontenc}	
+\usepackage[utf8]{inputenc}		
+\usepackage{lastpage}		
+\usepackage{color}	
+\usepackage{graphicx}	
+\usepackage{units}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[num]{abntex2cite}
+\usepackage{bold-extra}
+\usepackage{eso-pic}
+\usepackage{indentfirst, microtype}		
+\usepackage{caption,subcaption,float, dcolumn}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{enumerate}
+\usepackage{titlesec}
+
+\usepackage{multirow}
+
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\usepackage{svg}
+
+\usepackage{listings}
+\usepackage[newfloat]{minted}
+\usemintedstyle{friendly}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Código}
+
+%
+
+\newcommand{\algorithmautorefname}{Algoritmo}
+\citebrackets[]
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+\definecolor{blue}{rgb}{0, .226, .437}
+\makeatletter
+\hypersetup{
+pdftitle={Circuito digital CMOS para controle do fator de qualidade de um filtro passa-banda ativo sintonizável}, 
+		pdfauthor={Alef de Oliveira Santos},
+    	pdfsubject={TCC2},
+	    pdfcreator={LaTeX with abnTeX2},
+        pdfkeywords={Fator Q. Controle digital. Métodos numéricos. RTL. Verilog.},
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}  
+\makeindex
+
+
+
+\setkeys{Gin}{width=\textwidth}
+
+\renewcommand{\listalgorithmname}{Lista de algoritmos}
+
+\titleformat{\chapter}     {\normalfont\normalsize\bfseries}{\thechapter}     				 {1em}{}
+\titleformat{\section}     {\normalfont\normalsize}{\thechapter.\thesection}     			 {1em}{}
+\titleformat{\subsection}  {\normalfont\normalsize}{\thechapter.\thesection.\thesubsection}  {1em}{}
+
+
+\setlrmarginsandblock{1.5cm}{1.5cm}{*}
+\setulmarginsandblock{1.5cm}{2.5cm}{*}
+\checkandfixthelayout

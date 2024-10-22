@@ -24,7 +24,7 @@ function compileLaTeX(){
 #    	 makeglossaries $1
 #        pdflatex -interaction=nonstopmode $1
 #        pdflatex -interaction=nonstopmode $1
-		latexmk -pdf -time -silent $1
+		latexmk -pdf -time -silent -shell-escape $1
 }
 
 # initialize directories
