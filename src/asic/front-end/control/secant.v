@@ -8,6 +8,7 @@ module secant #(
   input  wire [BUS_WIDTH-1:0] q_desired  ,
   input  wire [BUS_WIDTH-1:0] q_measured ,
   input  wire [BUS_WIDTH-1:0] i_ref_setup,
+  output reg went_unstable,
   output reg  [BUS_WIDTH-1:0] i_ref
 );
 
