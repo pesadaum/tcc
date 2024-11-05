@@ -62,6 +62,8 @@ module control_tb_new ();
 
   reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
 
+  real my_real = 3.14159;
+
   initial begin: fill_measurements
     integer file  ;
     integer parsed;
@@ -119,6 +121,7 @@ module control_tb_new ();
     #5 rst = 0; ready = 1;
     #50;
 
+    $display(my_real);
     $stop();
 
   end

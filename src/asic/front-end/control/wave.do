@@ -20,8 +20,9 @@ add wave -noupdate /control_tb_new/DUT/f_c
 add wave -noupdate /control_tb_new/DUT/slope
 add wave -noupdate /control_tb_new/DUT/converged
 add wave -noupdate /control_tb_new/DUT/error
+add wave -noupdate /control_tb_new/my_real
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {17 ps} 0}
+WaveRestoreCursors {{Cursor 1} {10 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

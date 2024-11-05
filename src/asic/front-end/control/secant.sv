@@ -17,10 +17,12 @@ module secant #(
   // Initial lower and upper bounds and midpoint respectively;
   reg signed [BUS_WIDTH:0] a, b, c;
 
-  reg signed [BUS_WIDTH:0] f_a, f_b, f_c, slope;
+  // reg signed [BUS_WIDTH:0] f_a, f_b, f_c;
 
+  real f_a, f_b, f_c;
 
-  // real slope;
+  real slope = -1;
+
   // flag for achieving convergence
   reg converged;
 
@@ -38,13 +40,13 @@ module secant #(
     // b = 900;
     // c = 0;
     // q_desired = 258;
-    c = 826;
+    // c = 826;
     // f_c = 119;
     converged = 1'b0;
   end
 
   always @(posedge clk) begin
-    if (ready) state = state+1;
+    if (ready) state <= state + 1;
 
     if (error < TOL) converged <= 1'b1;
     else converged <= 1'b0;
@@ -65,11 +67,14 @@ module secant #(
       end
 
       2 : begin
-        i_ref <= c;
+        // i_ref <= c;
         f_b   <= q_measured;
+
+
       end
 
       3 : begin
+        i_ref <= c;
         f_c <= q_measured;
 
         // slope <= (10 *(f_b - f_a)/ (b-a)) * 10;
@@ -100,12 +105,13 @@ module secant #(
   always @(state) begin
     if (state == 3) begin
 
-      slope = (f_b - f_a)/ (b-a);
-      $display("slope=%d", slope);
+      $display("slope=%f, f_b=%f, f_a=%f, b=%f, a=%f ", slope, f_b, f_a, b, a);
+      slope = (f_b - f_a) / ((b-a)/2**BUS_WIDTH-1);
 
-      if (!slope) begin
+      if (slope == 0) begin
         slope = (10 *(f_b - f_a)/ (b-a)) * 100;
-        $display("slope=%d (iszer0)", slope);
+        $display("slope=%f [float]", slope);
+
         c     = (b - (f_b - q_desired));
 
       end

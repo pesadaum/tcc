@@ -56,6 +56,61 @@ def secant(a: float,
 
     return c
 
+def secant_full(
+           a: float,
+           b: float,
+           SEEK: int,
+           TOL: float,
+           f: callable,
+           MAX_ITER: int,
+           debug=False):
+    """
+    # Description
+    Computes SEEK = f(x) for a given function and a given set of values using a modified version of the secant method
+
+    # Parameters
+    @param a: initial lower bound
+    @param b: initial upper bound
+    @param SEEK: Value to be found
+    @param TOL: Error tolerance
+    @param f: The function that best describes the system 
+    @param MAX_ITER: Maximum number of operations allowed before convergence
+    @param debug: Flag for exporting the results, returns a pandas dataframe with all variables described in the classical version of the algorithm
+    """
+
+    converged = False
+    iter = 1
+
+    r_iter = []
+
+    while (not converged and iter <= MAX_ITER):
+        slope = (f(b) - f(a))/(b - a)
+        c = b - (f(b) - SEEK)/slope
+
+        if debug:
+            r_dict = dict()
+            r_dict['iter'] = iter
+            r_dict['a'] = a
+            r_dict['b'] = b
+            r_dict['c'] = c
+            r_dict['f(a)'] = f(a)
+            r_dict['f(b)'] = f(b)
+            r_dict['f(c)'] = f(c)
+            r_dict['slope'] = slope
+            r_dict['error'] = f(c) - SEEK
+
+            r_iter.append(r_dict)
+
+        a, b = b, c
+
+        converged = not (np.abs(f(c) - SEEK) > TOL)
+        iter += 1
+
+    if debug:
+        return pd.DataFrame(r_iter)
+
+    return c
+
 
 def mod_secant(a: float,
                b: float,
