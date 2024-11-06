@@ -12,10 +12,12 @@ module secant #(
   output reg  [BUS_WIDTH-1:0] i_ref
 );
 
-  reg [3-1:0] state;
+  reg [2:0] state;
 
   // Initial lower and upper bounds and midpoint respectively;
-  reg signed [BUS_WIDTH:0] a, b, c;
+  reg [BUS_WIDTH-1:0] a, b, c;
+
+  real a_f, b_f, c_f;
 
   // reg signed [BUS_WIDTH:0] f_a, f_b, f_c;
 
@@ -32,6 +34,10 @@ module secant #(
 
   // should be SIGNED and BUS_WIDTH+1 bit long
   reg signed [BUS_WIDTH:0] error;
+
+  assign a_f = a;
+  assign b_f = b;
+  assign c_f = c;
 
   initial begin
     state = -1;
@@ -74,52 +80,53 @@ module secant #(
       end
 
       3 : begin
-        i_ref <= c;
-        f_c <= q_measured;
-
-        // slope <= (10 *(f_b - f_a)/ (b-a)) * 10;
-        // c <= (b - (f_b - q_desired) / slope);
-        // c <= slope;
-
-        // c <= 1023 - (314 - 258)/((314 - 22)/(1023));
-        // c <= 1023 - (314 - 258)*1/0.28;
-
-        // c   <= (a+b)/2;
-        // c <= 10/3;
-
-        // a <= b;
-        // b <= c;
+        
+        slope <= (f_b - f_a) / ((b_f - a_f ) / (2**BUS_WIDTH-2));
 
       end
 
       4 : begin
+        $display("===============calculations inside state 4 ====================");
+     
+        $display(b_f - (2**BUS_WIDTH-1 * ((f_b - q_desired) / slope)));
+        c <= b_f - (1023 * (f_b - q_desired) / slope);
+      end
+
+      5 : begin
+        i_ref <= c;
+
+      end
+
+      6 : begin
+       
         // $display(a,, b,, c,, f_a,, f_b,, f_c,,slope ,, q_desired,,);
         a     <= b;
         b     <= c;
         state <= -1;
+        f_c   <= q_measured;
       end
     endcase
 
   end
 
-  always @(state) begin
-    if (state == 3) begin
+  // always @(state) begin
+  //   if (state == 3) begin
 
-      $display("slope=%f, f_b=%f, f_a=%f, b=%f, a=%f ", slope, f_b, f_a, b, a);
-      slope = (f_b - f_a) / ((b-a)/2**BUS_WIDTH-1);
+  //     $display("slope=%f, f_b=%f, f_a=%f, b=%f, a=%f ", slope, f_b, f_a, b, a);
+  //     slope = (f_b - f_a) / ((b-a)/1022);
 
-      if (slope == 0) begin
-        slope = (10 *(f_b - f_a)/ (b-a)) * 100;
-        $display("slope=%f [float]", slope);
+  //     if (slope == 0) begin
+  //       slope = (10 *(f_b - f_a)/ (b-a)) * 100;
+  //       $display("slope=%f [float]", slope);
 
-        c     = (b - (f_b - q_desired));
+  //       c     = (b - (f_b - q_desired));
 
-      end
-      else
-        c = b - (f_b - q_desired) / slope;
-    end
-    // c <= slope;
-  end
+  //     end
+  //     else
+  //       c = (b/1000) - (f_b - q_desired) / slope;
+  //   end
+  //   // c <= slope;
+  // end
 
   always @* begin
     // calculating error (\epsilon) and taking the absolute value
