@@ -54,7 +54,7 @@ module control_tb_new ();
     clk         =          0;
     ready       =          0;
     rst         =          0;
-    q_desired   =        110;
+    q_desired   =        65;
     i_ref_mux   = 2**BUS_WIDTH-1;
     enable      = 1;
     went_unstable = 0;
@@ -114,14 +114,13 @@ module control_tb_new ();
 
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
-    # 50;
+    # (50 * 6);
 
     q_desired = 40;
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
     #50;
 
-    $display(my_real);
     $stop();
 
   end

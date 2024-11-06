@@ -73,9 +73,7 @@ module secant #(
       end
 
       2 : begin
-        // i_ref <= c;
         f_b   <= q_measured;
-
 
       end
 
@@ -86,10 +84,8 @@ module secant #(
       end
 
       4 : begin
-        $display("===============calculations inside state 4 ====================");
-     
-        $display(b_f - (2**BUS_WIDTH-1 * ((f_b - q_desired) / slope)));
         c <= b_f - (1023 * (f_b - q_desired) / slope);
+
       end
 
       5 : begin
@@ -102,7 +98,6 @@ module secant #(
         // $display(a,, b,, c,, f_a,, f_b,, f_c,,slope ,, q_desired,,);
         a     <= b;
         b     <= c;
-        state <= -1;
         f_c   <= q_measured;
       end
     endcase
