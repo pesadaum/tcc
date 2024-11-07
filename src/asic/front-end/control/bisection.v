@@ -6,7 +6,6 @@ module bisection #(
   input  wire                 clk            ,
   input  wire                 rst            ,
   input  wire                 enable         ,
-  input  wire                 i_ref_mux,
   input  wire [BUS_WIDTH-1:0] q_desired      ,
   input  wire [BUS_WIDTH-1:0] q_measured     ,
   output reg  [BUS_WIDTH-1:0] i_ref,
@@ -39,7 +38,7 @@ module bisection #(
       converged     <= 0;
     end
 
-    else if (!converged && ready && enable && i_ref_mux) begin
+    else if (!converged && ready && enable) begin
 
       if (error < TOL) converged <= 1'b1;
       // desired value is between a and c
