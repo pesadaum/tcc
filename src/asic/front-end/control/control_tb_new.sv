@@ -49,20 +49,16 @@ module control_tb_new ();
     .went_unstable(went_unstable)
   );
 
-
   initial begin
     clk         =          0;
     ready       =          0;
     rst         =          0;
-    q_desired   =        65;
     i_ref_mux   = 2**BUS_WIDTH-1;
     enable      = 1;
     went_unstable = 0;
   end
 
   reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
-
-  real my_real = 3.14159;
 
   initial begin: fill_measurements
     integer file  ;
@@ -111,15 +107,26 @@ module control_tb_new ();
 
   initial begin
     // # 5 start = 1'b1; // wait 5 units to set high impedance
+    q_desired = 110;
 
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
-    # (50 * 6);
+    # (50 * 3);
 
     q_desired = 40;
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
-    #50;
+    # (50 * 3);
+
+    q_desired = 220;
+    #5 rst = 1; ready = 0;
+    #5 rst = 0; ready = 1;
+    # (50 * 7);
+
+    q_desired = 96;
+    #5 rst = 1; ready = 0;
+    #5 rst = 0; ready = 1;
+    # (50 * 3);
 
     $stop();
 
