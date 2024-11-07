@@ -2,14 +2,14 @@ module secant #(
   parameter BUS_WIDTH = 10,
   parameter TOL       = 30
 ) (
-  input  wire                 ready          , // flag for measurement is ready
-  input  wire                 clk            ,
-  input  wire                 rst            ,
-  input  wire                 enable         ,
-  input  wire [BUS_WIDTH-1:0] q_desired      ,
-  input  wire [BUS_WIDTH-1:0] q_measured     ,
-  output reg  [BUS_WIDTH-1:0] i_ref,
-  output reg went_unstable
+  input  wire                 ready        , // flag for measurement is ready
+  input  wire                 clk          ,
+  input  wire                 rst          ,
+  input  wire                 enable       ,
+  input  wire [BUS_WIDTH-1:0] q_desired    ,
+  input  wire [BUS_WIDTH-1:0] q_measured   ,
+  output reg  [BUS_WIDTH-1:0] i_ref        ,
+  output reg                  went_unstable
 );
 
   reg [2:0] state;
@@ -51,12 +51,20 @@ module secant #(
 
   assign went_unstable = 1'b0;
 
+  reg rdy_reg;
+
 
 
   always @(posedge clk or posedge rst) begin
 
-    if (error < TOL) converged <= 1'b1;
-    else converged <= 1'b0;
+    rdy_reg <= ready;
+
+
+    if (ready && enable) begin
+
+      if (error < TOL) converged <= 1'b1;
+      else converged <= 1'b0;
+    end
 
 
     if (rst) begin
@@ -70,65 +78,62 @@ module secant #(
     end
 
     else begin
-      if (ready) begin
+      if (enable) begin
 
         case (state)
           SEND_I_REF_A :
             begin
               i_ref <= a;
-
-              state <= SEND_I_REF_B;
+              state <= ready ? SEND_I_REF_B : SEND_I_REF_A;
             end
 
           SEND_I_REF_B :
             begin
               i_ref <= b;
-              f_a   <= q_measured;
+              
+              if (rdy_reg) begin
+                f_a   <= q_measured;
+                state <= GET_FB;
+              end
 
-              state <= GET_FB;
             end
 
           GET_FB :
             begin
-              f_b   <= q_measured;
-              state <= CALC_SLOPE;
-
+                f_b   <= q_measured;
+                state <= CALC_SLOPE;
             end
 
           CALC_SLOPE :
             begin
               slope <= (f_b - f_a) / ((b_f - a_f ) / (2**BUS_WIDTH-2));
-
               state <= CALC_C;
             end
 
           CALC_C :
             begin
               c <= b_f - (1023 * (f_b - q_desired) / slope);
-
               state <= SEND_I_REF_C;
-
             end
 
           SEND_I_REF_C :
             begin
               i_ref <= c;
 
-              state <= UPDATE_BOUNDS;
+              state <= ready ? UPDATE_BOUNDS : SEND_I_REF_C;
 
             end
 
           UPDATE_BOUNDS :
             begin
 
-              a <= b;
-              b <= c;
-
-              f_a <= f_b;
-
-              f_c   <= q_measured;
-              state <= FORWARD_MEASURE;
-
+                a <= b;
+                b <= c;
+                
+                f_a <= f_b;
+                f_c   <= q_measured;
+                
+                state <= FORWARD_MEASURE;
             end
 
           FORWARD_MEASURE :
@@ -153,6 +158,7 @@ module secant #(
     error = f_c - q_desired;
     error = (error > 0) ? error : -error;
   end
+
 
 
 

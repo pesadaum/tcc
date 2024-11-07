@@ -36,6 +36,7 @@ add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/went
 add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref
 add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref_max
 add wave -noupdate -expand -group I_REF_MUX /top_tb/top_inst/i_ref_mux_inst/i_ref_out
+add wave -noupdate /top_tb/top_inst/q_control_inst/i_ref_mux
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {1246 ps} 1} {{Cursor 2} {7000 ps} 1} {{Cursor 3} {5000 ps} 1}
 quietly wave cursor active 2
@@ -53,4 +54,4 @@ configure wave -griddelta 40
 configure wave -timeline 1
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {73850 ps}
+WaveRestoreZoom {0 ps} {277664 ps}
