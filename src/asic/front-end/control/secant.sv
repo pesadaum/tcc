@@ -2,14 +2,14 @@ module secant #(
   parameter BUS_WIDTH = 10,
   parameter TOL       = 30
 ) (
-  input  wire                 ready        ,
-  input  wire                 clk          ,
-  input  wire                 rst          ,
-  input  wire [BUS_WIDTH-1:0] q_desired    ,
-  input  wire [BUS_WIDTH-1:0] q_measured   ,
-  input  wire [BUS_WIDTH-1:0] i_ref_setup  ,
-  output reg                  went_unstable,
-  output reg  [BUS_WIDTH-1:0] i_ref
+  input  wire                 ready          , // flag for measurement is ready
+  input  wire                 clk            ,
+  input  wire                 rst            ,
+  input  wire                 enable         ,
+  input  wire [BUS_WIDTH-1:0] q_desired      ,
+  input  wire [BUS_WIDTH-1:0] q_measured     ,
+  output reg  [BUS_WIDTH-1:0] i_ref,
+  output reg went_unstable
 );
 
   reg [2:0] state;
@@ -49,17 +49,8 @@ module secant #(
   assign b_f = b;
   assign c_f = c;
 
-  // initial begin
-  //   state = -1;
-  //   a = 0;
-  //   b = 2**BUS_WIDTH-2;
-  //   // b = 900;
-  //   // c = 0;
-  //   // q_desired = 258;
-  //   // c = 826;
-  //   // f_c = 119;
-  //   converged = 1'b0;
-  // end
+  assign went_unstable = 1'b0;
+
 
 
   always @(posedge clk or posedge rst) begin

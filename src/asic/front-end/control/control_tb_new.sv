@@ -41,8 +41,7 @@ module control_tb_new ();
     .ready        (ready        ), // flag for measurement is ready
     .clk          (clk          ),
     .rst          (rst          ),
-    // .enable       (enable       ),
-    .i_ref_setup  (i_ref_mux    ),
+    .enable       (enable       ),
     .q_desired    (q_desired    ),
     .q_measured   (q_measured   ),
     .i_ref        (i_ref        ),
