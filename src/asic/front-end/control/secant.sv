@@ -14,14 +14,14 @@ module secant #(
 
   reg [2:0] state;
 
-  localparam SEND_I_REF_A  = 'd0,
-    SEND_I_REF_B    = 'd1,
-    GET_FB          = 'd2,
-    CALC_SLOPE      = 'd3,
-    CALC_C          = 'd4,
-    SEND_I_REF_C    = 'd5,
-    UPDATE_BOUNDS   = 'd6,
-    FORWARD_MEASURE = 'd7;
+  localparam SEND_I_REF_A  = 3'd0,
+    SEND_I_REF_B    = 3'd1,
+    GET_FB          = 3'd2,
+    CALC_SLOPE      = 3'd3,
+    CALC_C          = 3'd4,
+    SEND_I_REF_C    = 3'd5,
+    UPDATE_BOUNDS   = 3'd6,
+    FORWARD_MEASURE = 3'd7;
 
 
   // Initial lower and upper bounds and midpoint respectively;
@@ -62,7 +62,7 @@ module secant #(
   // end
 
 
-  always @(posedge clk ) begin
+  always @(posedge clk or posedge rst) begin
 
     if (error < TOL) converged <= 1'b1;
     else converged <= 1'b0;
