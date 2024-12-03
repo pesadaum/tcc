@@ -48,14 +48,14 @@
 
 \usepackage{listings}
 \usepackage[newfloat]{minted}
+% \usemintedstyle{friendly}
+\citebrackets[]
+
 \usemintedstyle{friendly}
 \newenvironment{code}{\captionsetup{type=listing}}{}
 \SetupFloatingEnvironment{listing}{name=Código}
 
-%
-
 \newcommand{\algorithmautorefname}{Algoritmo}
-\citebrackets[]
 \renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
 \renewcommand{\backref}{}
 \renewcommand*{\backrefalt}[4]{
@@ -87,10 +87,6 @@ pdftitle={Circuito digital CMOS para controle do fator de qualidade de um filtro
 \setlength{\parindent}{1.3cm}
 \setlength{\parskip}{0.2cm}  
 \makeindex
-
-
-
-\setkeys{Gin}{width=\textwidth}
 
 \renewcommand{\listalgorithmname}{Lista de algoritmos}
 

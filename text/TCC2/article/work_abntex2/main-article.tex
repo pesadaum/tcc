@@ -2,6 +2,7 @@
 
 
 
+
 \makeindex
 % ---
 
@@ -56,20 +57,16 @@
 % titulo em outro idioma (opcional)
 
 \title{Circuito digital CMOS para controle do fator de qualidade de um filtro passa-banda ativo sintonizável}
-
 \twocolumn[
+	
+
 	\begin{center}
-		% % \begin{minipage}[H]{0.4}
-		% % 	\begin{figure*}[]
-		% % 		\centering
-		% % 		\includegraphics[H]{./unifeilogo.eps}
-				
-		% % 	\end{figure*}
-			
-		% % \end{minipage}
-		% \begin{minipage}
-			
+
+		% \begin{minipage}{.4\textwidth}
+		% 	\centering
+		% 		\includegraphics{"./unifeilogo-eps-converted-to.pdf"}
 		% \end{minipage}
+		
 		\Large 
 		 	Trabalho de conclusão de curso \\
 		 	Universidade Federal de Itajubá - \textit{Campus} Theodomiro Carneiro Santiago\\
@@ -94,9 +91,9 @@
 			\vspace*{0.5cm}
 
 			\textit{E-mail}: 
-				\href{mailto:alef_santos@unifei.edu.br}{\verb|alef\_santos@unifei.edu.br}, 
-				\href{mailto:dean.karolak@unifei.edu.br}{\verb|dean.karolak@unifei.edu.br},
-				\href{mailto:paulo.silva@unifei.edu.br }{\verb|paulo.silva@unifei.edu.br } 
+				\href{mailto:alef_santos@unifei.edu.br}{alef\_santos@unifei.edu.br}, 
+				\href{mailto:dean.karolak@unifei.edu.br}{dean.karolak@unifei.edu.br},
+				\href{mailto:paulo.silva@unifei.edu.br }{paulo.silva@unifei.edu.br} 
 		
 		
 	\end{center}
@@ -169,6 +166,27 @@
 % 
 
 Este trabalho trata de um sistema eletrônico que recebe e controla o fator de qualidade ($Q$) de um circuito eletrônico ressonante. O circuito proposto utiliza-se de técnicas de computação numérica para controlar o fator de qualidade através de uma corrente de referência injetada no sistema ressonante. Neste trabalho serão realizados circuitos digitais periféricos para a determinação do valor de $Q$ medido de um filtro passa banda ativo, bem como, um circuito digital para controle e aproximação do $Q$ desejado. Em relação ao controle e aproximação de Q, serão comparados os métodos numéricos da Bisseção, Secantes e Secantes com seleção de intervalo implementados. O sistema digital é projetado e implementado em Verilog tendo em mente a posterior fabricação em silício. Para efeitos de estudo e desenvolvimento, este projeto em ASIC utiliza uma tecnologia GPDK de 45nm.
+
+\begin{minted}{c}
+    int main() {
+    printf("hello, world");
+    return 0;
+    }
+\end{minted}
+
+\chapter{Testando}
+
+
+na \autoref{f-arq} vemos a \nameref{f-arq}
+
+\begin{figure}[H]
+	\centering
+	\caption{Arquitetura simplificada}
+	\includegraphics[width=\columnwidth]{"./fig/arq-simplif.pdf"}
+	\label{f-arq}
+\end{figure}
+
+
 % ----------------------------------------------------------
 % ELEMENTOS PÓS-TEXTUAIS
 % ----------------------------------------------------------

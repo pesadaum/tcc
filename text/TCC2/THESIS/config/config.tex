@@ -1,0 +1,84 @@
+\documentclass[
+    12pt,
+    openright,
+    twoside,
+    a4paper,
+    english,
+    brazil]{abntex2}
+
+\usepackage{cmap}	
+\usepackage{lmodern}	
+\usepackage[T1]{fontenc}	
+\usepackage[utf8]{inputenc}		
+\usepackage{lastpage}		
+\usepackage{color}	
+\usepackage{graphicx}	
+\usepackage{units}
+\usepackage[brazilian,hyperpageref]{backref}
+\usepackage[num]{abntex2cite}
+\usepackage{bold-extra}
+\usepackage{eso-pic}
+\usepackage{indentfirst, microtype}		
+\usepackage{caption,subcaption,float, dcolumn}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{enumerate}
+
+\usepackage{multirow}
+
+
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\usepackage{svg}
+
+\usepackage{listings}
+\usepackage[newfloat]{minted}
+\usemintedstyle{friendly}
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Código}
+
+%
+
+\newcommand{\algorithmautorefname}{Algoritmo}
+\citebrackets[]
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\renewcommand{\backref}{}
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+\definecolor{blue}{rgb}{0, .226, .437}
+\makeatletter
+\hypersetup{
+pdftitle={Circuito digital para controle do fator de qualidade de um filtro passa-banda ativo sintonizável}, 
+		pdfauthor={Alef de Oliveira Santos},
+    	pdfsubject={TCC1},
+	    pdfcreator={LaTeX with abnTeX2},
+            pdfkeywords={Fator Q. Controle digital. Métodos numéricos. RTL. Verilog.},
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.2cm}  
+\makeindex
+
+
+
+\setkeys{Gin}{width=\textwidth}
+
+\renewcommand{\listalgorithmname}{Lista de algoritmos}

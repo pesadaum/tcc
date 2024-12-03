@@ -90,7 +90,7 @@ module secant #(
           SEND_I_REF_B :
             begin
               i_ref <= b;
-              
+
               if (rdy_reg) begin
                 f_a   <= q_measured;
                 state <= GET_FB;
@@ -100,19 +100,26 @@ module secant #(
 
           GET_FB :
             begin
+              if (ready) begin
                 f_b   <= q_measured;
                 state <= CALC_SLOPE;
+              end
             end
 
           CALC_SLOPE :
             begin
-              slope <= (f_b - f_a) / ((b_f - a_f ) / (2**BUS_WIDTH-2));
+
+              if (f_b != f_a)
+                slope <= (f_b - f_a) / ((b_f - a_f ) / (2**BUS_WIDTH-2));
+              else
+                slope <= 1.001;
+
               state <= CALC_C;
             end
 
           CALC_C :
             begin
-              c <= b_f - (1023 * (f_b - q_desired) / slope);
+              c     <= b_f - ((2**BUS_WIDTH-1) * (f_b - q_desired) / slope);
               state <= SEND_I_REF_C;
             end
 
@@ -127,13 +134,13 @@ module secant #(
           UPDATE_BOUNDS :
             begin
 
-                a <= b;
-                b <= c;
-                
-                f_a <= f_b;
-                f_c   <= q_measured;
-                
-                state <= FORWARD_MEASURE;
+              a <= b;
+              b <= c;
+
+              f_a <= f_b;
+              f_c <= q_measured;
+
+              state <= FORWARD_MEASURE;
             end
 
           FORWARD_MEASURE :

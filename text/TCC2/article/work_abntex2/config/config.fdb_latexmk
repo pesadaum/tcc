@@ -1,13 +1,13 @@
 # Fdb version 3
-["makeindex config.idx"] 0 "config.idx" "config.ind" "config" 0
+["makeindex config.idx"] 0 "config.idx" "config.ind" "config" 1729645208
   "config.idx" 0 -1 0 "pdflatex"
   (generated)
   "config.ilg"
   "config.ind"
-["pdflatex"] 1729557000 "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex" "config.pdf" "config" 1729557000
-  "/dev/null" 1729549537 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1729645208 "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex" "config.pdf" "config" 1729645208
+  "/dev/null" 1729639677 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1722791492 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex" 1729556999 3178 e1069de6a7ef48ec303dec2a01da2ef9 ""
+  "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex" 1729645207 3169 b20dc8f61316e6ea6ce126ab390e81e8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1136768653 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1136768653 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
@@ -150,9 +150,9 @@
   "/usr/share/texmf/tex/latex/lm/t1lmr.fd" 1256929440 1865 afbfccbe7fda9c2dc5078ad7c486bbed ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1722801451 2798648 2dd66f5038e21b8dd7619112bb037dca ""
-  "config.aux" 1729557000 32 3985256e7290058c681f74d7a3565a19 ""
+  "config.aux" 0 -1 0 ""
   "config.ind" 0 -1 0 "makeindex config.idx"
-  "config.tex" 1729556999 3178 e1069de6a7ef48ec303dec2a01da2ef9 ""
+  "config.tex" 1729645207 3169 b20dc8f61316e6ea6ce126ab390e81e8 ""
   (generated)
   "config.idx"
   "config.log"

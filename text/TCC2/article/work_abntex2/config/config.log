@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.4)  21 OCT 2024 21:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.4)  22 OCT 2024 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1015,14 +1015,14 @@ runsystem(mkdir -p _minted-config)...disabled (restricted).
 
 
 
-/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex:51: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
+/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/config/config.tex:52: Package minted Error: You must invoke LaTeX with the -shell-escape flag.
 
 See the minted package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.51 \usemintedstyle
-                    {friendly}
+l.52 \citebrackets
+                  []
 Pass the -shell-escape flag to LaTeX. Refer to the minted.sty documentation for more information.
 
 Package hyperref Info: Option `colorlinks' set `true' on input line 85.

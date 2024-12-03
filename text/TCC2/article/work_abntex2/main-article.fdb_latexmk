@@ -1,20 +1,21 @@
 # Fdb version 3
-["bibtex main-article"] 1729557290 "main-article.aux" "main-article.bbl" "main-article" 1729557290
+["bibtex main-article"] 1729717425 "main-article.aux" "main-article.bbl" "main-article" 1729717426
   "/usr/share/texlive/texmf-dist/bibtex/bib/abntex2/abntex2-options.bib" 1357081713 5396 4eb260dac60f150ae608d45252853090 ""
   "/usr/share/texlive/texmf-dist/bibtex/bst/abntex2/abntex2-num.bst" 1543183680 60065 0bf58df5e47e1a6c21c910ec88a893f4 ""
-  "main-article.aux" 1729557285 2072 247f1e2ff21ba19dd1bfab8c88f13b0b "pdflatex"
+  "main-article.aux" 1729646627 2625 454465e658ad797674a8725164020ea6 "pdflatex"
   "ref.bib" 1728843929 12018 f18c8c74c37cf8baa346aca7ba3db8cd ""
   (generated)
   "main-article.bbl"
   "main-article.blg"
-["makeindex main-article.idx"] 1729557290 "main-article.idx" "main-article.ind" "main-article" 1729557290
-  "main-article.idx" 1729557284 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex main-article.idx"] 1729717425 "main-article.idx" "main-article.ind" "main-article" 1729717426
+  "main-article.idx" 1729646627 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "main-article.ilg"
   "main-article.ind"
-["pdflatex"] 1729557290 "main-article.tex" "main-article.pdf" "main-article" 1729557290
-  "/dev/null" 1729549537 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1729717426 "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/main-article.tex" "main-article.pdf" "main-article" 1729717426
+  "/dev/null" 1729717371 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1722791492 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/pesadaum/work/tcc/text/TCC2/article/work_abntex2/main-article.tex" 1729717425 6929 e1f87935c5fa329406dc36c338b5c4f0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
@@ -180,6 +181,7 @@
   "/usr/share/texmf/fonts/tfm/public/lm/ec-lmr12.tfm" 1254938640 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "/usr/share/texmf/fonts/tfm/public/lm/ec-lmri10.tfm" 1254938640 17148 9556e1b5f936b77a796f68d2d559ba99 ""
   "/usr/share/texmf/fonts/tfm/public/lm/ec-lmri12.tfm" 1254938640 17144 271aaf9ebb339934b04110dc5211fba4 ""
+  "/usr/share/texmf/fonts/tfm/public/lm/ec-lmtk10.tfm" 1254938640 1368 5bfeb1cf8f9f0acdb7436bfaa8e0da4e ""
   "/usr/share/texmf/fonts/tfm/public/lm/ec-lmtt10.tfm" 1254938640 1372 2ef2c2b492b3c4cd7879fe083abbb061 ""
   "/usr/share/texmf/fonts/tfm/public/lm/lmex10.tfm" 1254938640 992 ce925c9346c7613270a79afbee98c070 ""
   "/usr/share/texmf/fonts/tfm/public/lm/lmmi10.tfm" 1254938640 1528 6d36b2385e0ca062a654de6ac59cb34f ""
@@ -198,6 +200,7 @@
   "/usr/share/texmf/fonts/type1/public/lm/lmri10.pfb" 1254938640 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmri12.pfb" 1254938640 109265 32320cb6133d4d76bf83e27b5eb4009b ""
   "/usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb" 1254938640 27802 5c876bb2c4040caaf035d60bd74a86bd ""
+  "/usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb" 1254938640 117319 7f8361f845845ce6d5b36cbd9f9cf377 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb" 1254938640 113227 1010e11451afc2822c95dae77c390042 ""
   "/usr/share/texmf/tex/latex/lm/lmodern.sty" 1256929440 1606 c17281c7cff2bbd7ff0173e1433487ec ""
   "/usr/share/texmf/tex/latex/lm/omllmm.fd" 1256929440 888 44447a3a3af84a22454ef89500942d93 ""
@@ -209,15 +212,20 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1722801434 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1722801451 2798648 2dd66f5038e21b8dd7619112bb037dca ""
-  "config/config.tex" 1729556999 3178 e1069de6a7ef48ec303dec2a01da2ef9 ""
-  "main-article.aux" 1729557285 2072 247f1e2ff21ba19dd1bfab8c88f13b0b "pdflatex"
-  "main-article.bbl" 1729557290 201 9c3fd3fd7ade6eaa6854bd6d1afb7a8e "bibtex main-article"
-  "main-article.brf" 1729557284 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main-article.ind" 1729557290 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main-article.idx"
-  "main-article.tex" 1729557283 6705 9d89f51a42e0f019020d49e115d8d1ca ""
+  "_minted-main-article/EAFA21BF19C2027915E675D18A41367F60B05BD58D0D99C7EC229DB7FB01D7DB.pygtex" 1729641420 341 c6930e5ed73bac7e22c7dd0acab31b59 ""
+  "_minted-main-article/friendly.pygstyle" 1729641420 6513 8866be9ec5e5fb1e091922e713e48e4d ""
+  "config/config.tex" 1729645207 3169 b20dc8f61316e6ea6ce126ab390e81e8 ""
+  "fig/arq-simplif.pdf" 1729555487 45597 3fdeabd9a7ea139e29d92121dc0b5791 ""
+  "main-article.aux" 0 -1 0 "pdflatex"
+  "main-article.bbl" 1729717425 201 9c3fd3fd7ade6eaa6854bd6d1afb7a8e "bibtex main-article"
+  "main-article.brf" 1729717426 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main-article.ind" 0 -1 0 "makeindex main-article.idx"
+  "main-article.pyg" 1729717426 65 eafa21bf19c2027915e675d18a41367f "pdflatex"
+  "main-article.tex" 1729717425 6929 e1f87935c5fa329406dc36c338b5c4f0 ""
   (generated)
   "main-article.aux"
   "main-article.brf"
   "main-article.idx"
   "main-article.log"
   "main-article.pdf"
+  "main-article.pyg"

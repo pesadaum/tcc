@@ -3,58 +3,41 @@ module control_tb_new ();
   // timeunit = 900us;
   // timeprecision = 1us;
   localparam BUS_WIDTH = 10;
-  localparam TOL       = 1 ;
+  localparam TOL   = 1 ;
   // localparam q_desired = 110;
 
 
 
-  logic clk          ;
-  logic ready        ;
-  logic rst          ;
-  logic enable       ;
-  logic went_unstable;
+  logic clk  ;
+  logic ready;
+  logic rst  ;
+//   logic enable;
 
-  logic [BUS_WIDTH-1:0] q_desired ;
-  logic [BUS_WIDTH-1:0] q_measured;
-  logic [BUS_WIDTH-1:0] i_ref_mux ;
-  logic [BUS_WIDTH-1:0] i_ref     ;
+  logic [BUS_WIDTH-1:0] q_desired  ;
+  logic [BUS_WIDTH-1:0] q_measured ;
+  logic [BUS_WIDTH-1:0] i_ref_setup;
+  logic [BUS_WIDTH-1:0] i_ref      ;
 
-  // bisection #(
-  //   .BUS_WIDTH(BUS_WIDTH),
-  //   .TOL      (TOL      )
-  // ) DUT (
-  //   .ready        (ready        ), // flag for measurement is ready
-  //   .clk          (clk          ),
-  //   .rst          (rst          ),
-  //   .enable       (enable       ),
-  //   .i_ref_mux    (i_ref_mux    ),
-  //   .q_desired    (q_desired    ),
-  //   .q_measured   (q_measured   ),
-  //   .i_ref        (i_ref        ),
-  //   .went_unstable(went_unstable)
-  // );
-
-  secant #(
+  bisection #(
     .BUS_WIDTH(BUS_WIDTH),
-    .TOL      (TOL      )
+    .TOL  (TOL  )
   ) DUT (
-    .ready        (ready        ), // flag for measurement is ready
-    .clk          (clk          ),
-    .rst          (rst          ),
-    .enable       (enable       ),
-    .q_desired    (q_desired    ),
-    .q_measured   (q_measured   ),
-    .i_ref        (i_ref        ),
-    .went_unstable(went_unstable)
+    .rst        (rst        ),
+    .clk        (clk        ),
+    .ready      (ready      ),
+    .q_desired  (q_desired  ),
+    .q_measured (q_measured ),
+    .i_ref      (i_ref      ),
+    .i_ref_setup(i_ref_setup)
   );
+
 
   initial begin
     clk         =          0;
     ready       =          0;
     rst         =          0;
-    i_ref_mux   = 2**BUS_WIDTH-1;
-    enable      = 1;
-    went_unstable = 0;
+    q_desired   =        110;
+    i_ref_setup = 2**BUS_WIDTH-1;
   end
 
   reg [BUS_WIDTH-1:0] q_array[2**BUS_WIDTH-1:0]; // Caution, large array
@@ -106,26 +89,15 @@ module control_tb_new ();
 
   initial begin
     // # 5 start = 1'b1; // wait 5 units to set high impedance
-    q_desired = 110;
 
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
-    # (50 * 3);
+    # 50;
 
     q_desired = 40;
     #5 rst = 1; ready = 0;
     #5 rst = 0; ready = 1;
-    # (50 * 3);
-
-    q_desired = 220;
-    #5 rst = 1; ready = 0;
-    #5 rst = 0; ready = 1;
-    # (50 * 7);
-
-    q_desired = 96;
-    #5 rst = 1; ready = 0;
-    #5 rst = 0; ready = 1;
-    # (50 * 3);
+    #50;
 
     $stop();
 

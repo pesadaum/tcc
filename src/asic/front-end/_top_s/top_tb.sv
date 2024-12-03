@@ -82,7 +82,7 @@ localparam CLK_PERIOD = 1; // -> ~1GHz
 always
   #CLK_PERIOD clk = ~clk;
 
-int unsigned values_sweep[4]     ; // Array size 10, change it as needed
+int unsigned values_sweep[6]     ; // Array size 10, change it as needed
 int unsigned step            = 20;
 int unsigned lower_b             ;
 int unsigned upper_b             ;
@@ -107,7 +107,7 @@ initial begin
 
 
   foreach (values_sweep[i]) begin : q_desired_sweep
-    max_timeout = 5_0000;
+    max_timeout = 50_0000;
     q_desired = values_sweep[i];
     while (!top_inst.q_control_inst.converged) begin
       #1 ;
@@ -115,7 +115,7 @@ initial begin
       if(max_timeout == 0)
         break;
     end
-    #5 rst = 1;  #5 rst = 0;
+    #75 rst = 1;  #75 rst = 0;
   end
 
   // while (!top_inst.q_control_inst.converged) begin

@@ -3,7 +3,7 @@ module q_measurement_tb ();
   localparam BUS_WIDTH       = 10;
   localparam Q_PER_PULSE = 30;
 
-  logic             clk         ;
+  logic             clk, rst         ;
   logic             q_serialized;
   logic             start       ;
   logic             ready       ;

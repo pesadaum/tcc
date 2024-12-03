@@ -1,4 +1,4 @@
-timeunit 100ps;
+timeunit 1ns;
 
 
 `include "../resonant_system_emulation/resonant_sys.sv"
@@ -7,15 +7,15 @@ module top_tb ();
 localparam BUS_WIDTH = 10;
 // -- module: Q measurement
 localparam WTD_BUS_WIDTH = 3;
-localparam Q_PER_PULSE   = 3;
+localparam Q_PER_PULSE   = 1;
 // -- module: control
-localparam TOL = 6;
+localparam TOL = 5;
 // -- module: instability determination
 localparam I_REF_DELTA_INSTB = 10;
 localparam DELTA_Q_INSTB     = 50;
 // -- module: resonant system emulation
 localparam PULSE_DURATION = 3;
-localparam INCLUDE_Q_DROP = 1;
+localparam INCLUDE_Q_DROP = 0;
 
 wire                 q_serialized;
 reg                  start       ;
@@ -82,7 +82,7 @@ localparam CLK_PERIOD = 1; // -> ~1GHz
 always
   #CLK_PERIOD clk = ~clk;
 
-int unsigned values_sweep[4]     ; // Array size 10, change it as needed
+int unsigned values_sweep[9]     ; // Array size 10, change it as needed
 int unsigned step            = 20;
 int unsigned lower_b             ;
 int unsigned upper_b             ;
@@ -107,7 +107,7 @@ initial begin
 
 
   foreach (values_sweep[i]) begin : q_desired_sweep
-    max_timeout = 5_000;
+    max_timeout = 50_000;
     q_desired = values_sweep[i];
     while (!top_inst.q_control_inst.converged) begin
       #1 ;
@@ -115,7 +115,7 @@ initial begin
       if(max_timeout == 0)
         break;
     end
-    #5 rst = 1;  #5 rst = 0;
+    #75 rst = 1;  #75 rst = 0;
   end
 
   // while (!top_inst.q_control_inst.converged) begin
